@@ -5,5 +5,5 @@
 [ ] Dominik F.
 [ ] Dominik K.
 [ ] Franziska 
-[X] Jeff Zimmer
+[X] Jeff
 [ ] Marc
