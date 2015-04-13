@@ -6,7 +6,7 @@
 
 [ ] Dominik F.
 
-[ ] Dominik K.
+[x] Dominik K.
 
 [ ] Franziska 
 
