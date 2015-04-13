@@ -2,7 +2,7 @@
 
 [ ] Christian H.
 
-[ ] Christian W.
+[X] Christian W.
 
 [ ] Dominik F.
 
