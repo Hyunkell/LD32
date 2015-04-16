@@ -4,7 +4,7 @@
 
 [X] Christian W.
 
-[ ] Dominik F.
+[x] Dominik F.
 
 [x] Dominik K.
 
