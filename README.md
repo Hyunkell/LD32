@@ -1,6 +1,6 @@
 # Fluffy Tigers - Ludum Dare 32
 
-[ ] Christian H.
+[x] Christian H.
 
 [X] Christian W.
 
