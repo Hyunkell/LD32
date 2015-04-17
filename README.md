@@ -8,7 +8,7 @@
 
 [x] Dominik K.
 
-[ ] Franziska 
+[X] Franziska 
 
 [X] Jeff
 
