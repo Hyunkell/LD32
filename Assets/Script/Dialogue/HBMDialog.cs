@@ -38,7 +38,18 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerable<DialogueAction> CharismaOptions()
     {
-        yield break;
+		if (this.isGreetingPhase) 
+		{
+			yield return new DialogueAction ("Thank you", CharismaGreeting);
+		} 
+		else 
+		{
+			yield return new DialogueAction("Like Mercedes?", CharismaMercedes);
+			if(this.Player.HasHappend("charismaGreeting"))
+			{
+				yield return new DialogueAction("Good work", CharismaWonder);
+			}
+		}
     }
 
     protected override IEnumerable<DialogueAction> IntimidationOptions()
@@ -122,7 +133,7 @@ public class HBMDialog : Dialogue
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcMercedes);
-		Npc.Say ("(Mercedes Monolog)");
+		Npc.Say ("(Mercedes monologue)");
 
 		yield return End ();
 	}
