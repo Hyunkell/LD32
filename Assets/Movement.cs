@@ -19,7 +19,8 @@ public class Movement : MonoBehaviour {
     {
         if (this._rigidBody.velocity.x <= this.maxSpeed)
         {
-            this.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * this.acceleration, 0, 0) * Time.deltaTime, Space.World);
+            this._rigidBody.MovePosition(this._rigidBody.position+(new Vector2(Input.GetAxis("Horizontal") * this.acceleration, 0) * Time.deltaTime));
+            //this.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * this.acceleration, 0, 0) * Time.deltaTime, Space.World);
         }
     }
 }
