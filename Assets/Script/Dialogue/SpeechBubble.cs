@@ -36,10 +36,9 @@ public class SpeechBubble : MonoBehaviour
 
     public void Clear()
     {
+        uiText.text = "";
         for( int i = 0; i < buttonMode.transform.childCount; i++ )
-        {
             GameObject.Destroy( buttonMode.transform.GetChild( i ).gameObject );
-        }
     }
 
     public void ShowButton( DialogueAction namedAction )

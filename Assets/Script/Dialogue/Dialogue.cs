@@ -9,6 +9,12 @@ public abstract class Dialogue : MonoBehaviour
     public Actor Player;
     public Actor Npc;
 
+    protected abstract void StartNode();
+    protected abstract IEnumerable<DialogueAction> CharismaOptions();
+    protected abstract IEnumerable<DialogueAction> IntimidationOptions();
+    protected abstract IEnumerable<DialogueAction> IntelligenceOptions();
+    protected abstract IEnumerable<DialogueAction> ChatOptions();
+
     protected Coroutine End()
     {
         return StartCoroutine( WaitAndEnd() );
@@ -19,6 +25,7 @@ public abstract class Dialogue : MonoBehaviour
         // TODO: Fix this clusterfuck
         yield return WaitForInput();
         yield return WaitForInput();
+        Npc.speechBubble.Clear();
         ShowCategoryOptions().MoveNext();
     }
 
@@ -33,13 +40,7 @@ public abstract class Dialogue : MonoBehaviour
             yield return null;
     }
 
-    //private Action primaryNode;
-    //private List<NamedAction> charismaNodes = new List<NamedAction>();
-    //private List<NamedAction> IntimidateNodes = new List<NamedAction>();
-    //private List<NamedAction> IntelligenceNodes = new List<NamedAction>();
-    //private List<NamedAction> ChatNodes = new List<NamedAction>();
 
-    protected abstract void StartNode();
 
     void OnMouseDown()
     {
@@ -110,11 +111,6 @@ public abstract class Dialogue : MonoBehaviour
     {
 
     }
-
-    protected abstract IEnumerable<DialogueAction> CharismaOptions();
-    protected abstract IEnumerable<DialogueAction> IntimidationOptions();
-    protected abstract IEnumerable<DialogueAction> IntelligenceOptions();
-    protected abstract IEnumerable<DialogueAction> ChatOptions();
 }
 
 public class DialogueNode
