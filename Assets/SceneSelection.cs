@@ -5,7 +5,7 @@ public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "TheKitchen", "TheOffice" };
+    private string[] scenes = new string[] { "TheKitchen", "TheOffice", "TheChefOffice" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -44,6 +44,8 @@ public class SceneSelection : MonoBehaviour {
 			if(renderer.gameObject.name == "SpawnPoint"){
 				character.transform.position = renderer.gameObject.transform.position;
 				character.GetComponentInChildren<SpriteRenderer>().sortingOrder = renderer.sortingOrder;
+                character.GetComponent<Movement>().enabled = true;
+                character.GetComponentInChildren<SpeechBubble>().Hide();
 				return;
 			}
 		}
