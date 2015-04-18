@@ -320,7 +320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6131054, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_IsTrigger
@@ -345,6 +345,14 @@ Prefab:
     - target: {fileID: 21248522, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.03000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.0999999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
@@ -417,7 +425,7 @@ GameObject:
   - 4: {fileID: 153969312}
   - 212: {fileID: 153969311}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_6
+  m_Name: ChefOfficeBigFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175235776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.33999991, y: .200000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1260905791}
@@ -667,7 +675,7 @@ GameObject:
   - 4: {fileID: 328259146}
   - 212: {fileID: 328259145}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_16
+  m_Name: ChefOfficeStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +953,7 @@ GameObject:
   - 4: {fileID: 384963861}
   - 212: {fileID: 384963862}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_15
+  m_Name: ChefOfficeCarpet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,11 +1038,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: .330000013
+      value: .230000004
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 2.74000001
+      value: 3.42000008
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1284,7 +1292,7 @@ GameObject:
   - 4: {fileID: 529746992}
   - 212: {fileID: 529746991}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_13
+  m_Name: ChefOfficeCarGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1560,60 +1568,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
   m_PrefabInternal: {fileID: 685128321}
---- !u!1 &687078199
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 687078201}
-  - 212: {fileID: 687078200}
-  m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &687078200
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 687078199}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300014, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &687078201
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 687078199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.300000012, y: -76.5999985, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
 --- !u!1001 &743037436
 Prefab:
   m_ObjectHideFlags: 0
@@ -1659,15 +1613,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21248522, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.21000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.30999994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
@@ -1686,7 +1652,7 @@ GameObject:
   - 4: {fileID: 753084269}
   - 212: {fileID: 753084270}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_6
+  m_Name: ChefOfficeToy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1740,7 +1706,7 @@ GameObject:
   - 4: {fileID: 766698286}
   - 212: {fileID: 766698287}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_8
+  m_Name: ChefOfficeDesk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1794,7 +1760,7 @@ GameObject:
   - 4: {fileID: 848302541}
   - 212: {fileID: 848302540}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_10
+  m_Name: ChefOfficeFlower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1789,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300008, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &848302541
@@ -1883,7 +1849,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 68d746d65b222404e8528033e84e69d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &867322977
@@ -1908,7 +1874,7 @@ GameObject:
   - 4: {fileID: 870862827}
   - 212: {fileID: 870862826}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_0
+  m_Name: ChefOfficeStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1937,7 +1903,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &870862827
@@ -1962,7 +1928,7 @@ GameObject:
   - 4: {fileID: 882913675}
   - 212: {fileID: 882913676}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_11
+  m_Name: ChefOfficeCarRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2036,7 @@ GameObject:
   - 4: {fileID: 921136514}
   - 212: {fileID: 921136515}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_14
+  m_Name: ChefOfficeBooks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2559,11 +2525,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135410818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ee9dd12b037844f8fc7d6eeb4848e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c1b1da1bdc435a44929cff0404f9fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 1135410819}
+  NpcGreeting: 
+  NpcOk: 
+  NpcThanks: 
+  NpcWonder: 
+  NpcMercedes: 
+  NpcIntimidateRevealB: 
+  PlayerIntimidateGreeting: 
+  PlayerCharismaGreeting: 
+  PlayerCharismaWonder: 
+  PlayerCharismaMercedes: 
+  PlayerIntimidateRevealB: 
 --- !u!1 &1149850634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +2932,7 @@ GameObject:
   - 4: {fileID: 1362358938}
   - 212: {fileID: 1362358937}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_8
+  m_Name: ChefOfficeBigFlag2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3088,7 +3065,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: .219999999, y: 3.73000002}
+  m_AnchoredPosition: {x: -3.02999997, y: 3.66000009}
   m_SizeDelta: {x: 173.080002, y: 116.059998}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1485351708
@@ -3466,7 +3443,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1742796845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0500000007, y: .379999995, z: 0}
+  m_LocalPosition: {x: .800000012, y: .50999999, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 287545730}
@@ -3498,7 +3475,7 @@ GameObject:
   - 4: {fileID: 1780373683}
   - 212: {fileID: 1780373684}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_17
+  m_Name: ChefOfficeChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3637,11 +3614,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -1.21000004
+      value: -2.13000011
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 4.42000008
+      value: 3.8900001
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.x
@@ -3808,6 +3785,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 104980, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
   m_IsPrefabParent: 0
@@ -3842,7 +3823,7 @@ GameObject:
   - 4: {fileID: 2011889951}
   - 212: {fileID: 2011889950}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_5
+  m_Name: ChefOfficeLittleFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3896,7 +3877,7 @@ GameObject:
   - 4: {fileID: 2025932691}
   - 212: {fileID: 2025932690}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_12
+  m_Name: ChefOfficeCarSchwarz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3950,7 +3931,7 @@ GameObject:
   - 4: {fileID: 2047378342}
   - 212: {fileID: 2047378341}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_1
+  m_Name: ChefOfficeDeskLamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4004,7 +3985,7 @@ GameObject:
   - 4: {fileID: 2064135049}
   - 212: {fileID: 2064135048}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_4
+  m_Name: ChefOfficeFlower1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,7 +4014,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2064135049
@@ -4058,7 +4039,7 @@ GameObject:
   - 4: {fileID: 2064870809}
   - 212: {fileID: 2064870808}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_9
+  m_Name: ChefOfficeArchives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4087,7 +4068,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300018, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2064870809
@@ -4117,7 +4098,7 @@ GameObject:
   - 4: {fileID: 2130702924}
   - 212: {fileID: 2130702923}
   m_Layer: 0
-  m_Name: ChefOfficeSpritesheet_7
+  m_Name: ChefOfficeSign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4146,7 +4127,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300014, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &2130702924

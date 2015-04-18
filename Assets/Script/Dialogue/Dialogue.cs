@@ -9,6 +9,11 @@ public abstract class Dialogue : MonoBehaviour
     public Actor Player;
     public Actor Npc;
 
+    protected abstract bool HasCharismaOptions { get; }
+    protected abstract bool HasIntimidationOptions { get; }
+    protected abstract bool HasIntelligenceOptions { get; }
+    protected abstract bool HasChatOptions { get; }
+
     protected abstract void StartNode();
     protected abstract IEnumerable<DialogueAction> CharismaOptions();
     protected abstract IEnumerable<DialogueAction> IntimidationOptions();
@@ -26,7 +31,17 @@ public abstract class Dialogue : MonoBehaviour
         yield return WaitForInput();
         yield return WaitForInput();
         Npc.speechBubble.Clear();
-        ShowCategoryOptions().MoveNext();
+
+        // Check if we need to move to the next scene
+        if( Npc.affinity >= 50.0f )
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
+            Player.speechBubble.Clear();
+            Player.speechBubble.Hide();
+            Player.GetComponent<Movement>().enabled = true;
+        }
+        else
+            ShowCategoryOptions().MoveNext();
     }
 
     protected Coroutine WaitForInput()
@@ -39,8 +54,6 @@ public abstract class Dialogue : MonoBehaviour
         while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
     }
-
-
 
     void OnMouseDown()
     {
@@ -60,10 +73,14 @@ public abstract class Dialogue : MonoBehaviour
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        Player.speechBubble.ShowButton( new DialogueAction( "Charisma", ShowCharismaOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Intimidate", ShowIntimidateOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Intelligence", ShowIntelligenceOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Chat", ShowChatOptions ) );
+        if( HasCharismaOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Charisma", ShowCharismaOptions ) );
+        if( HasIntimidationOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Intimidate", ShowIntimidateOptions ) );
+        if( HasIntelligenceOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Intelligence", ShowIntelligenceOptions ) );
+        if( HasChatOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Chat", ShowChatOptions ) );
         yield break;
     }
 
