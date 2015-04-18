@@ -26,15 +26,15 @@ public class Movement : MonoBehaviour {
         }
         if (nInputHorizontal != 0)
         {
-            var sprite = this.gameObject.GetComponent<SpriteRenderer>();
+            var sprite = this.gameObject.GetComponentInChildren<SpriteRenderer>();
 			if(nInputHorizontal < 0){
 				//Turn sprite to left
                 sprite.transform.localScale = 
-					new Vector3(-1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+					new Vector3(1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
 			} else if( nInputHorizontal > 0){
 				//Turn sprite to right
                 sprite.transform.localScale = 
-					new Vector3(1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+					new Vector3(-1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
 			}
 
 

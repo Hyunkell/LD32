@@ -44,6 +44,8 @@ public class SceneSelection : MonoBehaviour {
 			if(renderer.gameObject.name == "SpawnPoint"){
 				character.transform.position = renderer.gameObject.transform.position;
 				character.GetComponentInChildren<SpriteRenderer>().sortingOrder = renderer.sortingOrder;
+                character.GetComponent<Movement>().enabled = true;
+                character.GetComponentInChildren<SpeechBubble>().Hide();
 				return;
 			}
 		}
