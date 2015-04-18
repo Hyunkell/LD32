@@ -5,7 +5,7 @@ public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "TheKitchen", "TheOffice" };
+    private string[] scenes = new string[] { "TheKitchen", "TheOffice", "TheChefOffice" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
