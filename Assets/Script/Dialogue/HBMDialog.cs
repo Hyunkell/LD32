@@ -30,10 +30,10 @@ public class HBMDialog : Dialogue
 
     private bool isGreetingPhase = true;
 
-    protected override bool HasCharismaOptions { get { return false; } }
+    protected override bool HasCharismaOptions { get { return true; } }
     protected override bool HasIntimidationOptions { get { return true; } }
-    protected override bool HasIntelligenceOptions { get { return false; } }
-    protected override bool HasChatOptions { get { return false; } }
+    protected override bool HasIntelligenceOptions { get { return true; } }
+    protected override bool HasChatOptions { get { return !isGreetingPhase; } }
 
     protected override void StartNode()
     {
