@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class SceneSelection : MonoBehaviour {
-    
-	public string mainCharacter = "GameObject";
+
+    public string mainCharacter = "GameObject";
 
 	private GameObject _character;
 
