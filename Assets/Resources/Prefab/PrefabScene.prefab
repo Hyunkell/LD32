@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 423972}
   - 61: {fileID: 6131054}
+  - 61: {fileID: 6103158}
   m_Layer: 0
   m_Name: PrefabScene
   m_TagString: Untagged
@@ -57,6 +58,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 423972}
   m_RootOrder: 0
+--- !u!61 &6103158
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129548}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 6.30821228, y: -.0296211243}
+  serializedVersion: 2
+  m_Size: {x: .822308898, y: 10.180975}
 --- !u!61 &6131054
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,9 +81,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -6.41878414, y: 0}
   serializedVersion: 2
-  m_Size: {x: 12, y: 10}
+  m_Size: {x: .670901, y: 10}
 --- !u!212 &21248522
 SpriteRenderer:
   m_ObjectHideFlags: 1
