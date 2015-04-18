@@ -104,38 +104,38 @@ public class HBMDialog : Dialogue
 	#region Charisma Options
 	public IEnumerator CharismaGreeting()
 	{
-		PlaySound (this.PlayerCharismaGreeting);
-		Player.Say ("I just wanted to thank you for doing an amazing job, ruling Germany.");
-		yield return WaitForInput ();
+        PlaySound(this.PlayerCharismaGreeting);
+        Player.Say("I just wanted to thank you for doing an amazing job, ruling Germany.");
+        yield return WaitForInput();
 
-		PlaySound (this.NpcThanks);
-		Npc.Say ("Thank you... I guess?");
+        PlaySound(this.NpcThanks);
+        Npc.Say("Thank you... I guess?");
 
-		yield return End ();
+        yield return End();
 	}
 
 	public IEnumerator CharismaWonder()
 	{
-		PlaySound (this.PlayerCharismaWonder);
-		Player.Say ("Having started the Wirtschaftswunder proves your capability as a leader!");
-		yield return WaitForInput ();
+        PlaySound(this.PlayerCharismaWonder);
+        Player.Say("Having started the Wirtschaftswunder proves your capability as a leader!");
+        yield return WaitForInput();
 
-		PlaySound (this.NpcWonder);
-		Npc.Say ("The Wirtschawhat? Ah yes, yes I am often amazed at myself");
+        PlaySound(this.NpcWonder);
+        Npc.Say("The Wirtschawhat? Ah yes, yes I am often amazed at myself");
 
-		yield return End ();
+        yield return End();
 	}
 
 	public IEnumerator CharismaMercedes()
 	{
-		PlaySound (this.PlayerCharismaMercedes);
-		Player.Say ("So you like Mercedes cars? I like them too! <3");
-		yield return WaitForInput ();
+        PlaySound(this.PlayerCharismaMercedes);
+        Player.Say("So you like Mercedes cars? I like them too! <3");
+        yield return WaitForInput();
 
-		PlaySound (this.NpcMercedes);
-		Npc.Say ("(Mercedes monologue)");
+        PlaySound(this.NpcMercedes);
+        Npc.Say("(Mercedes Monolog)");
 
-		yield return End ();
+        yield return End();
 	}
 
 	#endregion
