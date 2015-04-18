@@ -320,7 +320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465512, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6131054, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_IsTrigger
@@ -376,7 +376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 0
+  m_RootOrder: 2
 --- !u!212 &138816472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!212 &362973562
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -726,7 +726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!212 &378090008
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -826,6 +826,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!1001 &479546401
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 134408740}
+    m_Modifications:
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.97000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.310000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 104980, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_Name
+      value: KitchenWomanEnemy 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .666666687
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .666666687
+      objectReference: {fileID: 0}
+    - target: {fileID: 21285236, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 7504cf9e34c254cb68c54efaee52ddc7,
+        type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &479546402 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+  m_PrefabInternal: {fileID: 479546401}
+--- !u!95 &479546403
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479546402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c930bf1bdc1724472ada6c9d1d7a191e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &480545524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +1112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!212 &670404412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1224,7 +1304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1 &935680033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 8
+  m_RootOrder: 10
 --- !u!212 &935680035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1584,7 +1664,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 10
+  m_RootOrder: 12
 --- !u!212 &1248071770
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1684,7 +1764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!212 &1476222311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1777,6 +1857,73 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
+--- !u!1001 &1611126027
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.39999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 104980, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_Name
+      value: KitchenWomanEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1611126028 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+  m_PrefabInternal: {fileID: 1611126027}
+--- !u!95 &1611126029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611126028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c930bf1bdc1724472ada6c9d1d7a191e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1649017111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1951,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!212 &1649017113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1858,7 +2005,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 7
+  m_RootOrder: 9
 --- !u!212 &1671609684
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2092,7 +2239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 134408740}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!212 &1958461024
 SpriteRenderer:
   m_ObjectHideFlags: 0
