@@ -1,9 +1,18 @@
 fileFormatVersion: 2
 guid: a47829de66e3cf7458755d045c76ed0d
-timeCreated: 1429393946
+timeCreated: 1429394480
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ChefCharacter_0
+    21300002: ChefCharacter_1
+    21300004: ChefCharacter_2
+    21300006: ChefCharacter_3
+    21300008: ChefCharacter_4
+    21300010: ChefCharacter_5
+    21300012: ChefCharacter_6
+    21300014: ChefCharacter_7
+    21300016: ChefCharacter_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +39,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +57,97 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ChefCharacter_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 603
+        width: 306
+        height: 504
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_1
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 600
+        width: 304
+        height: 460
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 58
+        width: 349
+        height: 457
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_3
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 70
+        width: 312
+        height: 459
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_4
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 270
+        width: 287
+        height: 283
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_5
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 267
+        width: 286
+        height: 295
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_6
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 51
+        width: 357
+        height: 210
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_7
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 55
+        width: 350
+        height: 207
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ChefCharacter_8
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 601
+        width: 308
+        height: 511
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
