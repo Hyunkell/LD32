@@ -8,6 +8,7 @@ public class Actor : MonoBehaviour
 {
     public new string name;
     public SpeechBubble speechBubble;
+    [Range( -50, 50 )]
     public float affinity;
 
     public void Say( params string[] text )
