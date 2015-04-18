@@ -6,9 +6,13 @@ public class StartDialog : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		var gameObject = other.gameObject;
 		gameObject.GetComponent<Movement> ().enabled = false;
+        gameObject.GetComponentInChildren<Animator>().Play("MainCharacterIdle");
 
         var dialogue = GetComponent<Dialogue>();
-        dialogue.BeginDialogue();
+        if (dialogue != null)
+        {
+            dialogue.BeginDialogue();
+        }
 	}
 
 	// Use this for initialization

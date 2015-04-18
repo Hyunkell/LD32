@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b59d8dae4b0a5848b393db48c2af39e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCharacter: GameObject
+  character: {fileID: 287545727}
 --- !u!1001 &134408739
 Prefab:
   m_ObjectHideFlags: 0
@@ -418,8 +418,9 @@ GameObject:
   - 50: {fileID: 287545728}
   - 114: {fileID: 287545729}
   - 61: {fileID: 287545731}
+  - 61: {fileID: 287545732}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MainCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,6 +468,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!61 &287545731
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 287545727}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+--- !u!61 &287545732
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -886,6 +900,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300002, guid: 7504cf9e34c254cb68c54efaee52ddc7,
         type: 3}
+    - target: {fileID: 6187880, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
   m_IsPrefabParent: 0

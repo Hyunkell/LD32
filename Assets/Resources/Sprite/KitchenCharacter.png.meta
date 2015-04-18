@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7504cf9e34c254cb68c54efaee52ddc7
-timeCreated: 1429376212
+timeCreated: 1429385369
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,8 @@ TextureImporter:
     21300002: KitchenCharacter_1
     21300004: KitchenCharacter_2
     21300006: KitchenCharacter_3
+    21300008: KitchenCharacter_4
+    21300010: KitchenCharacter_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,46 +55,46 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: KitchenCharacter_0
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 456
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: KitchenCharacter_1
       rect:
         serializedVersion: 2
-        x: 516
-        y: 417
-        width: 239
-        height: 508
+        x: 572
+        y: 0
+        width: 233
+        height: 526
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 1}
-    - name: KitchenCharacter_2
-      rect:
-        serializedVersion: 2
-        x: 1117
-        y: 297
-        width: 5
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: KitchenCharacter_3
       rect:
         serializedVersion: 2
-        x: 841
-        y: 79
-        width: 331
-        height: 516
+        x: 802
+        y: 0
+        width: 320
+        height: 524
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 11, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KitchenCharacter_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 230
+        height: 526
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: KitchenCharacter_5
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 0
+        width: 248
+        height: 524
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
