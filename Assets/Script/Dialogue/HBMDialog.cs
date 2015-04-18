@@ -30,7 +30,7 @@ public class HBMDialog : Dialogue
     protected override bool HasCharismaOptions { get { return true; } }
     protected override bool HasIntimidationOptions { get { return true; } }
     protected override bool HasIntelligenceOptions { get { return true; } }
-    protected override bool HasChatOptions { get { return !this.HasHappend(HappeningKeys.Greeting); } }
+    protected override bool HasChatOptions { get { return this.HasHappend(HappeningKeys.Greeting); } }
 
     protected override void StartNode()
     {
@@ -41,7 +41,7 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerable<DialogueAction> CharismaOptions()
     {
-        if (this.HasHappend(HappeningKeys.Greeting))
+        if (!this.HasHappend(HappeningKeys.Greeting))
         {
             yield return new DialogueAction("Thank you", CharismaGreeting);
         }
@@ -57,7 +57,7 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerable<DialogueAction> IntimidationOptions()
     {
-        if (this.HasHappend(HappeningKeys.Greeting))
+        if (!this.HasHappend(HappeningKeys.Greeting))
         {
             yield return new DialogueAction("Shut up", IntimidateGreeting);
         }
