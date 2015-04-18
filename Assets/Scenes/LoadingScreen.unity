@@ -777,11 +777,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.3799992
+      value: .370000005
       objectReference: {fileID: 0}
     - target: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -26.1900005
+      value: -51.3300018
       objectReference: {fileID: 0}
     - target: {fileID: 423972, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
       propertyPath: m_LocalPosition.z
