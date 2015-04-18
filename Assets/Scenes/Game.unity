@@ -910,6 +910,10 @@ Prefab:
       propertyPath: m_Name
       value: SpeechBubbleHBM
       objectReference: {fileID: 0}
+    - target: {fileID: 22323480, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
   m_IsPrefabParent: 0
@@ -1791,11 +1795,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135410818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ee9dd12b037844f8fc7d6eeb4848e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c1b1da1bdc435a44929cff0404f9fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
-  Npc: {fileID: 1260905794}
+  Npc: {fileID: 1135410819}
+  NpcGreeting: 
+  NpcIntimidateRevealB: 
+  PlayerIntimidateGreeting: 
+  PlayerIntimidateRevealB: 
 --- !u!1 &1149850634
 GameObject:
   m_ObjectHideFlags: 0
