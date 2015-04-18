@@ -3,9 +3,7 @@ using System.Collections;
 
 public class SceneSelection : MonoBehaviour {
 
-    public string mainCharacter = "GameObject";
-
-	private GameObject _character;
+	public GameObject character;
 
     private string[] scenes = new string[] {"TheKitchen", "TheOffice" };
     private int sceneIndex = 0;
@@ -13,7 +11,6 @@ public class SceneSelection : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-		LoadCharacter (mainCharacter);
         LoadCurrentScene();
 	}
 
@@ -22,11 +19,6 @@ public class SceneSelection : MonoBehaviour {
         LoadScene(scenes[sceneIndex]);
     }
 
-	private void LoadCharacter(string characterName)
-	{
-		var character = GameObject.Find(characterName);
-		this._character = character;
-	}
 
     public void LoadNextScene()
     {
@@ -47,8 +39,8 @@ public class SceneSelection : MonoBehaviour {
 		var spriteRenderers = scene.GetComponentsInChildren<SpriteRenderer> ();
 		foreach (var renderer in spriteRenderers) {
 			if(renderer.gameObject.name == "SpawnPoint"){
-				_character.transform.position = renderer.gameObject.transform.position;
-				_character.GetComponentInChildren<SpriteRenderer>().sortingOrder = renderer.sortingOrder;
+				character.transform.position = renderer.gameObject.transform.position;
+				character.GetComponentInChildren<SpriteRenderer>().sortingOrder = renderer.sortingOrder;
 				return;
 			}
 		}
