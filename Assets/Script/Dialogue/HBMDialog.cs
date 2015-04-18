@@ -113,7 +113,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcOk);
         Npc.Say("Ok");
-        Player.Happens(HappeningKeys.Greeting);
+        Npc.Happens(HappeningKeys.Greeting);
         yield return End();
     }
 
@@ -181,7 +181,7 @@ public class HBMDialog : Dialogue
 
 		PlaySound (this.NpcCharismaGreetingThanks);
         Npc.Say("Thank you... I guess?");
-        Player.Happens(HappeningKeys.Greeting);
+        Npc.Happens(HappeningKeys.Greeting);
 
         yield return End();
     }
