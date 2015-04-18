@@ -26,6 +26,17 @@ public class Movement : MonoBehaviour {
         }
         if (nInputHorizontal != 0)
         {
+			if(nInputHorizontal < 0){
+				//Turn sprite to left
+				this.gameObject.transform.localScale = 
+					new Vector3(-1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+			} else if( nInputHorizontal > 0){
+				//Turn sprite to right
+				this.gameObject.transform.localScale = 
+					new Vector3(1, this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+			}
+
+
             gameObject.GetComponentInChildren<Animator>().Play("MainCharacterWalking");
         }
         else
