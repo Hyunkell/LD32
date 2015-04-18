@@ -12,23 +12,26 @@ public class HBMDialog : Dialogue
 	public string NpcCharismaWonder = string.Empty;
 	public string NpcCharismaMercedes = string.Empty;
 
-    public string NpcIntimidateRevealB = string.Empty;
-
 	public string NpcChatWeatherMercedes = string.Empty;
 	public string NpcChatMotionOfNoConfidence = string.Empty;
 	public string NpcChatWarForDummies = string.Empty;
 	public string NpcChatBeerGarden = string.Empty;
 	public string NpcChatMoney = string.Empty;
 	public string NpcChatOlympic = string.Empty;
+
+    public string NpcIntimidateRevealB = string.Empty;
+    public string NpcIntimidateBUnknown = string.Empty;
+    public string NpcIntimidateScratchCar = string.Empty;
+    public string NpcIntimidateHurtFather = string.Empty;
+
     #endregion
 
     #region Player Sound Files
     public string PlayerIntimidateGreeting = string.Empty;
+
 	public string PlayerCharismaGreeting = string.Empty;
 	public string PlayerCharismaWonder = string.Empty;
 	public string PlayerCharismaMercedes = string.Empty;
-
-    public string PlayerIntimidateRevealB = string.Empty;
 
 	public string PlayerChatWeather = string.Empty;
 	public string PlayerChatWhatsUp = string.Empty;
@@ -36,14 +39,18 @@ public class HBMDialog : Dialogue
 	public string PlayerChatLastWeekend = string.Empty;
 	public string PlayerChatFavSong = string.Empty;
 	public string PlayerChatFavSport = string.Empty;
+
+	public string PlayerIntimidateRevealB = string.Empty;
+    public string PlayerIntimidateScratchCar = string.Empty;
+    public string PlayerIntimidateHurtFather = string.Empty;
+
     #endregion
 
-    private bool isGreetingPhase = true;
 
     protected override bool HasCharismaOptions { get { return true; } }
     protected override bool HasIntimidationOptions { get { return true; } }
     protected override bool HasIntelligenceOptions { get { return true; } }
-    protected override bool HasChatOptions { get { return !isGreetingPhase; } }
+    protected override bool HasChatOptions { get { return !this.HasHappend(HappeningKeys.Greeting); } }
 
     protected override void StartNode()
     {
@@ -54,29 +61,31 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerable<DialogueAction> CharismaOptions()
     {
-		if (this.isGreetingPhase) 
-		{
-			yield return new DialogueAction ("Thank you", CharismaGreeting);
-		} 
-		else 
-		{
-			yield return new DialogueAction("Like Mercedes?", CharismaMercedes);
-			if(this.Player.HasHappend("charismaGreeting"))
-			{
-				yield return new DialogueAction("Good work", CharismaWonder);
-			}
-		}
+        if (this.HasHappend(HappeningKeys.Greeting))
+        {
+            yield return new DialogueAction("Thank you", CharismaGreeting);
+        }
+        else
+        {
+            yield return new DialogueAction("Like Mercedes?", CharismaMercedes);
+            if (this.Player.HasHappend("charismaGreeting"))
+            {
+                yield return new DialogueAction("Good work", CharismaWonder);
+            }
+        }
     }
 
     protected override IEnumerable<DialogueAction> IntimidationOptions()
     {
-        if (this.isGreetingPhase)
+        if (this.HasHappend(HappeningKeys.Greeting))
         {
-        yield return new DialogueAction("Shut up", IntimidateGreeting);
-    }
+            yield return new DialogueAction("Shut up", IntimidateGreeting);
+        }
         else
         {
-            yield return new DialogueAction("reveal the B", IntimidateRevealB);
+            yield return new DialogueAction("Reveal the B", IntimidateRevealB);
+            if (this.HasHappend(HappeningKeys.Mercedes)) yield return new DialogueAction("Scratch car", IntimidateScratchCar);
+            yield return new DialogueAction("Hurt father", IntimidateHurtFather);
         }
     }
 
@@ -104,6 +113,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcOk);
         Npc.Say("Ok");
+        Player.Happens(HappeningKeys.Greeting);
         yield return End();
     }
 
@@ -113,45 +123,86 @@ public class HBMDialog : Dialogue
         Player.Say("I know what the \"B\" Stands for");
         yield return WaitForInput();
 
-        if (this.Player.HasHappend("abc"))
+        if (this.Player.HasHappend(HappeningKeys.SecondName))
         {
             PlaySound(this.NpcIntimidateRevealB);
-            Npc.Say("Oh, please don't tell anyone! They will know that Im a Nazi");
+            Npc.Say(
+                "Oh, please don't tell anyone!",
+                " They will know that Im a Nazi");
+
+            yield return End();
+        }
+        else
+        {
+            PlaySound(this.NpcIntimidateBUnknown);
+            Npc.Say("No, NO, that can't be true, how would you know");
+
+            //TODO: Nameselection
+        }
+    }
+
+    public IEnumerator IntimidateScratchCar()
+    {
+        PlaySound(this.PlayerIntimidateScratchCar);
+        Player.Say(
+            "Shiny Mercedes you got out there, ",
+            "would be a shame if somehting were to happen");
+
+        yield return WaitForInput();
+
+        PlaySound(this.NpcIntimidateScratchCar);
+        Npc.Say("Oh no! Please don't hurt it!");
+        Npc.ModifyAffinity(10f);
+
         yield return End();
     }
+
+    public IEnumerator IntimidateHurtFather()
+    {
+        PlaySound(this.PlayerIntimidateHurtFather);
+        Player.Say("I will hurt your father ... bad!");
+
+        yield return WaitForInput();
+
+        PlaySound(this.NpcIntimidateHurtFather);
+        Npc.Say("You can't hurt him, he was Schützenmeister for five years in a row");
+        Npc.ModifyAffinity(-10f);
+
+        yield return End();
     }
     #endregion
 
-	#region Charisma Options
-	public IEnumerator CharismaGreeting()
-	{
-		PlaySound (this.PlayerCharismaGreeting);
-		Player.Say ("I just wanted to thank you for doing an amazing job, ruling Germany.");
-		yield return WaitForInput ();
+    #region Charisma Options
+    public IEnumerator CharismaGreeting()
+    {
+        PlaySound(this.PlayerCharismaGreeting);
+        Player.Say("I just wanted to thank you for doing an amazing job, ruling Germany.");
+        yield return WaitForInput();
 
 		PlaySound (this.NpcCharismaGreetingThanks);
-		Npc.Say ("Thank you... I guess?");
+        Npc.Say("Thank you... I guess?");
+        Player.Happens(HappeningKeys.Greeting);
 
-		yield return End ();
-	}
+        yield return End();
+    }
 
-	public IEnumerator CharismaWonder()
-	{
-		PlaySound (this.PlayerCharismaWonder);
-		Player.Say ("Having started the Wirtschaftswunder proves your capability as a leader!");
-		yield return WaitForInput ();
+    public IEnumerator CharismaWonder()
+    {
+        PlaySound(this.PlayerCharismaWonder);
+        Player.Say("Having started the Wirtschaftswunder proves your capability as a leader!");
+        yield return WaitForInput();
 
 		PlaySound (this.NpcCharismaWonder);
-		Npc.Say ("The Wirtschawhat? Ah yes, yes I am often amazed at myself");
+        Npc.Say("The Wirtschawhat? Ah yes, yes I am often amazed at myself");
 
-		yield return End ();
-	}
+        yield return End();
+    }
 
-	public IEnumerator CharismaMercedes()
-	{
-		PlaySound (this.PlayerCharismaMercedes);
-		Player.Say ("So you like Mercedes cars? I like them too! <3");
-		yield return WaitForInput ();
+    public IEnumerator CharismaMercedes()
+    {
+        PlaySound(this.PlayerCharismaMercedes);
+        Player.Say("So you like Mercedes cars? I like them too! <3");
+        yield return WaitForInput();
 
 		PlaySound (this.NpcCharismaMercedes);
 		Npc.Say ("(Mercedes monologue)");
@@ -173,12 +224,14 @@ public class HBMDialog : Dialogue
 		Npc.Say ("It's great. Finally I can drive my awesome mercedes again!");
 		yield return WaitForInput ();
 
+		//TODO Check happenings!
+
 		PlaySound (this.NpcCharismaMercedes);
 		Npc.Say ("(Mercedes monologue)");
 
-		yield return End ();
-	}
-
+        yield return End();
+    }
+	
 	public IEnumerator ChatWhatsUp()
 	{
 		PlaySound (this.PlayerChatWhatsUp);
@@ -193,7 +246,7 @@ public class HBMDialog : Dialogue
 
 	public IEnumerator ChatHowIsWork()
 	{
-		PlaySound (this.ChatHowIsWork);
+		PlaySound (this.PlayerChatHowIsWork);
 		Player.Say ("How's your work doing?");
 		yield return WaitForInput ();
 		
@@ -206,7 +259,7 @@ public class HBMDialog : Dialogue
 
 	public IEnumerator ChatWeekend()
 	{
-		PlaySound (this.ChatWeekend);
+		PlaySound (this.PlayerChatLastWeekend);
 		Player.Say ("What were you doing last weekend?");
 		yield return WaitForInput ();
 		
@@ -244,4 +297,5 @@ public class HBMDialog : Dialogue
 	}
 
 	#endregion
+
 }
