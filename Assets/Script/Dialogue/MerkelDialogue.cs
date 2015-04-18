@@ -15,54 +15,61 @@ public class MerkelDialogue : Dialogue
             "Welcome to ze Germany" );
     }
 
-    protected override IEnumerable<NamedAction> CharismaOptions()
+    protected override IEnumerable<DialogueAction> CharismaOptions()
     {
         // Conditions go here
         // if( hasFlower )
-        yield return new NamedAction( "Flower", Charisma_Flower );
+        yield return new DialogueAction( "Flower", Charisma_Flower );
     }
 
-
-    protected override IEnumerable<NamedAction> IntimidationOptions()
+    protected override IEnumerable<DialogueAction> IntimidationOptions()
     {
-        yield return new NamedAction( "Punch", Intimidate_Punch );
+        yield return new DialogueAction( "Punch", Intimidate_Punch );
     }
 
-    protected override IEnumerable<NamedAction> IntelligenceOptions()
+    protected override IEnumerable<DialogueAction> IntelligenceOptions()
     {
-        return Enumerable.Empty<NamedAction>();
+        return Enumerable.Empty<DialogueAction>();
     }
 
-    protected override IEnumerable<NamedAction> ChatOptions()
+    protected override IEnumerable<DialogueAction> ChatOptions()
     {
-        return Enumerable.Empty<NamedAction>();
+        return Enumerable.Empty<DialogueAction>();
     }
 
-    public void Charisma_Flower()
+    public IEnumerator Charisma_Flower()
     {
         PlaySound( "Merkel_Charisma_Flower_Player" );
         Player.Say(
             "Hello Frau Merkel!",
             "I have bought you a flower. :D" );
 
+        yield return WaitForInput();
 
         PlaySound( "Merkel_Charisma_Flower_Merkel" );
         Npc.Say(
-            "Dude wtf, I hate flowers!" );
+            "Dude wtf, I hate flowers!",
+            "Affinity -10");
         Npc.ModifyAffinity( -10.0f );
+
+        yield return End();
     }
 
-    public void Intimidate_Punch()
+    public IEnumerator Intimidate_Punch()
     {
         PlaySound( "Merkel_Intimidate_Punch_Player" );
         Player.Say(
             "Hello Frau Merkel!",
             "Joint my empire or I shall punch you the face!" );
 
+        yield return WaitForInput();
+
         PlaySound( "Merkel_Intimidate_Punch_Merkel" );
         Npc.Say(
             "omg pls no :(",
-            "Affinity -10" );
+            "Affinity +10" );
         Npc.ModifyAffinity( +10.0f );
+
+        yield return End();
     }
 }

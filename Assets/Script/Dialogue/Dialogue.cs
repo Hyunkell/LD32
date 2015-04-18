@@ -9,18 +9,38 @@ public abstract class Dialogue : MonoBehaviour
     public Actor Player;
     public Actor Npc;
 
-    //private Action primaryNode;
-    //private List<NamedAction> charismaNodes = new List<NamedAction>();
-    //private List<NamedAction> IntimidateNodes = new List<NamedAction>();
-    //private List<NamedAction> IntelligenceNodes = new List<NamedAction>();
-    //private List<NamedAction> ChatNodes = new List<NamedAction>();
-
     protected abstract void StartNode();
+    protected abstract IEnumerable<DialogueAction> CharismaOptions();
+    protected abstract IEnumerable<DialogueAction> IntimidationOptions();
+    protected abstract IEnumerable<DialogueAction> IntelligenceOptions();
+    protected abstract IEnumerable<DialogueAction> ChatOptions();
 
-    void Start()
+    protected Coroutine End()
     {
-        
+        return StartCoroutine( WaitAndEnd() );
     }
+
+    IEnumerator WaitAndEnd()
+    {
+        // TODO: Fix this clusterfuck
+        yield return WaitForInput();
+        yield return WaitForInput();
+        Npc.speechBubble.Clear();
+        ShowCategoryOptions().MoveNext();
+    }
+
+    protected Coroutine WaitForInput()
+    {
+        return StartCoroutine( WaitForSpaceKey() );
+    }
+
+    IEnumerator WaitForSpaceKey()
+    {
+        while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
+            yield return null;
+    }
+
+
 
     void OnMouseDown()
     {
@@ -33,64 +53,64 @@ public abstract class Dialogue : MonoBehaviour
         Npc.speechBubble.gameObject.SetActive( true );
 
         StartNode();
-        ShowCategoryOptions();
+        ShowCategoryOptions().MoveNext();
     }
 
-    void ShowCategoryOptions()
+    protected IEnumerator ShowCategoryOptions()
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        Player.speechBubble.ShowButton( new NamedAction( "Charisma", ShowCharismaOptions ) );
-        Player.speechBubble.ShowButton( new NamedAction( "Intimidate", ShowIntimidateOptions ) );
-        Player.speechBubble.ShowButton( new NamedAction( "Intelligence", ShowIntelligenceOptions ) );
-        Player.speechBubble.ShowButton( new NamedAction( "Chat", ShowChatOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Charisma", ShowCharismaOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Intimidate", ShowIntimidateOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Intelligence", ShowIntelligenceOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Chat", ShowChatOptions ) );
+        yield break;
     }
 
-    void ShowCharismaOptions()
+    IEnumerator ShowCharismaOptions()
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in CharismaOptions() )
             Player.speechBubble.ShowButton( option );
-        Player.speechBubble.ShowButton( new NamedAction( "Back", ShowCategoryOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
+        yield break;
     }
 
-    void ShowIntimidateOptions()
+    IEnumerator ShowIntimidateOptions()
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in IntimidationOptions() )
             Player.speechBubble.ShowButton( option );
-        Player.speechBubble.ShowButton( new NamedAction( "Back", ShowCategoryOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
+        yield break;
     }
 
-    void ShowIntelligenceOptions()
+    IEnumerator ShowIntelligenceOptions()
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in IntelligenceOptions() )
             Player.speechBubble.ShowButton( option );
-        Player.speechBubble.ShowButton( new NamedAction( "Back", ShowCategoryOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
+        yield break;
     }
 
-    void ShowChatOptions()
+    IEnumerator ShowChatOptions()
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in ChatOptions() )
             Player.speechBubble.ShowButton( option );
-        Player.speechBubble.ShowButton( new NamedAction( "Back", ShowCategoryOptions ) );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
+        yield break;
     }
 
     protected void PlaySound( string fileName )
     {
 
     }
-
-    protected abstract IEnumerable<NamedAction> CharismaOptions();
-    protected abstract IEnumerable<NamedAction> IntimidationOptions();
-    protected abstract IEnumerable<NamedAction> IntelligenceOptions();
-    protected abstract IEnumerable<NamedAction> ChatOptions();
 }
 
 public class DialogueNode

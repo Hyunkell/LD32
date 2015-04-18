@@ -4,12 +4,12 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
-public class NamedAction
+public class DialogueAction
 {
     public string text;
-    public Action action;
+    public Func<IEnumerator> action;
 
-    public NamedAction( string buttonText, Action buttonAction )
+    public DialogueAction( string buttonText, Func<IEnumerator> buttonAction )
     {
         this.text = buttonText;
         this.action = buttonAction;
@@ -36,48 +36,22 @@ public class SpeechBubble : MonoBehaviour
 
     public void Clear()
     {
+        uiText.text = "";
         for( int i = 0; i < buttonMode.transform.childCount; i++ )
-        {
             GameObject.Destroy( buttonMode.transform.GetChild( i ).gameObject );
-        }
     }
 
-    public void ShowButton( NamedAction namedAction )
+    public void ShowButton( DialogueAction namedAction )
     {
         textMode.SetActive( false );
         buttonMode.SetActive( true );
 
         var button = Prefab.CreateInstance( "DialogueButton", buttonMode );
         var buttonText = button.GetComponentInChildren<UnityEngine.UI.Text>();
-        Debug.Log( button );
-        Debug.Log( buttonText );
         buttonText.text = namedAction.text;
-        button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => namedAction.action() );
+        button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => StartCoroutine( namedAction.action() ) );
     }
 
-    /*
-    public void ShowButtons( List<NamedAction> buttons )
-    {
-        textMode.SetActive( false );
-        buttonMode.SetActive( true );
-
-        // Clear existing buttons
-        for( int i = 0; i < buttonMode.transform.childCount; i++ )
-        {
-            GameObject.Destroy( buttonMode.transform.GetChild( i ).gameObject );
-        }
-
-        // Create new buttons
-        foreach( var buttonAction in buttons )
-        {
-            var button = Prefab.CreateInstance( "DialogueButton", buttonMode );
-            var buttonText = button.GetComponentInChildren<UnityEngine.UI.Text>();
-            var captureButtonAction = buttonAction;
-            buttonText.text = buttonAction.text;
-            button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => captureButtonAction.action() );
-        }
-    }
-    */
     public void Hide()
     {
         textMode.SetActive( false );
