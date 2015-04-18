@@ -9,6 +9,11 @@ public abstract class Dialogue : MonoBehaviour
     public Actor Player;
     public Actor Npc;
 
+    protected abstract bool HasCharismaOptions { get; }
+    protected abstract bool HasIntimidationOptions { get; }
+    protected abstract bool HasIntelligenceOptions { get; }
+    protected abstract bool HasChatOptions { get; }
+
     protected abstract void StartNode();
     protected abstract IEnumerable<DialogueAction> CharismaOptions();
     protected abstract IEnumerable<DialogueAction> IntimidationOptions();
@@ -60,10 +65,14 @@ public abstract class Dialogue : MonoBehaviour
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        Player.speechBubble.ShowButton( new DialogueAction( "Charisma", ShowCharismaOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Intimidate", ShowIntimidateOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Intelligence", ShowIntelligenceOptions ) );
-        Player.speechBubble.ShowButton( new DialogueAction( "Chat", ShowChatOptions ) );
+        if( HasCharismaOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Charisma", ShowCharismaOptions ) );
+        if( HasIntimidationOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Intimidate", ShowIntimidateOptions ) );
+        if( HasIntelligenceOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Intelligence", ShowIntelligenceOptions ) );
+        if( HasChatOptions )
+            Player.speechBubble.ShowButton( new DialogueAction( "Chat", ShowChatOptions ) );
         yield break;
     }
 

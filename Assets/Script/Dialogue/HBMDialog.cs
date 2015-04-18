@@ -13,6 +13,11 @@ public class HBMDialog : Dialogue
     public string PlayerIntimidateGreeting = string.Empty;
     #endregion
 
+    protected override bool HasCharismaOptions { get { return false; } }
+    protected override bool HasIntimidationOptions { get { return true; } }
+    protected override bool HasIntelligenceOptions { get { return false; } }
+    protected override bool HasChatOptions { get { return false; } }
+
     protected override void StartNode()
     {
         PlaySound(this.NpcGreeting);
