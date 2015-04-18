@@ -5,7 +5,7 @@ public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] {"TheKitchen", "TheOffice" };
+    private string[] scenes = new string[] { "TheKitchen", "TheOffice" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -16,7 +16,10 @@ public class SceneSelection : MonoBehaviour {
 
     private void LoadCurrentScene()
     {
-        LoadScene(scenes[sceneIndex]);
+        if (sceneIndex >= 0 && sceneIndex < scenes.Length)
+        {
+            LoadScene(scenes[sceneIndex]);
+        }
     }
 
 

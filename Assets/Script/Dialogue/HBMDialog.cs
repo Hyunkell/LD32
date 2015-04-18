@@ -17,6 +17,11 @@ public class HBMDialog : Dialogue
 
     private bool isGreetingPhase = true;
 
+    protected override bool HasCharismaOptions { get { return false; } }
+    protected override bool HasIntimidationOptions { get { return true; } }
+    protected override bool HasIntelligenceOptions { get { return false; } }
+    protected override bool HasChatOptions { get { return false; } }
+
     protected override void StartNode()
     {
         PlaySound(this.NpcGreeting);
@@ -33,8 +38,8 @@ public class HBMDialog : Dialogue
     {
         if (this.isGreetingPhase)
         {
-            yield return new DialogueAction("Shut up", IntimidateGreeting);
-        }
+        yield return new DialogueAction("Shut up", IntimidateGreeting);
+    }
         else
         {
             yield return new DialogueAction("reveal the B", IntimidateRevealB);
@@ -73,8 +78,8 @@ public class HBMDialog : Dialogue
         {
             PlaySound(this.NpcIntimidateRevealB);
             Npc.Say("Oh, please don't tell anyone! They will know that Im a Nazi");
-            yield return End();
-        }
+        yield return End();
+    }
     }
     #endregion
 }
