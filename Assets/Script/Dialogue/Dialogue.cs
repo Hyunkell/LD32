@@ -44,10 +44,10 @@ public abstract class Dialogue : MonoBehaviour
 
     void OnMouseDown()
     {
-        BeginConversation();
+        BeginDialogue();
     }
 
-    void BeginConversation()
+    public void BeginDialogue()
     {
         //Player.speechBubble.gameObject.SetActive( true );
         Npc.speechBubble.gameObject.SetActive( true );
