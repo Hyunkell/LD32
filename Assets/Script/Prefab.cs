@@ -1,0 +1,30 @@
+﻿using UnityEngine;
+using System;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+
+public static class Prefab
+{
+    static Dictionary<string, GameObject> prefabs;
+
+    static void LoadAll()
+    {
+        prefabs = new Dictionary<string, GameObject>();
+        foreach( var prefab in Resources.LoadAll<GameObject>( "Prefab" ) )
+        {
+            prefabs.Add( prefab.name, prefab );
+        }
+    }
+
+    public static GameObject CreateInstance( string prefabName, GameObject parent )
+    {
+        if( prefabs == null )
+            LoadAll();
+
+        var instance = GameObject.Instantiate( prefabs[prefabName] );
+        instance.transform.SetParent( parent.transform, false );
+        instance.transform.localScale = new Vector3( 1, 1, 1 );
+        return instance;
+    }
+}
