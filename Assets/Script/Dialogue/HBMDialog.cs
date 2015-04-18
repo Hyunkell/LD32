@@ -6,6 +6,7 @@ public class HBMDialog : Dialogue
 {
     #region Npc Sound Files
     public string NpcGreeting = string.Empty;
+    private string NpcOk = string.Empty;
     #endregion
 
     #region Player Sound Files
@@ -44,7 +45,9 @@ public class HBMDialog : Dialogue
     {
         PlaySound(this.PlayerIntimidateGreeting);
         Player.Say("Shut up, it doesn't matter.");
+        yield return WaitForInput();
 
+        PlaySound(this.NpcOk);
         yield return End();
     }
     #endregion
