@@ -6,26 +6,20 @@ public class HBMDialog : Dialogue
 {
     #region Npc Sound Files
     public string NpcGreeting = string.Empty;
-<<<<<<< HEAD
     public string NpcOk = string.Empty;
 	public string NpcThanks = string.Empty;
 	public string NpcWonder = string.Empty;
 	public string NpcMercedes = string.Empty;
-=======
-    private string NpcOk = string.Empty;
     public string NpcIntimidateRevealB = string.Empty;
->>>>>>> 920737fde900070265d7f0a56068d8957df532d9
     #endregion
 
     #region Player Sound Files
     public string PlayerIntimidateGreeting = string.Empty;
-<<<<<<< HEAD
 	public string PlayerCharismaGreeting = string.Empty;
 	public string PlayerCharismaWonder = string.Empty;
 	public string PlayerCharismaMercedes = string.Empty;
-=======
     public string PlayerIntimidateRevealB = string.Empty;
->>>>>>> 920737fde900070265d7f0a56068d8957df532d9
+
     #endregion
 
     private bool isGreetingPhase = true;
