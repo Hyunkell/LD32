@@ -6,6 +6,12 @@ using System.Collections.Generic;
 
 public class MerkelDialogue : Dialogue
 {
+
+    protected override bool HasCharismaOptions { get { return true; } }
+    protected override bool HasIntimidationOptions { get { return true; } }
+    protected override bool HasIntelligenceOptions { get { return false; } }
+    protected override bool HasChatOptions { get { return false; } }
+
     protected override void StartNode()
     {
         PlaySound( "TEST_SOUND" );
@@ -49,7 +55,7 @@ public class MerkelDialogue : Dialogue
         PlaySound( "Merkel_Charisma_Flower_Merkel" );
         Npc.Say(
             "Dude wtf, I hate flowers!",
-            "Affinity -10");
+            "Affinity -10" );
         Npc.ModifyAffinity( -10.0f );
 
         yield return End();

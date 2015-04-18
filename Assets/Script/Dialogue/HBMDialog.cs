@@ -6,18 +6,34 @@ public class HBMDialog : Dialogue
 {
     #region Npc Sound Files
     public string NpcGreeting = string.Empty;
+<<<<<<< HEAD
     public string NpcOk = string.Empty;
 	public string NpcThanks = string.Empty;
 	public string NpcWonder = string.Empty;
 	public string NpcMercedes = string.Empty;
+=======
+    private string NpcOk = string.Empty;
+    public string NpcIntimidateRevealB = string.Empty;
+>>>>>>> 920737fde900070265d7f0a56068d8957df532d9
     #endregion
 
     #region Player Sound Files
     public string PlayerIntimidateGreeting = string.Empty;
+<<<<<<< HEAD
 	public string PlayerCharismaGreeting = string.Empty;
 	public string PlayerCharismaWonder = string.Empty;
 	public string PlayerCharismaMercedes = string.Empty;
+=======
+    public string PlayerIntimidateRevealB = string.Empty;
+>>>>>>> 920737fde900070265d7f0a56068d8957df532d9
     #endregion
+
+    private bool isGreetingPhase = true;
+
+    protected override bool HasCharismaOptions { get { return false; } }
+    protected override bool HasIntimidationOptions { get { return true; } }
+    protected override bool HasIntelligenceOptions { get { return false; } }
+    protected override bool HasChatOptions { get { return false; } }
 
     protected override void StartNode()
     {
@@ -33,7 +49,14 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerable<DialogueAction> IntimidationOptions()
     {
+        if (this.isGreetingPhase)
+        {
         yield return new DialogueAction("Shut up", IntimidateGreeting);
+    }
+        else
+        {
+            yield return new DialogueAction("reveal the B", IntimidateRevealB);
+        }
     }
 
     protected override IEnumerable<DialogueAction> IntelligenceOptions()
@@ -54,7 +77,22 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcOk);
+        Npc.Say("Ok");
         yield return End();
+    }
+
+    public IEnumerator IntimidateRevealB()
+    {
+        PlaySound(this.PlayerIntimidateRevealB);
+        Player.Say("I know what the \"B\" Stands for");
+        yield return WaitForInput();
+
+        if (this.Player.HasHappend("abc"))
+        {
+            PlaySound(this.NpcIntimidateRevealB);
+            Npc.Say("Oh, please don't tell anyone! They will know that Im a Nazi");
+        yield return End();
+    }
     }
     #endregion
 
