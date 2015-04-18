@@ -31,7 +31,17 @@ public abstract class Dialogue : MonoBehaviour
         yield return WaitForInput();
         yield return WaitForInput();
         Npc.speechBubble.Clear();
-        ShowCategoryOptions().MoveNext();
+
+        // Check if we need to move to the next scene
+        if( Npc.affinity >= 50.0f )
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
+            Player.speechBubble.Clear();
+            Player.speechBubble.Hide();
+            Player.GetComponent<Movement>().enabled = true;
+        }
+        else
+            ShowCategoryOptions().MoveNext();
     }
 
     protected Coroutine WaitForInput()
@@ -44,8 +54,6 @@ public abstract class Dialogue : MonoBehaviour
         while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
     }
-
-
 
     void OnMouseDown()
     {
