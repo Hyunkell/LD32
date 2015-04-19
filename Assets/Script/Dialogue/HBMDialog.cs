@@ -44,6 +44,8 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerCharismaGreeting;
     public AudioClip PlayerCharismaWonder;
     public AudioClip PlayerCharismaMercedes;
+    public AudioClip PlayerCharismaLoveYou;
+    public AudioClip PlayerCharismaPanzerGeneral;
 
     public AudioClip PlayerChatWeather;
     public AudioClip PlayerChatWhatsUp;
@@ -51,6 +53,7 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerChatLastWeekend;
     public AudioClip PlayerChatFavSong;
     public AudioClip PlayerChatFavSport;
+    public AudioClip PlayerChatFather;
 
     public AudioClip PlayerIntimidateRevealB;
     public AudioClip PlayerIntimidateScratchCar;
@@ -66,9 +69,6 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerIntimidateRevealBWrongNames;
 
 
-    public AudioClip PlayerCharismaLoveYou;
-    public AudioClip PlayerCharismaPanzerGeneral;
-    public AudioClip PlayerChatFather;
     #endregion
 
     private string[] mercedesMonolog = new string[] {
@@ -268,7 +268,11 @@ public class HBMDialog : Dialogue
             yield return WaitForInput();
 
             PlaySound(this.PlayerIntimidateRevealBWrongNames);
-            Player.Say("blablabla");
+            Player.Say("I think it's Bambi!",
+                "Oh, no, no no: Bärbel!",
+                "It MUST be Beelzebub!",
+                "BERND! I'm sure, it's Bernd.",
+                "...or... Broccoli?");
             Npc.Happens(HappeningKeys.SaidWrongName);
             yield return WaitForInput();
 
@@ -284,7 +288,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.PlayerIntimidateScratchCar);
         Player.Say(
             "Shiny Mercedes you got out there, ",
-            "would be a shame if somehting were to happen");
+            "would be a shame if something were to happen to it...");
 
         yield return WaitForInput();
 
@@ -298,14 +302,15 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateHurtFather()
     {
         PlaySound(this.PlayerIntimidateHurtFather);
-        Player.Say("I will hurt your father ... bad!");
+        Player.Say("I will hurt your father ... bad!",
+            "Real bad! Mhhhh...");
 
         yield return WaitForInput();
 
         PlaySound(this.NpcIntimidateHurtFather);
         Npc.Say("You can't hurt him, ",
-            "he was Schützenmeister for five years in a row.",
-            "And I don't even like him anyway.");
+            "he was Schützenmeister five years in a row!",
+            "And I don't... even... like him.");
         Npc.ModifyAffinity(-10f);
 
         yield return End();
@@ -314,7 +319,7 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateFeedDog()
     {
         PlaySound(this.PlayerIntimidateFeedDog);
-        Player.Say("I will give your dog treats till",
+        Player.Say("I will give your dog treats, until",
             "he is the fattest dog in the world!");
         yield return WaitForInput();
 
