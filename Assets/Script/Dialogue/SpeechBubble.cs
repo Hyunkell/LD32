@@ -24,8 +24,9 @@ public class DialogueAction
 public class DialogueParameterAction<ParamType> : DialogueAction
 {
     private ParamType parameter;
-    private Func<ParamType,IEnumerator> action;
-    public DialogueParameterAction(string buttonText, Func<ParamType,IEnumerator> buttonAction, ParamType parameter) : base(buttonText, null)
+    private Func<ParamType, IEnumerator> action;
+    public DialogueParameterAction( string buttonText, Func<ParamType, IEnumerator> buttonAction, ParamType parameter )
+        : base( buttonText, null )
     {
         this.parameter = parameter;
         this.action = buttonAction;
@@ -33,7 +34,7 @@ public class DialogueParameterAction<ParamType> : DialogueAction
 
     internal override IEnumerator DoAction()
     {
-        return this.action(this.parameter);
+        return this.action( this.parameter );
     }
 }
 
@@ -53,7 +54,8 @@ public class SpeechBubble : MonoBehaviour
     {
         textMode.SetActive( true );
         buttonMode.SetActive( false );
-        iconMode.SetActive( false );
+        if( iconMode != null )
+            iconMode.SetActive( false );
 
         var sb = new System.Text.StringBuilder();
         //sb.AppendLine( name + ":" );
@@ -73,7 +75,8 @@ public class SpeechBubble : MonoBehaviour
     {
         textMode.SetActive( false );
         buttonMode.SetActive( true );
-        iconMode.SetActive( false );
+        if( iconMode != null )
+            iconMode.SetActive( false );
 
         var button = Prefab.CreateInstance( "DialogueButton", buttonMode );
         var buttonText = button.GetComponentInChildren<UnityEngine.UI.Text>();
@@ -92,7 +95,8 @@ public class SpeechBubble : MonoBehaviour
     {
         textMode.SetActive( false );
         buttonMode.SetActive( false );
-        iconMode.SetActive( false );
+        if( iconMode != null )
+            iconMode.SetActive( false );
     }
 }
 
