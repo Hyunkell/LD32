@@ -756,6 +756,7 @@ GameObject:
   - 114: {fileID: 287545729}
   - 61: {fileID: 287545731}
   - 114: {fileID: 287545732}
+  - 114: {fileID: 287545733}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -831,6 +832,17 @@ MonoBehaviour:
   name: 
   speechBubble: {fileID: 1323712870}
   affinity: 0
+--- !u!114 &287545733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 287545727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0535eac8e111e49b1967c13e6f3fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &298019186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,12 +2947,15 @@ MonoBehaviour:
   NpcCharismaGreetingThanks: 
   NpcCharismaWonder: 
   NpcCharismaMercedes: 
+  NpcCharismaLoveYou: 
+  NpcCharismaPanzerGeneral: 
   NpcChatWeatherMercedes: 
   NpcChatMotionOfNoConfidence: 
   NpcChatWarForDummies: 
   NpcChatBeerGarden: 
   NpcChatMoney: 
   NpcChatOlympic: 
+  NpcChatFather: 
   NpcIntimidateRevealB: 
   NpcIntimidateBUnknown: 
   NpcIntimidateScratchCar: 
@@ -2971,6 +2986,17 @@ MonoBehaviour:
   PlayerIntelligenceTaxSystem: 
   PlayerIntelligenceMilitary: 
   PlayerIntelligenceMilitarySmall: 
+  PlayerIntelligenceWomen: 
+  PlayerIntelligenceWorldLeader: 
+  PlayerCharismaLoveYou: 
+  PlayerCharismaPanzerGeneral: 
+  PlayerChatFather: 
+  PlayerIntimidateRevealBWrongNames:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
