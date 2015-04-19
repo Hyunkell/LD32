@@ -18,14 +18,21 @@ public class DialogueAction
 
 public class SpeechBubble : MonoBehaviour
 {
+    public GameObject _iconCharismaPrefab;
+    public GameObject _iconIntimidatePrefab;
+    public GameObject _iconIntelligencePrefab;
+    public GameObject _iconChatPrefab;
+
     public GameObject textMode;
     public GameObject buttonMode;
+    public GameObject iconMode;
     public UnityEngine.UI.Text uiText;
 
     public void ShowText( params string[] text )
     {
         textMode.SetActive( true );
         buttonMode.SetActive( false );
+        iconMode.SetActive( false );
 
         var sb = new System.Text.StringBuilder();
         //sb.AppendLine( name + ":" );
@@ -45,6 +52,7 @@ public class SpeechBubble : MonoBehaviour
     {
         textMode.SetActive( false );
         buttonMode.SetActive( true );
+        iconMode.SetActive( false );
 
         var button = Prefab.CreateInstance( "DialogueButton", buttonMode );
         var buttonText = button.GetComponentInChildren<UnityEngine.UI.Text>();
@@ -52,10 +60,18 @@ public class SpeechBubble : MonoBehaviour
         button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => StartCoroutine( namedAction.action() ) );
     }
 
+    public void ShowIcon( DialogueAction namedAction )
+    {
+        textMode.SetActive( false );
+        buttonMode.SetActive( false );
+        iconMode.SetActive( true );
+    }
+
     public void Hide()
     {
         textMode.SetActive( false );
         buttonMode.SetActive( false );
+        iconMode.SetActive( false );
     }
 }
 
