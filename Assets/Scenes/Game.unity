@@ -901,6 +901,10 @@ MonoBehaviour:
   name: 
   speechBubble: {fileID: 1323712870}
   affinity: 0
+  hasCharismaAbility: 1
+  hasIntimidateAbility: 1
+  hasIntelligenceAbility: 1
+  hasChatAbility: 1
 --- !u!1 &298019186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1485,10 @@ MonoBehaviour:
   name: 
   speechBubble: {fileID: 1529869839}
   affinity: 0
+  hasCharismaAbility: 1
+  hasIntimidateAbility: 1
+  hasIntelligenceAbility: 1
+  hasChatAbility: 1
 --- !u!4 &455556262 stripped
 Transform:
   m_PrefabParentObject: {fileID: 448132, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -2988,6 +2996,10 @@ MonoBehaviour:
   name: 
   speechBubble: {fileID: 860925009}
   affinity: 0
+  hasCharismaAbility: 1
+  hasIntimidateAbility: 1
+  hasIntelligenceAbility: 1
+  hasChatAbility: 1
 --- !u!114 &1135410820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3010,8 +3022,10 @@ MonoBehaviour:
   NpcCharismaLoveYou: {fileID: 8300000, guid: 8fdcf1ae718239b4f92bc565888052f0, type: 3}
   NpcCharismaPanzerGeneral: {fileID: 8300000, guid: 5e3ca4396cd4536479751759458a11b0,
     type: 3}
-  NpcChatWeatherMercedes: {fileID: 0}
-  NpcChatMotionOfNoConfidence: {fileID: 0}
+  NpcChatWeatherMercedes: {fileID: 8300000, guid: 79ec171cafefa5c49924b1cdd401f330,
+    type: 3}
+  NpcChatMotionOfNoConfidence: {fileID: 8300000, guid: 3796aa96c5996234e84b36fd77c1562c,
+    type: 3}
   NpcChatWarForDummies: {fileID: 8300000, guid: 687984d3192b66444bc70a57e5061d6d,
     type: 3}
   NpcChatBeerGarden: {fileID: 8300000, guid: 97163f9bdd84fdf42b3e13bab6246c5f, type: 3}
@@ -3020,7 +3034,8 @@ MonoBehaviour:
   NpcChatFather: {fileID: 8300000, guid: b811e3b547d54cd40bb88fe450871d40, type: 3}
   NpcIntimidateRevealB: {fileID: 8300000, guid: accd6d1efd04777479d920f05d7b88bc,
     type: 3}
-  NpcIntimidateBUnknown: {fileID: 0}
+  NpcIntimidateBUnknown: {fileID: 8300000, guid: d39fe6cd36d1e554cb6c13ea999e9f88,
+    type: 3}
   NpcIntimidateScratchCar: {fileID: 8300000, guid: f89a532086f37a847a226a2e2bda9afd,
     type: 3}
   NpcIntimidateHurtFather: {fileID: 8300000, guid: f794a6bbe7f9fbe4caf21a15bd690139,
@@ -3028,9 +3043,12 @@ MonoBehaviour:
   NpcIntimidateBWrong: {fileID: 8300000, guid: 98dcdb56521c6a149aabeeeda4b2b7ab, type: 3}
   NpcIntimidateFeedDog: {fileID: 8300000, guid: 20062846330620e499959a0892f3f697,
     type: 3}
-  NpcIntelligenceGreetingHow: {fileID: 0}
-  NpcIntelligenceTaxSystem: {fileID: 0}
-  NpcIntelligenceMilitary: {fileID: 0}
+  NpcIntelligenceGreetingHow: {fileID: 8300000, guid: 427199b1c0163d5448116a7d46c146c9,
+    type: 3}
+  NpcIntelligenceTaxSystem: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
+    type: 3}
+  NpcIntelligenceMilitary: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
+    type: 3}
   NpcIntelligenceMilitarySmall: {fileID: 8300000, guid: 22ded8015f3efc149ab2d7c610e5cc86,
     type: 3}
   NpcIntelligenceWomen: {fileID: 8300000, guid: 3339726af77ac3146a8cd15cab7bf16f,
@@ -3082,7 +3100,7 @@ MonoBehaviour:
     type: 3}
   PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
     type: 3}
-  PlayerChatFather: {fileID: 0}
+  PlayerChatFather: {fileID: 8300000, guid: 76dec721b2537ab489f217f00596038b, type: 3}
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -3356,6 +3374,10 @@ MonoBehaviour:
   name: Merkel
   speechBubble: {fileID: 1485351708}
   affinity: 0
+  hasCharismaAbility: 1
+  hasIntimidateAbility: 1
+  hasIntelligenceAbility: 1
+  hasChatAbility: 1
 --- !u!114 &1260905795
 MonoBehaviour:
   m_ObjectHideFlags: 0
