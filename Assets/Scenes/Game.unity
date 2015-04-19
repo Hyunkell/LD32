@@ -3244,7 +3244,7 @@ MonoBehaviour:
     type: 3}
   NpcIntelligenceTaxSystem: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
     type: 3}
-  NpcIntelligenceMilitary: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
+  NpcIntelligenceMilitary: {fileID: 8300000, guid: bbaccc6f1876fbe4ba996917cf436354,
     type: 3}
   NpcIntelligenceMilitarySmall: {fileID: 8300000, guid: 22ded8015f3efc149ab2d7c610e5cc86,
     type: 3}
@@ -3287,12 +3287,8 @@ MonoBehaviour:
     type: 3}
   PlayerIntelligenceWorldLeader: {fileID: 8300000, guid: f264ffc85efba1f47aad60a945f80409,
     type: 3}
-  PlayerIntimidateRevealBWrongNames:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  PlayerIntimidateRevealBWrongNames: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
+    type: 3}
   PlayerCharismaLoveYou: {fileID: 8300000, guid: 1563d49d772155a42970e8f7f6c644d0,
     type: 3}
   PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,

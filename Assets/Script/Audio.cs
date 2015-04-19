@@ -8,8 +8,11 @@ public static class Audio
         if( clip != null )
         {
             var audio = Camera.main.GetComponent<AudioSource>();
+            audio.Stop();
             audio.PlayOneShot( clip );
         }
+        else
+            Debug.LogWarning( "Audio.Play(null)" );
     }
 
     public static void Stop()
