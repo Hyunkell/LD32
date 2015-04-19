@@ -13,6 +13,11 @@ public class Actor : MonoBehaviour
 
     private HashSet<string> happenings = new HashSet<string>();
 
+    public bool hasCharismaAbility = true;
+    public bool hasIntimidateAbility = true;
+    public bool hasIntelligenceAbility = true;
+    public bool hasChatAbility = true;
+
     public void Say( params string[] text )
     {
         speechBubble.ShowText( text );

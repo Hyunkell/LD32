@@ -35,13 +35,68 @@ public abstract class Dialogue : MonoBehaviour
         // Check if we need to move to the next scene
         if( Npc.affinity >= 50.0f )
         {
-            GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
+            LoadNextScene();
+        }
+        else if( Npc.affinity <= -50.0f )
+        {
+            // The player will loose one of his abilities
+            // Choose ability
             Player.speechBubble.Clear();
-            Player.speechBubble.Hide();
-            Player.GetComponent<Movement>().enabled = true;
+            if( Player.hasCharismaAbility )
+                ShowCategoryOption( Player.speechBubble._iconCharismaPrefab, DisableCharmAbility );
+            if( Player.hasIntimidateAbility )
+                ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, DisableIntimidateAbility );
+            if( Player.hasIntelligenceAbility )
+                ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, DisableIntelligenceAblility );
+            if( Player.hasChatAbility )
+                ShowCategoryOption( Player.speechBubble._iconChatPrefab, DisableChatAbility );
+
+            // TODO: the player needs to know that he is loosing an ability
+            // Just tint the buttons red for now
+            foreach( Transform child in Player.speechBubble.iconMode.transform )
+            {
+                var icon = child.GetComponent<UnityEngine.UI.Image>();
+                icon.color = Color.red;
+            }
         }
         else
             ShowCategoryOptions().MoveNext();
+    }
+
+    void LoadNextScene()
+    {
+        GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
+        Player.speechBubble.Clear();
+        Player.speechBubble.Hide();
+        Player.GetComponent<Movement>().enabled = true;
+    }
+
+    private IEnumerator DisableCharmAbility()
+    {
+        Player.hasCharismaAbility = false;
+        LoadNextScene();
+        yield break;
+    }
+
+    private IEnumerator DisableIntimidateAbility()
+    {
+        Player.hasIntimidateAbility = false;
+        LoadNextScene();
+        yield break;
+    }
+
+    private IEnumerator DisableIntelligenceAblility()
+    {
+        Player.hasIntelligenceAbility = false;
+        LoadNextScene();
+        yield break;
+    }
+
+    private IEnumerator DisableChatAbility()
+    {
+        Player.hasChatAbility = false;
+        LoadNextScene();
+        yield break;
     }
 
     protected Coroutine WaitForInput()
@@ -75,13 +130,13 @@ public abstract class Dialogue : MonoBehaviour
     {
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        if( HasCharismaOptions )
+        if( HasCharismaOptions && Player.hasCharismaAbility )
             ShowCategoryOption( Player.speechBubble._iconCharismaPrefab, ShowCharismaOptions );
-        if( HasIntimidationOptions )
+        if( HasIntimidationOptions && Player.hasIntimidateAbility )
             ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, ShowIntimidateOptions );
-        if( HasIntelligenceOptions )
+        if( HasIntelligenceOptions && Player.hasIntelligenceAbility )
             ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, ShowIntelligenceOptions );
-        if( HasChatOptions )
+        if( HasChatOptions && Player.hasChatAbility )
             ShowCategoryOption( Player.speechBubble._iconChatPrefab, ShowChatOptions );
         yield break;
     }
