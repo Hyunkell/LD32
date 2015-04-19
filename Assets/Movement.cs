@@ -4,7 +4,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     public float maxSpeed = 200;
-    public float acceleration = 20;
+    public float acceleration = 10;
 
     private Rigidbody2D _rigidBody;
 
