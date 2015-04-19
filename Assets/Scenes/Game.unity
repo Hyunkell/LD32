@@ -3001,12 +3001,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 1135410819}
-  NpcGreeting: {fileID: 0}
-  NpcOk: {fileID: 0}
+  NpcGreeting: {fileID: 8300000, guid: a7106e43d97cad7459201ed64d3f6a66, type: 3}
+  NpcOk: {fileID: 8300000, guid: 4a6013e0eee6b8f4491b3ef11af822aa, type: 3}
   NpcCharismaGreetingThanks: {fileID: 0}
-  NpcCharismaWonder: {fileID: 0}
-  NpcCharismaMercedes: {fileID: 0}
-  NpcCharismaLoveYou: {fileID: 0}
+  NpcCharismaWonder: {fileID: 8300000, guid: 8ad2844ca21f8ca4295554f1dd0a585f, type: 3}
+  NpcCharismaMercedes: {fileID: 8300000, guid: 82bdad1a3f5d5d547857689a6a59497a, type: 3}
+  NpcCharismaLoveYou: {fileID: 8300000, guid: 8fdcf1ae718239b4f92bc565888052f0, type: 3}
   NpcCharismaPanzerGeneral: {fileID: 8300000, guid: 5e3ca4396cd4536479751759458a11b0,
     type: 3}
   NpcChatWeatherMercedes: {fileID: 0}
@@ -3016,12 +3016,16 @@ MonoBehaviour:
   NpcChatMoney: {fileID: 0}
   NpcChatOlympic: {fileID: 0}
   NpcChatFather: {fileID: 0}
-  NpcIntimidateRevealB: {fileID: 0}
+  NpcIntimidateRevealB: {fileID: 8300000, guid: d39fe6cd36d1e554cb6c13ea999e9f88,
+    type: 3}
   NpcIntimidateBUnknown: {fileID: 0}
-  NpcIntimidateScratchCar: {fileID: 0}
-  NpcIntimidateHurtFather: {fileID: 0}
-  NpcIntimidateBWrong: {fileID: 0}
-  NpcIntimidateFeedDog: {fileID: 0}
+  NpcIntimidateScratchCar: {fileID: 8300000, guid: f89a532086f37a847a226a2e2bda9afd,
+    type: 3}
+  NpcIntimidateHurtFather: {fileID: 8300000, guid: f794a6bbe7f9fbe4caf21a15bd690139,
+    type: 3}
+  NpcIntimidateBWrong: {fileID: 8300000, guid: 98dcdb56521c6a149aabeeeda4b2b7ab, type: 3}
+  NpcIntimidateFeedDog: {fileID: 8300000, guid: 20062846330620e499959a0892f3f697,
+    type: 3}
   NpcIntelligenceGreetingHow: {fileID: 0}
   NpcIntelligenceTaxSystem: {fileID: 0}
   NpcIntelligenceMilitary: {fileID: 0}
@@ -3029,22 +3033,30 @@ MonoBehaviour:
   NpcIntelligenceWomen: {fileID: 0}
   NpcIntelligenceWorldLeader: {fileID: 0}
   PlayerIntimidateGreeting: {fileID: 0}
-  PlayerCharismaGreeting: {fileID: 0}
-  PlayerCharismaWonder: {fileID: 0}
-  PlayerCharismaMercedes: {fileID: 0}
+  PlayerCharismaGreeting: {fileID: 8300000, guid: c5c44e9a5fb97da42861fbe95dc7f8ac,
+    type: 3}
+  PlayerCharismaWonder: {fileID: 8300000, guid: 8972c6ada4087cd4eb2e452dd5ad79ca,
+    type: 3}
+  PlayerCharismaMercedes: {fileID: 8300000, guid: 050335b74f71a044b86a3eaf66f1791d,
+    type: 3}
   PlayerChatWeather: {fileID: 0}
   PlayerChatWhatsUp: {fileID: 0}
   PlayerChatHowIsWork: {fileID: 0}
   PlayerChatLastWeekend: {fileID: 0}
   PlayerChatFavSong: {fileID: 0}
   PlayerChatFavSport: {fileID: 0}
-  PlayerIntimidateRevealB: {fileID: 0}
-  PlayerIntimidateScratchCar: {fileID: 0}
-  PlayerIntimidateHurtFather: {fileID: 0}
-  PlayerIntimidateFeedDog: {fileID: 0}
+  PlayerIntimidateRevealB: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
+    type: 3}
+  PlayerIntimidateScratchCar: {fileID: 8300000, guid: a6c9bd39fe0d2424595a2c2b29083405,
+    type: 3}
+  PlayerIntimidateHurtFather: {fileID: 8300000, guid: b88c5199347b76041b2aafb3d1c187e6,
+    type: 3}
+  PlayerIntimidateFeedDog: {fileID: 8300000, guid: 06e40cfd2e85c144d86be1b65462b09f,
+    type: 3}
   PlayerIntelligenceGreeting: {fileID: 0}
   PlayerIntelligenceTaxSystem: {fileID: 0}
-  PlayerIntelligenceMilitary: {fileID: 0}
+  PlayerIntelligenceMilitary: {fileID: 8300000, guid: b34c1667ec721a64eafc649b1dbbd668,
+    type: 3}
   PlayerIntelligenceMilitarySmall: {fileID: 0}
   PlayerCharismaLoveYou: {fileID: 0}
   PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
@@ -3075,17 +3087,6 @@ Animator:
 Transform:
   m_PrefabParentObject: {fileID: 479588, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
   m_PrefabInternal: {fileID: 1135410816}
---- !u!114 &1135410827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1135410818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045d989a9693d4505b08811c180a7fd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1149850634
 GameObject:
   m_ObjectHideFlags: 0
