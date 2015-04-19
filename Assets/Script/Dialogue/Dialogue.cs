@@ -22,7 +22,7 @@ public abstract class Dialogue : MonoBehaviour
 
     protected Coroutine End()
     {
-        return StartCoroutine(WaitAndEnd());
+        return StartCoroutine( WaitAndEnd() );
     }
 
     IEnumerator WaitAndEnd()
@@ -33,7 +33,7 @@ public abstract class Dialogue : MonoBehaviour
         Npc.speechBubble.Clear();
 
         // Check if we need to move to the next scene
-        if (Npc.affinity >= 50.0f)
+        if( Npc.affinity >= 50.0f )
         {
             GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
             Player.speechBubble.Clear();
@@ -46,12 +46,12 @@ public abstract class Dialogue : MonoBehaviour
 
     protected Coroutine WaitForInput()
     {
-        return StartCoroutine(WaitForSpaceKey());
+        return StartCoroutine( WaitForSpaceKey() );
     }
 
     IEnumerator WaitForSpaceKey()
     {
-        while (!(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
     }
 
@@ -63,7 +63,7 @@ public abstract class Dialogue : MonoBehaviour
     public void BeginDialogue()
     {
         //Player.speechBubble.gameObject.SetActive( true );
-        Npc.speechBubble.gameObject.SetActive(true);
+        Npc.speechBubble.gameObject.SetActive( true );
 
         StartNode();
         ShowCategoryOptions().MoveNext();
@@ -71,16 +71,16 @@ public abstract class Dialogue : MonoBehaviour
 
     protected IEnumerator ShowCategoryOptions()
     {
-        Player.speechBubble.gameObject.SetActive(true);
+        Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        if (HasCharismaOptions)
-            ShowDialogueOption("Charisma", ShowCharismaOptions);
-        if (HasIntimidationOptions)
-            ShowDialogueOption("Intimidate", ShowIntimidateOptions);
-        if (HasIntelligenceOptions)
-            ShowDialogueOption("Intelligence", ShowIntelligenceOptions);
-        if (HasChatOptions)
-            ShowDialogueOption("Chat", ShowChatOptions);
+        if( HasCharismaOptions )
+            ShowCategoryOption( Player.speechBubble._iconCharismaPrefab, ShowCharismaOptions );
+        if( HasIntimidationOptions )
+            ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, ShowIntimidateOptions );
+        if( HasIntelligenceOptions )
+            ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, ShowIntelligenceOptions );
+        if( HasChatOptions )
+            ShowCategoryOption( Player.speechBubble._iconChatPrefab, ShowChatOptions );
         yield break;
     }
 
@@ -89,64 +89,74 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.Clear();
     }
 
-    protected void ShowDialogueOption(string name, Func<IEnumerator> action)
+    protected void ShowCategoryOption( GameObject iconPrefab, Func<IEnumerator> action )
     {
-        Player.speechBubble.ShowButton(new DialogueAction(name, action));
+        Player.speechBubble.ShowIcon( iconPrefab, new DialogueAction( "icon", action ) );
     }
 
-    protected void ShowDialogueOption<ParamType>(string name, Func<ParamType, IEnumerator> action, ParamType parameter)
+    protected void ShowDialogueOption( string name, Func<IEnumerator> action )
     {
-        Player.speechBubble.ShowButton(new DialogueParameterAction<ParamType>(name, action, parameter));
+        if( !DialogueAction.IsDone( name ) )
+            Player.speechBubble.ShowButton( new DialogueAction( name, action ) );
+    }
+
+    protected void ShowDialogueOption<ParamType>( string name, Func<ParamType, IEnumerator> action, ParamType parameter )
+    {
+        Player.speechBubble.ShowButton( new DialogueParameterAction<ParamType>( name, action, parameter ) );
     }
 
     IEnumerator ShowCharismaOptions()
     {
-        Player.speechBubble.gameObject.SetActive(true);
+        Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        foreach (var option in CharismaOptions())
-            Player.speechBubble.ShowButton(option);
-        Player.speechBubble.ShowButton(new DialogueAction("Back", ShowCategoryOptions));
+        foreach( var option in CharismaOptions() )
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
 
     IEnumerator ShowIntimidateOptions()
     {
-        Player.speechBubble.gameObject.SetActive(true);
+        Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        foreach (var option in IntimidationOptions())
-            Player.speechBubble.ShowButton(option);
-        Player.speechBubble.ShowButton(new DialogueAction("Back", ShowCategoryOptions));
+        foreach( var option in IntimidationOptions() )
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
 
     IEnumerator ShowIntelligenceOptions()
     {
-        Player.speechBubble.gameObject.SetActive(true);
+        Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        foreach (var option in IntelligenceOptions())
-            Player.speechBubble.ShowButton(option);
-        Player.speechBubble.ShowButton(new DialogueAction("Back", ShowCategoryOptions));
+        foreach( var option in IntelligenceOptions() )
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
 
     IEnumerator ShowChatOptions()
     {
-        Player.speechBubble.gameObject.SetActive(true);
+        Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
-        foreach (var option in ChatOptions())
-            Player.speechBubble.ShowButton(option);
-        Player.speechBubble.ShowButton(new DialogueAction("Back", ShowCategoryOptions));
+        foreach( var option in ChatOptions() )
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
+        Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
 
-    protected void PlaySound(string fileName)
+    protected void PlaySound( string fileName )
     {
 
     }
 
-    protected bool HasHappend(string key)
+    protected bool HasHappend( string key )
     {
-        return this.Npc.HasHappend(key) || this.Player.HasHappend(key);
+        return this.Npc.HasHappend( key ) || this.Player.HasHappend( key );
     }
 }
 

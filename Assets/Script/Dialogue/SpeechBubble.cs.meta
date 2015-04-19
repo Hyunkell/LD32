@@ -1,10 +1,21 @@
 fileFormatVersion: 2
 guid: 64cfec90b384af4499f1a4d7ea79a89c
-timeCreated: 1429361084
+timeCreated: 1429440848
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _iconCharismaPrefab: {fileID: 188756, guid: 51944a6b9fcb42244a3046d30bb3daea,
+      type: 2}
+  - _iconIntimidatePrefab: {fileID: 140570, guid: 0bd379f2ee1b9084086670b589565421,
+      type: 2}
+  - _iconIntelligencePrefab: {fileID: 105248, guid: 2d88222da6a32ff4cbe24375bf4a6af9,
+      type: 2}
+  - _iconChatPrefab: {fileID: 193156, guid: 99d4175dd32f7804780ffb3488d2036c, type: 2}
+  - textMode: {instanceID: 0}
+  - buttonMode: {instanceID: 0}
+  - iconMode: {instanceID: 0}
+  - uiText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
