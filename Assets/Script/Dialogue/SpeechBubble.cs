@@ -30,6 +30,11 @@ public class DialogueAction
     {
         return done.Contains( name );
     }
+
+    public static void Reset()
+    {
+        done.Clear();
+    }
 }
 
 public class DialogueParameterAction<ParamType> : DialogueAction

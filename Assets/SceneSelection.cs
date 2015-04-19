@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "TheChefOffice", "TitleScreen", "TheFathersOffice", "TheKitchen", "EmptyTestScene" };
+    private string[] scenes = new string[] { "Intro", "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -14,8 +15,16 @@ public class SceneSelection : MonoBehaviour {
         LoadCurrentScene();
 	}
 
-    private void LoadCurrentScene()
+    public void ResetGame()
     {
+        Debug.LogWarning( "TODO: Define game over screen" );
+        Application.LoadLevel( Application.loadedLevel );
+    }
+
+    public void LoadCurrentScene()
+    {
+        Audio.Stop();
+
         if (sceneIndex >= 0 && sceneIndex < scenes.Length)
         {
             LoadScene(scenes[sceneIndex]);
