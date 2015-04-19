@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a47829de66e3cf7458755d045c76ed0d
-timeCreated: 1429394480
+timeCreated: 1429440007
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -61,20 +61,20 @@ TextureImporter:
     - name: ChefCharacter_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 603
-        width: 306
-        height: 504
+        x: 54
+        y: 607
+        width: 299
+        height: 511
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 1}
     - name: ChefCharacter_1
       rect:
         serializedVersion: 2
         x: 664
         y: 600
         width: 304
-        height: 460
+        height: 509
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

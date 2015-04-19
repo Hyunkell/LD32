@@ -16,13 +16,17 @@ public static class Prefab
             prefabs.Add( prefab.name, prefab );
         }
     }
-
     public static GameObject CreateInstance( string prefabName, GameObject parent )
+    {
+        return CreateInstance( prefabs[prefabName], parent );
+    }
+
+    public static GameObject CreateInstance( GameObject prefab, GameObject parent )
     {
         if( prefabs == null )
             LoadAll();
 
-        var instance = GameObject.Instantiate( prefabs[prefabName] );
+        var instance = GameObject.Instantiate( prefab );
         instance.transform.SetParent( parent.transform, false );
         instance.transform.localScale = new Vector3( 1, 1, 1 );
         return instance;
