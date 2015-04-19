@@ -9,12 +9,15 @@ public class Intro : MonoBehaviour {
 
 	private int _currentImageIndex = 0;
 
+	public GameObject sceneLoader;
+
 	public void GoToNextImage()
 	{
 		_currentImageIndex++;
 
-		if (_currentImageIndex > images.Count) {
-			//TODO Go to start screen
+		if (_currentImageIndex >= images.Count) {
+			//Go to start screen
+			this.sceneLoader.SendMessage("LoadNextScene");
 		} else {
 			var image = images[_currentImageIndex];
 			this.gameObject.GetComponent<Image>().sprite = image;
