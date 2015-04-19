@@ -1,9 +1,20 @@
 fileFormatVersion: 2
 guid: 104cb7a34460a974eb2132eba49626bb
-timeCreated: 1429472931
+timeCreated: 1429475337
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ButtonSheet_0
+    21300002: ButtonSheet_1
+    21300004: ButtonSheet_2
+    21300006: ButtonSheet_3
+    21300008: ButtonSheet_4
+    21300010: ButtonSheet_5
+    21300012: ButtonSheet_6
+    21300014: ButtonSheet_7
+    21300016: ButtonSheet_8
+    21300018: ButtonSheet_9
+    21300020: ButtonSheet_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +41,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +59,117 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: ButtonSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 213
+        width: 135
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_1
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 193
+        width: 134
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_2
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 269
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 193
+        width: 265
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_4
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 243
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_5
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 143
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_6
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 135
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_7
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 55
+        width: 190
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_8
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 0
+        width: 350
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 290
+        height: 189
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ButtonSheet_10
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 186
+        width: 209
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
