@@ -63,7 +63,7 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerIntelligenceMilitarySmall;
     public AudioClip PlayerIntelligenceWomen;
     public AudioClip PlayerIntelligenceWorldLeader;
-    public AudioClip[] PlayerIntimidateRevealBWrongNames = new AudioClip[5];
+    public AudioClip PlayerIntimidateRevealBWrongNames;
 
 
     public AudioClip PlayerCharismaLoveYou;
@@ -264,27 +264,18 @@ public class HBMDialog : Dialogue
             Npc.Say("No, NO, that can't be true, how would you know");
             yield return WaitForInput();
 
-            this.ClearPlayerDialogue();
-            foreach (var name in this.Names)
-            {
-                ShowDialogueOption(name, IntimidateRevealWrongB, name);
-            }
+            PlaySound(this.PlayerIntimidateRevealBWrongNames);
+            Player.Say(name);
+            Npc.Happens(HappeningKeys.SaidWrongName);
+            yield return WaitForInput();
+
+            PlaySound(this.NpcIntimidateBWrong);
+            Npc.Say("Mmmnnnyeaaaah... thats not it.");
+            Npc.ModifyAffinity(-20f);
+            yield return End();
         }
     }
-
-    private IEnumerator IntimidateRevealWrongB(string name)
-    {
-        PlaySound(this.PlayerIntimidateRevealBWrongNames[Array.IndexOf(this.Names, name)]);
-        Player.Say(name);
-        Npc.Happens(HappeningKeys.SaidWrongName);
-        yield return WaitForInput();
-
-        PlaySound(this.NpcIntimidateBWrong);
-        Npc.Say("Mmmnnnyeaaaah... thats not it.");
-        Npc.ModifyAffinity(-20f);
-        yield return End();
-    }
-
+    
     public IEnumerator IntimidateScratchCar()
     {
         PlaySound(this.PlayerIntimidateScratchCar);
