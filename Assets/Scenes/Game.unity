@@ -2935,12 +2935,15 @@ MonoBehaviour:
   NpcCharismaGreetingThanks: 
   NpcCharismaWonder: 
   NpcCharismaMercedes: 
+  NpcCharismaLoveYou: 
+  NpcCharismaPanzerGeneral: 
   NpcChatWeatherMercedes: 
   NpcChatMotionOfNoConfidence: 
   NpcChatWarForDummies: 
   NpcChatBeerGarden: 
   NpcChatMoney: 
   NpcChatOlympic: 
+  NpcChatFather: 
   NpcIntimidateRevealB: 
   NpcIntimidateBUnknown: 
   NpcIntimidateScratchCar: 
@@ -2951,6 +2954,8 @@ MonoBehaviour:
   NpcIntelligenceTaxSystem: 
   NpcIntelligenceMilitary: 
   NpcIntelligenceMilitarySmall: 
+  NpcIntelligenceWomen: 
+  NpcIntelligenceWorldLeader: 
   PlayerIntimidateGreeting: 
   PlayerCharismaGreeting: 
   PlayerCharismaWonder: 
@@ -2969,6 +2974,17 @@ MonoBehaviour:
   PlayerIntelligenceTaxSystem: 
   PlayerIntelligenceMilitary: 
   PlayerIntelligenceMilitarySmall: 
+  PlayerIntelligenceWomen: 
+  PlayerIntelligenceWorldLeader: 
+  PlayerCharismaLoveYou: 
+  PlayerCharismaPanzerGeneral: 
+  PlayerChatFather: 
+  PlayerIntimidateRevealBWrongNames:
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -4259,6 +4275,10 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1 &1759176430 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 134416, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+  m_PrefabInternal: {fileID: 1907404739}
 --- !u!1 &1780373682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4731,6 +4751,10 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: -4.30000019
       objectReference: {fileID: 0}
+    - target: {fileID: 11499838, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+      propertyPath: iconMode
+      value: 
+      objectReference: {fileID: 1759176430}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
   m_IsPrefabParent: 0
