@@ -6,10 +6,11 @@ using System.Collections.Generic;
 
 public class DialogueAction
 {
+    // Tracks completed dialog choices
+    static HashSet<string> done = new HashSet<string>();
+
     public string text;
     private Func<IEnumerator> action;
-
-    static HashSet<object> done = new HashSet<object>();
 
     public DialogueAction( string buttonText, Func<IEnumerator> buttonAction )
     {
@@ -19,7 +20,15 @@ public class DialogueAction
 
     internal virtual IEnumerator DoAction()
     {
+        if( !IsDone( text ) )
+            done.Add( text );
+
         return this.action();
+    }
+
+    public static bool IsDone( string name )
+    {
+        return done.Contains( name );
     }
 }
 

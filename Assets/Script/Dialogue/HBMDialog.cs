@@ -12,6 +12,8 @@ public class HBMDialog : Dialogue
     public string NpcCharismaGreetingThanks = string.Empty;
     public string NpcCharismaWonder = string.Empty;
     public string NpcCharismaMercedes = string.Empty;
+    public string NpcCharismaLoveYou = string.Empty;
+    public string NpcCharismaPanzerGeneral = string.Empty;
 
     public string NpcChatWeatherMercedes = string.Empty;
     public string NpcChatMotionOfNoConfidence = string.Empty;
@@ -19,6 +21,7 @@ public class HBMDialog : Dialogue
     public string NpcChatBeerGarden = string.Empty;
     public string NpcChatMoney = string.Empty;
     public string NpcChatOlympic = string.Empty;
+    public string NpcChatFather = string.Empty;
 
     public string NpcIntimidateRevealB = string.Empty;
     public string NpcIntimidateBUnknown = string.Empty;
@@ -58,10 +61,17 @@ public class HBMDialog : Dialogue
     public string PlayerIntelligenceTaxSystem = string.Empty;
     public string PlayerIntelligenceMilitary = string.Empty;
     public string PlayerIntelligenceMilitarySmall = string.Empty;
-    private string PlayerIntelligenceWomen = string.Empty;
-    private string PlayerIntelligenceWorldLeader = string.Empty;
-    private string[] PlayerIntimidateRevealBWrongNames = new string[5];
+    public string PlayerIntelligenceWomen = string.Empty;
+    public string PlayerIntelligenceWorldLeader = string.Empty;
+    public string PlayerCharismaLoveYou = string.Empty;
+    public string PlayerCharismaPanzerGeneral = string.Empty;
+    public string PlayerChatFather = string.Empty;
+    public string[] PlayerIntimidateRevealBWrongNames = new string[5];
     #endregion
+
+    private string[] mercedesMonolog = new string[] {
+        "blabla"
+    };
 
     private string[] Names { get { return new string[] { "Bambi?", "Bärbel?", "Belzebub?", "Bernd?", "Brokkoli?" }; } }
 
@@ -88,6 +98,8 @@ public class HBMDialog : Dialogue
         {
             yield return new DialogueAction("Like Mercedes?", CharismaMercedes);
             yield return new DialogueAction("Good work", CharismaWonder);
+            yield return new DialogueAction("I love you", CharismaLoveYou);
+            yield return new DialogueAction("Panzer general", CharismaPanzerGeneral);
         }
     }
 
@@ -129,6 +141,7 @@ public class HBMDialog : Dialogue
         yield return new DialogueAction("How was weekend", ChatWeekend);
         yield return new DialogueAction("Favourite song", ChatFavSong);
         yield return new DialogueAction("Favourite olympic sport", ChatFavSport);
+        yield return new DialogueAction("Met father", ChatFather);
     }
     #endregion
 
@@ -255,13 +268,6 @@ public class HBMDialog : Dialogue
                 ShowDialogueOption(name, IntimidateRevealWrongB, name);
             }
         }
-        else
-        {
-            PlaySound(this.NpcIntimidateBWrong);
-            Npc.Say("Mmmnnnyeaaaah... thats not it.");
-            Npc.ModifyAffinity(-20f);
-            yield return End();
-        }
     }
 
     private IEnumerator IntimidateRevealWrongB(string name)
@@ -271,7 +277,10 @@ public class HBMDialog : Dialogue
         Npc.Happens(HappeningKeys.SaidWrongName);
         yield return WaitForInput();
 
-        //Go back to IntimidateRevealB
+        PlaySound(this.NpcIntimidateBWrong);
+        Npc.Say("Mmmnnnyeaaaah... thats not it.");
+        Npc.ModifyAffinity(-20f);
+        yield return End();
     }
 
     public IEnumerator IntimidateScratchCar()
@@ -341,7 +350,7 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaWonder);
-        Npc.Say("The Wirtschawhat? Ah yes, yes I am often amazed at myself");
+        Npc.Say("You seem to be the only one who can remember that.");
 
         yield return End();
     }
@@ -349,15 +358,39 @@ public class HBMDialog : Dialogue
     public IEnumerator CharismaMercedes()
     {
         PlaySound(this.PlayerCharismaMercedes);
-        Player.Say("So you like Mercedes cars? I like them too! <3");
+        Player.Say("So you like Mercedes cars? I like them too!");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaMercedes);
-        Npc.Say("(Mercedes monologue)");
+        Npc.Say(this.mercedesMonolog);
 
         yield return End();
     }
 
+    public IEnumerator CharismaLoveYou()
+    {
+        PlaySound(this.PlayerCharismaLoveYou);
+        Player.Say("I am in love with you!");
+        yield return WaitForInput();
+
+        PlaySound(this.NpcCharismaLoveYou);
+        Npc.Say("First of, you are way to funky,",
+            "secondly I got a Girlfriend.");
+        Npc.ModifyAffinity(-20f);
+        yield return End();
+    }
+
+    public IEnumerator CharismaPanzerGeneral()
+    {
+        PlaySound(this.PlayerCharismaPanzerGeneral);
+        Player.Say("You seem to be a fine panzer general.");
+        yield return WaitForInput();
+
+        PlaySound(this.NpcCharismaPanzerGeneral);
+        Npc.Say("Straight up lie!");
+        Npc.ModifyAffinity(-10f);
+        yield return End();
+    }
     #endregion
 
     #region Chat Options
@@ -372,10 +405,8 @@ public class HBMDialog : Dialogue
         Npc.Say("It's great. Finally I can drive my awesome mercedes again!");
         yield return WaitForInput();
 
-        //TODO Check happenings!
-
         PlaySound(this.NpcCharismaMercedes);
-        Npc.Say("(Mercedes monologue)");
+        Npc.Say(this.mercedesMonolog);
 
         yield return End();
     }
@@ -387,7 +418,10 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatMotionOfNoConfidence);
-        Player.Say("I'm a bit worried about the motion of no confidence. Maybe I'll loose my position soon...");
+        Npc.Say("I'm a bit worried about the",
+            "motion of no confidence.",
+            "Maybe I'll loose my position",
+            "soon... It's an age thing.");
 
         yield return End();
     }
@@ -399,8 +433,10 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatWarForDummies);
-        Player.Say("I'm trying to Read War for Dummies. Those military stategies are realy complicated!" +
-                    "Did you know that Germany has more than 1500 Tanks, and they all want to be commanded");
+        Npc.Say("I'm trying to Read \"War for Dummies\".",
+            "Those military stategies are realy complicated!" +
+            "Did you know that Germany has more than 1500 Tanks," +
+            "and they all want to be commanded.");
 
         yield return End();
     }
@@ -412,7 +448,8 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatBeerGarden);
-        Player.Say("I've visited the beer garden with my father. We had Weiswurst and Sauerkraut");
+        Npc.Say("I've visited the beer garden" +
+            "with my girlfriend. We had Weiswurst and Sauerkraut.");
 
         yield return End();
     }
@@ -424,7 +461,7 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatMoney);
-        Player.Say("Money, Money, Money!");
+        Npc.Say("Money, Money, Money!");
 
         yield return End();
     }
@@ -436,11 +473,29 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatOlympic);
-        Player.Say("I don't like the Olympic Games, they're so expensive." +
-                    "I'm allready paying such a hugh amount of taxes and all" +
-                    " is going to this useless sports! Did you know, that the" +
-                    " more money you have, the more money you have to give to the tax office, even I, as president.");
+        Npc.Say("I don't like the Olympic Games," +
+            "they're so expensive." +
+            "I'm allready paying such a hugh amount" +
+            "of taxes and all is going to this useless sports!" +
+            "Did you know, that the more money you have," +
+            "the more money you have to give to the tax office," +
+            "even I, as president.");
 
+        yield return End();
+    }
+
+    public IEnumerator ChatFather()
+    {
+        PlaySound(this.PlayerChatFather);
+        Player.Say("I met your dad.");
+        yield return WaitForInput();
+
+        PlaySound(this.NpcChatFather);
+        Npc.Say("Mwuhaha I made him my little bodyguard," +
+            "I never liked him, he was never there when" +
+            "I needed him, always at the Schützenverein." +
+            "Suddenly when I was voted Bundeskanzler," +
+            "he wanted to be there for me.");
         yield return End();
     }
 

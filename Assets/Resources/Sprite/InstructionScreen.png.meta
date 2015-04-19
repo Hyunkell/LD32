@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 93351a38acf557c4cb49a94819df755b
-timeCreated: 1429445563
+guid: 50c192121b1760849a21839034d3412b
+timeCreated: 1429445307
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: BodyguardCharacter_0
-    21300002: BodyguardCharacter_1
-    21300004: BodyguardCharacter_2
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -33,14 +30,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,37 +48,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: BodyguardCharacter_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 294
-        height: 474
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BodyguardCharacter_1
-      rect:
-        serializedVersion: 2
-        x: 685
-        y: 92
-        width: 77
-        height: 67
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BodyguardCharacter_2
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 0
-        width: 298
-        height: 488
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
