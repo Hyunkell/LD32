@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class Intro : MonoBehaviour {
 
 	public List<Sprite> images;
+    public List<float> delaySeconds;
+    public AudioClip introSound;
 
 	private int _currentImageIndex = 0;
 
@@ -21,8 +23,10 @@ public class Intro : MonoBehaviour {
 		} else {
 			var image = images[_currentImageIndex];
 			this.gameObject.GetComponent<Image>().sprite = image;
-		}
 
+            // Nächstes Bild starten nach delay
+            Invoke("GoToNextImage", delaySeconds[_currentImageIndex]);
+		}
 	}
 
 	// Use this for initialization
@@ -30,6 +34,8 @@ public class Intro : MonoBehaviour {
 		if (this.images.Count > 0) {
 			var image = images[0];
 			this.gameObject.GetComponent<Image>().sprite = image;
+            Audio.Play(introSound);
+            Invoke("GoToNextImage", delaySeconds[_currentImageIndex]);
 		}
 	}
 	

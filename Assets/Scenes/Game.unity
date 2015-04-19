@@ -3110,6 +3110,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ca3766b2ce458d4eb180cb55bc180bb, type: 3}
   - {fileID: 21300000, guid: a251f46f097aa2f4f8ab50dd5fe98a2e, type: 3}
   - {fileID: 21300000, guid: 50c192121b1760849a21839034d3412b, type: 3}
+  delaySeconds:
+  - 5
+  - 4
+  - 6
+  - 10
+  - 8
+  - 5
+  - 6
+  - 17
+  introSound: {fileID: 8300000, guid: 52ccc11f1fa6e1e42a4e286122dad3d3, type: 3}
   sceneLoader: {fileID: 131340425}
 --- !u!114 &1052347306
 MonoBehaviour:
@@ -3494,7 +3504,7 @@ MonoBehaviour:
     type: 3}
   PlayerChatFavSong: {fileID: 8300000, guid: 427199b1c0163d5448116a7d46c146c9, type: 3}
   PlayerChatFavSport: {fileID: 8300000, guid: f08764bc6cbd2df4499d3bf7668c6ee5, type: 3}
-  PlayerIntimidateRevealB: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
+  PlayerIntimidateRevealB: {fileID: 8300000, guid: 20942f515e390124cae376185354de2d,
     type: 3}
   PlayerIntimidateScratchCar: {fileID: 8300000, guid: a6c9bd39fe0d2424595a2c2b29083405,
     type: 3}
