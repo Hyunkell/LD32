@@ -4327,13 +4327,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260905790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ee9dd12b037844f8fc7d6eeb4848e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 941c74835df0c4f779d19d41567f2982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 1260905794}
-  _audioMercedesMonolog: {fileID: 8300000, guid: 0ede76e23e99a5d44b07224831dc88e3,
+  NpcGreetingHaltNoEntry: {fileID: 8300000, guid: b156d79aa0baeeb44997caabf51007ac,
     type: 3}
+  NpcGreetingNotHappening: {fileID: 8300000, guid: fa31c125a8afd0c4ab25fe2dbe12b7b4,
+    type: 3}
+  NpcGreetingThatWouldBe: {fileID: 8300000, guid: 636239ae65d5b9f4f9ede4edb9f81618,
+    type: 3}
+  NpcGreetingShyCoughing: {fileID: 8300000, guid: 802da361b4ddc17479f0cb47959f7d41,
+    type: 3}
+  NpcChatWorriedWind: {fileID: 8300000, guid: a960d8d2ed65b894d929ebc6b1ee1077, type: 3}
+  NpcChatSonPresident: {fileID: 8300000, guid: baa46dc8b7e4eff4bb9fa27f4d24d761, type: 3}
+  NpcChatWorkingCloseToSon: {fileID: 8300000, guid: 5ab37143e63aacf4d97253a549eafdeb,
+    type: 3}
+  NpcChatNameday: {fileID: 8300000, guid: 1d0e95dea9186c84b9f1c2f1ad996a30, type: 3}
+  NpcChatBlasMusik: {fileID: 8300000, guid: 0613463fc2058494f8eea1bd2f1c1693, type: 3}
+  NpcChatShooting: {fileID: 8300000, guid: 2d6f6b0bd6ebb1041b513183e3848ee4, type: 3}
+  NpcIntimidateJessesMaria: {fileID: 8300000, guid: a730a9b289d845640bbf7e5750c224d3,
+    type: 3}
+  NpcIntimidateTraditionalUniform: {fileID: 8300000, guid: 14fc70dab79b99a46870cf1b941a62ad,
+    type: 3}
+  NpcIntimidateKruschperl: {fileID: 8300000, guid: ae812df821f2d754e82a7631e817b71d,
+    type: 3}
+  NpcIntimidateDontDrink: {fileID: 8300000, guid: 7f3f9d8ae600d2447a6a25c6fb354da0,
+    type: 3}
+  NpcSmartBavarianShit: {fileID: 8300000, guid: 7f14a48d7bdeed8478bdf60383d238a5,
+    type: 3}
+  NpcSmartMorePower: {fileID: 8300000, guid: 99f61d7c483505a4dbf431fbe24d46fb, type: 3}
+  NpcSmartTrachtenmaking: {fileID: 8300000, guid: 7d940a4cb64b33444b6a225510abdca8,
+    type: 3}
+  NpcSmartElfriede: {fileID: 8300000, guid: 910f1a886891ce346b63efb48e941043, type: 3}
+  NpcCharmeBestBeard: {fileID: 8300000, guid: 7c3f5790762c1d6478a659491a46e64d, type: 3}
+  NpcCharmeSchuetzenkoenig: {fileID: 8300000, guid: 4598502154f145b4797903a3b229a4e1,
+    type: 3}
+  NpcCharmeBrezn: {fileID: 8300000, guid: 250b24d4b7e51214586e42d7f2a08f3f, type: 3}
+  NpcCharmeGamsbart: {fileID: 8300000, guid: 56446ea175870674d9ddb84ea14b6c4a, type: 3}
+  PlayerGreetingOutOfMyWay: {fileID: 8300000, guid: 9fdce0f66a27f59408befb34fc77428e,
+    type: 3}
+  PlayerGreetingImportantBusiness: {fileID: 8300000, guid: 9be0fc54c33f07c41a5697dcf98289d1,
+    type: 3}
+  PlayerGreetingCompetent: {fileID: 8300000, guid: 249406e7beae320458729c65ec979608,
+    type: 3}
+  PlayerChatHowsWeather: {fileID: 8300000, guid: ad17a382d820473409e87c4da43a3d28,
+    type: 3}
+  PlayerChatWhatsUp: {fileID: 8300000, guid: b4ff222d8b55f904bb5fca444e06d1c7, type: 3}
+  PlayerChatHowsWork: {fileID: 8300000, guid: 1ee8cb81ef594fe44a0d591cdccb88bb, type: 3}
+  PlayerChatWeekend: {fileID: 8300000, guid: c7cd2fd6eff41444699649a9d442e8b7, type: 3}
+  PlayerChatSong: {fileID: 8300000, guid: 427199b1c0163d5448116a7d46c146c9, type: 3}
+  PlayerChatOlympic: {fileID: 8300000, guid: f08764bc6cbd2df4499d3bf7668c6ee5, type: 3}
+  PlayerIntimidateGetToYourHouse: {fileID: 8300000, guid: 1fde6df8dc3e70a409e478fdbaa185e8,
+    type: 3}
+  PlayerIntimidateShinyUniform: {fileID: 8300000, guid: dae7699132951a544bf1db87b300fcd3,
+    type: 3}
+  PlayerIntimidatePushAndRun: {fileID: 8300000, guid: 67851e80b224d9c4f86b30304182d87e,
+    type: 3}
+  PlayerIntimidateWolpertinger: {fileID: 8300000, guid: 8c58c29f335be29499aa6362f52e1c5e,
+    type: 3}
+  PlayerSmartLuxembourgRules: {fileID: 8300000, guid: 83a8ddbc192f92f4880ec943d7d78493,
+    type: 3}
+  PlayerSmartRuleLAndG: {fileID: 8300000, guid: e977f77af1da6d449bb77ba343176331,
+    type: 3}
+  PlayerSmartTrachten: {fileID: 8300000, guid: 17c8d5c20541c914181f7408c7aa68d0, type: 3}
+  PlayerSmartWomen: {fileID: 8300000, guid: 1197f05087529474bae132a72cd93ef6, type: 3}
+  PlayerCharmeBeard: {fileID: 8300000, guid: 293acdbe167480c4fb2e7c4315c8f568, type: 3}
+  PlayerCharmeGun: {fileID: 8300000, guid: 7e223e9abe67b844e8331f26a6638079, type: 3}
+  PlayerCharmePretzel: {fileID: 8300000, guid: 877f8815851b82340ab66d4b846caee5, type: 3}
+  PlayerCharmeNiceCap: {fileID: 8300000, guid: d896b9721f26d3342a85920bb37e7a06, type: 3}
 --- !u!114 &1260905794
 MonoBehaviour:
   m_ObjectHideFlags: 0
