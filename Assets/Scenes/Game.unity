@@ -3006,12 +3006,15 @@ MonoBehaviour:
   NpcCharismaGreetingThanks: {fileID: 0}
   NpcCharismaWonder: {fileID: 0}
   NpcCharismaMercedes: {fileID: 0}
+  NpcCharismaLoveYou: {fileID: 0}
+  NpcCharismaPanzerGeneral: {fileID: 0}
   NpcChatWeatherMercedes: {fileID: 0}
   NpcChatMotionOfNoConfidence: {fileID: 0}
   NpcChatWarForDummies: {fileID: 0}
   NpcChatBeerGarden: {fileID: 0}
   NpcChatMoney: {fileID: 0}
   NpcChatOlympic: {fileID: 0}
+  NpcChatFather: {fileID: 0}
   NpcIntimidateRevealB: {fileID: 0}
   NpcIntimidateBUnknown: {fileID: 0}
   NpcIntimidateScratchCar: {fileID: 0}
@@ -3042,17 +3045,9 @@ MonoBehaviour:
   PlayerIntelligenceTaxSystem: {fileID: 0}
   PlayerIntelligenceMilitary: {fileID: 0}
   PlayerIntelligenceMilitarySmall: {fileID: 0}
-  PlayerIntelligenceWomen: 
-  PlayerIntelligenceWorldLeader: 
-  PlayerCharismaLoveYou: 
-  PlayerCharismaPanzerGeneral: 
-  PlayerChatFather: 
-  PlayerIntimidateRevealBWrongNames:
-  - 
-  - 
-  - 
-  - 
-  - 
+  PlayerCharismaLoveYou: {fileID: 0}
+  PlayerCharismaPanzerGeneral: {fileID: 0}
+  PlayerChatFather: {fileID: 0}
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -3086,7 +3081,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135410818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 045d989a9693d4505b08811c180a7fd5, type: 3}
+  m_Script: {fileID: 11500000, guid: c1cb4a59f3e9748b4bd11a5bda4475c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1149850634
