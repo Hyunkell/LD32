@@ -9,6 +9,8 @@ public class DialogueAction
     public string text;
     private Func<IEnumerator> action;
 
+    static HashSet<object> done = new HashSet<object>();
+
     public DialogueAction( string buttonText, Func<IEnumerator> buttonAction )
     {
         this.text = buttonText;
@@ -69,6 +71,12 @@ public class SpeechBubble : MonoBehaviour
         uiText.text = "";
         for( int i = 0; i < buttonMode.transform.childCount; i++ )
             GameObject.Destroy( buttonMode.transform.GetChild( i ).gameObject );
+
+        if( iconMode != null )
+        {
+            for( int i = 0; i < iconMode.transform.childCount; i++ )
+                GameObject.Destroy( iconMode.transform.GetChild( i ).gameObject );
+        }
     }
 
     public void ShowButton( DialogueAction namedAction )
@@ -84,11 +92,14 @@ public class SpeechBubble : MonoBehaviour
         button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => StartCoroutine( namedAction.DoAction() ) );
     }
 
-    public void ShowIcon( DialogueAction namedAction )
+    public void ShowIcon( GameObject iconPrefab, DialogueAction namedAction )
     {
         textMode.SetActive( false );
         buttonMode.SetActive( false );
         iconMode.SetActive( true );
+
+        var button = Prefab.CreateInstance( iconPrefab, iconMode );
+        button.GetComponent<UnityEngine.UI.Button>().onClick.AddListener( () => StartCoroutine( namedAction.DoAction() ) );
     }
 
     public void Hide()
