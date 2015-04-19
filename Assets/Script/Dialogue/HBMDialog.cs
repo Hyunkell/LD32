@@ -6,61 +6,61 @@ using System;
 public class HBMDialog : Dialogue
 {
     #region Npc Sound Files
-    public string NpcGreeting = string.Empty;
-    public string NpcOk = string.Empty;
+    public AudioClip NpcGreeting;
+    public AudioClip NpcOk;
 
-    public string NpcCharismaGreetingThanks = string.Empty;
-    public string NpcCharismaWonder = string.Empty;
-    public string NpcCharismaMercedes = string.Empty;
+    public AudioClip NpcCharismaGreetingThanks;
+    public AudioClip NpcCharismaWonder;
+    public AudioClip NpcCharismaMercedes;
 
-    public string NpcChatWeatherMercedes = string.Empty;
-    public string NpcChatMotionOfNoConfidence = string.Empty;
-    public string NpcChatWarForDummies = string.Empty;
-    public string NpcChatBeerGarden = string.Empty;
-    public string NpcChatMoney = string.Empty;
-    public string NpcChatOlympic = string.Empty;
+    public AudioClip NpcChatWeatherMercedes;
+    public AudioClip NpcChatMotionOfNoConfidence;
+    public AudioClip NpcChatWarForDummies;
+    public AudioClip NpcChatBeerGarden;
+    public AudioClip NpcChatMoney;
+    public AudioClip NpcChatOlympic;
 
-    public string NpcIntimidateRevealB = string.Empty;
-    public string NpcIntimidateBUnknown = string.Empty;
-    public string NpcIntimidateScratchCar = string.Empty;
-    public string NpcIntimidateHurtFather = string.Empty;
-    public string NpcIntimidateBWrong = string.Empty;
-    public string NpcIntimidateFeedDog = string.Empty;
+    public AudioClip NpcIntimidateRevealB;
+    public AudioClip NpcIntimidateBUnknown;
+    public AudioClip NpcIntimidateScratchCar;
+    public AudioClip NpcIntimidateHurtFather;
+    public AudioClip NpcIntimidateBWrong;
+    public AudioClip NpcIntimidateFeedDog;
 
-    public string NpcIntelligenceGreetingHow = string.Empty;
-    public string NpcIntelligenceTaxSystem = string.Empty;
-    public string NpcIntelligenceMilitary = string.Empty;
-    public string NpcIntelligenceMilitarySmall = string.Empty;
-    public string NpcIntelligenceWomen = string.Empty;
-    public string NpcIntelligenceWorldLeader = string.Empty;
+    public AudioClip NpcIntelligenceGreetingHow;
+    public AudioClip NpcIntelligenceTaxSystem;
+    public AudioClip NpcIntelligenceMilitary;
+    public AudioClip NpcIntelligenceMilitarySmall;
+    public AudioClip NpcIntelligenceWomen;
+    public AudioClip NpcIntelligenceWorldLeader;
     #endregion
 
     #region Player Sound Files
-    public string PlayerIntimidateGreeting = string.Empty;
+    public AudioClip PlayerIntimidateGreeting;
 
-    public string PlayerCharismaGreeting = string.Empty;
-    public string PlayerCharismaWonder = string.Empty;
-    public string PlayerCharismaMercedes = string.Empty;
+    public AudioClip PlayerCharismaGreeting;
+    public AudioClip PlayerCharismaWonder;
+    public AudioClip PlayerCharismaMercedes;
 
-    public string PlayerChatWeather = string.Empty;
-    public string PlayerChatWhatsUp = string.Empty;
-    public string PlayerChatHowIsWork = string.Empty;
-    public string PlayerChatLastWeekend = string.Empty;
-    public string PlayerChatFavSong = string.Empty;
-    public string PlayerChatFavSport = string.Empty;
+    public AudioClip PlayerChatWeather;
+    public AudioClip PlayerChatWhatsUp;
+    public AudioClip PlayerChatHowIsWork;
+    public AudioClip PlayerChatLastWeekend;
+    public AudioClip PlayerChatFavSong;
+    public AudioClip PlayerChatFavSport;
 
-    public string PlayerIntimidateRevealB = string.Empty;
-    public string PlayerIntimidateScratchCar = string.Empty;
-    public string PlayerIntimidateHurtFather = string.Empty;
-    public string PlayerIntimidateFeedDog = string.Empty;
+    public AudioClip PlayerIntimidateRevealB;
+    public AudioClip PlayerIntimidateScratchCar;
+    public AudioClip PlayerIntimidateHurtFather;
+    public AudioClip PlayerIntimidateFeedDog;
 
-    public string PlayerIntelligenceGreeting = string.Empty;
-    public string PlayerIntelligenceTaxSystem = string.Empty;
-    public string PlayerIntelligenceMilitary = string.Empty;
-    public string PlayerIntelligenceMilitarySmall = string.Empty;
-    private string PlayerIntelligenceWomen = string.Empty;
-    private string PlayerIntelligenceWorldLeader = string.Empty;
-    private string[] PlayerIntimidateRevealBWrongNames = new string[5];
+    public AudioClip PlayerIntelligenceGreeting;
+    public AudioClip PlayerIntelligenceTaxSystem;
+    public AudioClip PlayerIntelligenceMilitary;
+    public AudioClip PlayerIntelligenceMilitarySmall;
+    private AudioClip PlayerIntelligenceWomen;
+    private AudioClip PlayerIntelligenceWorldLeader;
+    private AudioClip[] PlayerIntimidateRevealBWrongNames = new AudioClip[5];
     #endregion
 
     private string[] Names { get { return new string[] { "Bambi?", "Bärbel?", "Belzebub?", "Bernd?", "Brokkoli?" }; } }

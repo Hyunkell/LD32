@@ -349,6 +349,7 @@ GameObject:
   - 124: {fileID: 131340427}
   - 81: {fileID: 131340426}
   - 114: {fileID: 131340431}
+  - 82: {fileID: 131340432}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -433,6 +434,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 287545727}
+--- !u!82 &131340432
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 131340425}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &134408739
 Prefab:
   m_ObjectHideFlags: 0
@@ -1396,6 +1466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 455556261}
+  _audioMercedesMonolog: {fileID: 0}
 --- !u!114 &455556261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,45 +3001,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 1135410819}
-  NpcGreeting: 
-  NpcOk: 
-  NpcCharismaGreetingThanks: 
-  NpcCharismaWonder: 
-  NpcCharismaMercedes: 
-  NpcChatWeatherMercedes: 
-  NpcChatMotionOfNoConfidence: 
-  NpcChatWarForDummies: 
-  NpcChatBeerGarden: 
-  NpcChatMoney: 
-  NpcChatOlympic: 
-  NpcIntimidateRevealB: 
-  NpcIntimidateBUnknown: 
-  NpcIntimidateScratchCar: 
-  NpcIntimidateHurtFather: 
-  NpcIntimidateBWrong: 
-  NpcIntimidateFeedDog: 
-  NpcIntelligenceGreetingHow: 
-  NpcIntelligenceTaxSystem: 
-  NpcIntelligenceMilitary: 
-  NpcIntelligenceMilitarySmall: 
-  PlayerIntimidateGreeting: 
-  PlayerCharismaGreeting: 
-  PlayerCharismaWonder: 
-  PlayerCharismaMercedes: 
-  PlayerChatWeather: 
-  PlayerChatWhatsUp: 
-  PlayerChatHowIsWork: 
-  PlayerChatLastWeekend: 
-  PlayerChatFavSong: 
-  PlayerChatFavSport: 
-  PlayerIntimidateRevealB: 
-  PlayerIntimidateScratchCar: 
-  PlayerIntimidateHurtFather: 
-  PlayerIntimidateFeedDog: 
-  PlayerIntelligenceGreeting: 
-  PlayerIntelligenceTaxSystem: 
-  PlayerIntelligenceMilitary: 
-  PlayerIntelligenceMilitarySmall: 
+  NpcGreeting: {fileID: 0}
+  NpcOk: {fileID: 0}
+  NpcCharismaGreetingThanks: {fileID: 0}
+  NpcCharismaWonder: {fileID: 0}
+  NpcCharismaMercedes: {fileID: 0}
+  NpcChatWeatherMercedes: {fileID: 0}
+  NpcChatMotionOfNoConfidence: {fileID: 0}
+  NpcChatWarForDummies: {fileID: 0}
+  NpcChatBeerGarden: {fileID: 0}
+  NpcChatMoney: {fileID: 0}
+  NpcChatOlympic: {fileID: 0}
+  NpcIntimidateRevealB: {fileID: 0}
+  NpcIntimidateBUnknown: {fileID: 0}
+  NpcIntimidateScratchCar: {fileID: 0}
+  NpcIntimidateHurtFather: {fileID: 0}
+  NpcIntimidateBWrong: {fileID: 0}
+  NpcIntimidateFeedDog: {fileID: 0}
+  NpcIntelligenceGreetingHow: {fileID: 0}
+  NpcIntelligenceTaxSystem: {fileID: 0}
+  NpcIntelligenceMilitary: {fileID: 0}
+  NpcIntelligenceMilitarySmall: {fileID: 0}
+  NpcIntelligenceWomen: {fileID: 0}
+  NpcIntelligenceWorldLeader: {fileID: 0}
+  PlayerIntimidateGreeting: {fileID: 0}
+  PlayerCharismaGreeting: {fileID: 0}
+  PlayerCharismaWonder: {fileID: 0}
+  PlayerCharismaMercedes: {fileID: 0}
+  PlayerChatWeather: {fileID: 0}
+  PlayerChatWhatsUp: {fileID: 0}
+  PlayerChatHowIsWork: {fileID: 0}
+  PlayerChatLastWeekend: {fileID: 0}
+  PlayerChatFavSong: {fileID: 0}
+  PlayerChatFavSport: {fileID: 0}
+  PlayerIntimidateRevealB: {fileID: 0}
+  PlayerIntimidateScratchCar: {fileID: 0}
+  PlayerIntimidateHurtFather: {fileID: 0}
+  PlayerIntimidateFeedDog: {fileID: 0}
+  PlayerIntelligenceGreeting: {fileID: 0}
+  PlayerIntelligenceTaxSystem: {fileID: 0}
+  PlayerIntelligenceMilitary: {fileID: 0}
+  PlayerIntelligenceMilitarySmall: {fileID: 0}
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -3215,6 +3288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 287545732}
   Npc: {fileID: 1260905794}
+  _audioMercedesMonolog: {fileID: 8300000, guid: 0ede76e23e99a5d44b07224831dc88e3,
+    type: 3}
 --- !u!114 &1260905794
 MonoBehaviour:
   m_ObjectHideFlags: 0
