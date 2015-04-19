@@ -74,13 +74,13 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         if( HasCharismaOptions )
-            ShowDialogueOption( "Charisma", ShowCharismaOptions );
+            ShowCategoryOption( Player.speechBubble._iconCharismaPrefab, ShowCharismaOptions );
         if( HasIntimidationOptions )
-            ShowDialogueOption( "Intimidate", ShowIntimidateOptions );
+            ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, ShowIntimidateOptions );
         if( HasIntelligenceOptions )
-            ShowDialogueOption( "Intelligence", ShowIntelligenceOptions );
+            ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, ShowIntelligenceOptions );
         if( HasChatOptions )
-            ShowDialogueOption( "Chat", ShowChatOptions );
+            ShowCategoryOption( Player.speechBubble._iconChatPrefab, ShowChatOptions );
         yield break;
     }
 
@@ -89,9 +89,19 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.Clear();
     }
 
+    protected void ShowCategoryOption( GameObject iconPrefab, Func<IEnumerator> action )
+    {
+        Player.speechBubble.ShowIcon( iconPrefab, new DialogueAction( "icon", action ) );
+    }
+
     protected void ShowDialogueOption( string name, Func<IEnumerator> action )
     {
         Player.speechBubble.ShowButton( new DialogueAction( name, action ) );
+    }
+
+    protected void ShowDialogueOption<ParamType>( string name, Func<ParamType, IEnumerator> action, ParamType parameter )
+    {
+        Player.speechBubble.ShowButton( new DialogueParameterAction<ParamType>( name, action, parameter ) );
     }
 
     IEnumerator ShowCharismaOptions()
