@@ -58,6 +58,31 @@ public class MerkelDialogue : Dialogue
             "Affinity -10" );
         Npc.ModifyAffinity( -10.0f );
 
+
+        // Dialogue branching test
+        yield return WaitForInput();
+        ClearPlayerDialogue();
+        bool test = true;
+        if( test )
+        {
+            ShowDialogueOption( "Test1", DialogBranchTest1 );
+            ShowDialogueOption( "Test2", DialogBranchTest2 );
+        }
+        else
+            yield return End();
+    }
+
+    public IEnumerator DialogBranchTest1()
+    {
+        Player.Say( "Test1 Player" );
+        Npc.Say( "Test1 Npc" );
+        yield return End();
+    }
+
+    public IEnumerator DialogBranchTest2()
+    {
+        Player.Say( "Test2 Player" );
+        Npc.Say( "Test2 Npc" );
         yield return End();
     }
 
