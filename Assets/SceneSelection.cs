@@ -8,8 +8,9 @@ public class SceneSelection : MonoBehaviour {
 	public GameObject character;
 
     public List<GameObject> scenes;
-    //private string[] _scenes = new string[] { "Intro", "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
     public GameObject gameOverScene;
+    public List<GameObject> scenesBeforeLeave;
+
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -34,17 +35,27 @@ public class SceneSelection : MonoBehaviour {
         }
     }
 
-
     public void LoadNextScene()
     {
+        CheckForLeaveCondition();
         this.sceneIndex++;
         LoadCurrentScene();
     }
 
     public void LoadPrevScene()
     {
+        CheckForLeaveCondition();
         this.sceneIndex--;
         LoadCurrentScene();
+    }
+
+    private void CheckForLeaveCondition()
+    {
+        var currentScene = scenes[sceneIndex];
+        if (scenesBeforeLeave.Contains(currentScene))
+        {
+            
+        }
     }
 
     private void LoadScene(string sceneName)
