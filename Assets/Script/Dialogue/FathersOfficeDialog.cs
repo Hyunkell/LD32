@@ -145,7 +145,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcChatSonPresident);
-		Player.Say ("My son is the president of the best country in the world, Bavaria ... I mean Germany. " +
+		Npc.Say ("My son is the president of the best country in the world, Bavaria ... I mean Germany. " +
 			"I'm so proud of Hans");
 
 		yield return End ();
@@ -159,7 +159,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcChatSonPresident);
-		Player.Say ("I like working so close to my son the Bundeskanzler of Deutschland, but I have no time anymore " +
+		Npc.Say ("I like working so close to my son the Bundeskanzler of Deutschland, but I have no time anymore " +
 			"to care about my beautiful beard.");
 
 		yield return End ();
@@ -173,7 +173,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcChatNameday);
-		Player.Say ("I have been celebrating the nameday of Hans' second name. \" Hans Blitzkrieg Müller, Buneskanzler " +
+		Npc.Say ("I have been celebrating the nameday of Hans' second name. \" Hans Blitzkrieg Müller, Buneskanzler " +
 			"of Germany\" has a nice ring to it, doesn't it?");
 
 		yield return End ();
@@ -200,7 +200,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcChatShooting);
-		Player.Say ("Shooting ... obviously. I got into it, because of the shiny Bavarian uniforms, " + 
+		Npc.Say ("Shooting ... obviously. I got into it, because of the shiny Bavarian uniforms, " + 
 		            "just like the one I'm wearing");
 
 		yield return End ();
@@ -263,7 +263,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcIntimidateKruschperl);
-		Player.Say ("You little Krüschperl will not be able to pass me.");
+		Npc.Say ("You little Krüschperl will not be able to pass me.");
 
 		yield return End ();
 	}
@@ -276,7 +276,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcIntimidateDontDrink);
-		Player.Say ("I don't drink on duty. You won't fool me!");
+		Npc.Say ("I don't drink on duty. You won't fool me!");
 
 		yield return End ();
 	}
@@ -293,9 +293,62 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcGreetingThatWouldBe);
-		Player.Say ("Oh, and that would be ... ?");
+		Npc.Say ("Oh, and that would be ... ?");
 
 		Npc.Happens (HappeningKeys.Greeting);
+
+		yield return End ();
+	}
+
+	private IEnumerator SmartLuxRules()
+	{
+		PlaySound (this.PlayerSmartLuxembourgRules);
+		Player.Say ("As soon as Luxembourg rules the world, all of Germany will be made Bavarian, that's the " +
+			"only thing the people know about Germany, anyway.");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcSmartBavarianShit);
+		Npc.Say ("Dreamy Bavarian Shit!");
+
+		yield return End ();
+	}
+
+	private IEnumerator SmartRuleLAndG()
+	{
+		PlaySound (this.PlayerSmartRuleLAndG);
+		Player.Say ("I could help your son rule Luxembourg and Germany.");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcSmartMorePower);
+		Npc.Say ("Ooooh the more power the better.");
+
+		yield return End ();
+	}
+
+	private IEnumerator SmartTrachten()
+	{
+		PlaySound (this.PlayerSmartTrachten);
+		Player.Say ("Luxembourg has a lot of beautiful Trachten-outfits.");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcSmartTrachtenmaking);
+		Npc.Say ("Nothing can beat the traditional bavarian art of Trachtenmaking!");
+
+		yield return End ();
+	}
+
+	private IEnumerator SmartWomen()
+	{
+		PlaySound (this.PlayerSmartWomen);
+		Player.Say("Luxembourg has some of the most beautiful women in the world.");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcSmartElfriede);
+		Npc.Say ("No, thanks. My beloved Elfriede is the only one for me!");
 
 		yield return End ();
 	}
