@@ -96,7 +96,8 @@ public abstract class Dialogue : MonoBehaviour
 
     protected void ShowDialogueOption( string name, Func<IEnumerator> action )
     {
-        Player.speechBubble.ShowButton( new DialogueAction( name, action ) );
+        if( !DialogueAction.IsDone( name ) )
+            Player.speechBubble.ShowButton( new DialogueAction( name, action ) );
     }
 
     protected void ShowDialogueOption<ParamType>( string name, Func<ParamType, IEnumerator> action, ParamType parameter )
@@ -109,7 +110,8 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in CharismaOptions() )
-            Player.speechBubble.ShowButton( option );
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
         Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
@@ -119,7 +121,8 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in IntimidationOptions() )
-            Player.speechBubble.ShowButton( option );
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
         Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
@@ -129,7 +132,8 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in IntelligenceOptions() )
-            Player.speechBubble.ShowButton( option );
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
         Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
@@ -139,7 +143,8 @@ public abstract class Dialogue : MonoBehaviour
         Player.speechBubble.gameObject.SetActive( true );
         Player.speechBubble.Clear();
         foreach( var option in ChatOptions() )
-            Player.speechBubble.ShowButton( option );
+            if( !DialogueAction.IsDone( option.text ) )
+                Player.speechBubble.ShowButton( option );
         Player.speechBubble.ShowButton( new DialogueAction( "Back", ShowCategoryOptions ) );
         yield break;
     }
