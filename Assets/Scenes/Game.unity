@@ -713,7 +713,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870862827}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &175235776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1039,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870862827}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &348834936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2521,6 @@ Transform:
   - {fileID: 848302541}
   - {fileID: 529746992}
   - {fileID: 2025932691}
-  - {fileID: 882913675}
   - {fileID: 328259146}
   - {fileID: 153969312}
   - {fileID: 1362358938}
@@ -2552,11 +2551,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 882913674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.225000143, y: .795004129, z: -1}
+  m_LocalPosition: {x: 1.21394062, y: .058878541, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 870862827}
-  m_RootOrder: 3
+  m_Father: {fileID: 2025932691}
+  m_RootOrder: 0
 --- !u!212 &882913676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2664,7 +2663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870862827}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!212 &921136515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4052,7 +4051,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 870862827}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &1366120343
 Prefab:
   m_ObjectHideFlags: 0
@@ -4371,7 +4370,7 @@ Transform:
   m_LocalScale: {x: .075000003, y: .075000003, z: 1}
   m_Children: []
   m_Father: {fileID: 870862827}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1605628095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,7 +5636,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.43894076, y: .736124277, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 882913675}
   m_Father: {fileID: 870862827}
   m_RootOrder: 2
 --- !u!1 &2047378340
