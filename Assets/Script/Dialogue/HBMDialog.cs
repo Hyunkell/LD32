@@ -165,8 +165,8 @@ public class HBMDialog : Dialogue
         PlaySound(this.PlayerIntelligenceTaxSystem);
         Player.Say("Ok so you ever heard about the",
             "\"Dynamic Tax System\" we use in Luxembourgh?",
-            "We take from the poor and",
-            "give it to the rich, like you");
+            "We practically take from the poor and",
+            "give it to rich people like you");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceTaxSystem);
@@ -187,12 +187,13 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcIntelligenceMilitary);
         Npc.Say("Tactics are way to complicated,",
             "I thought war should be fun.",
-            "But there are so many tanks",
+            "But there are sooo many tanks",
             "that need attention.");
         yield return WaitForInput();
 
         PlaySound(this.PlayerIntelligenceMilitarySmall);
-        Player.Say("Luxembourg only has one tank!");
+        Player.Say("Brother, well I have a treat for you:",
+            "Luxembourg only has one single tank!");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceMilitarySmall);
@@ -205,9 +206,9 @@ public class HBMDialog : Dialogue
     private IEnumerator IntelligenceWorldLeader()
     {
         PlaySound(this.PlayerIntelligenceWorldLeader);
-        Player.Say("You could be the new",
+        Player.Say("How about: You could be the new",
             "world leader and order around",
-            "all the army.");
+            "every tank on this planet!");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceWorldLeader);
@@ -219,12 +220,13 @@ public class HBMDialog : Dialogue
     private IEnumerator IntelligenceWoman()
     {
         PlaySound(this.PlayerIntelligenceWomen);
-        Player.Say("Luxembourg has the most beautiful",
+        Player.Say("So, you look like a man who has great taste in women.",
+            "And Luxemburg has the most beautiful",
             "women in the world.");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceWomen);
-        Npc.Say("No thanks, I allready got the best girlfriend.");
+        Npc.Say("No thanks, I already got the best girlfriend.");
         Npc.ModifyAffinity(-10f);
         yield return End();
     }
@@ -246,7 +248,8 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateRevealB()
     {
         PlaySound(this.PlayerIntimidateRevealB);
-        Player.Say("I know what the \"B\" Stands for");
+        Player.Say("Hey brother! I know what the \"B\"",
+            "in your name stands for");
         yield return WaitForInput();
 
         if (this.Player.HasHappend(HappeningKeys.SecondName))
@@ -254,7 +257,7 @@ public class HBMDialog : Dialogue
             PlaySound(this.NpcIntimidateRevealB);
             Npc.Say(
                 "Oh, please don't tell anyone!",
-                " They will know that Im a Nazi");
+                "They will know about my heritage!");
             Npc.ModifyAffinity(20f);
             yield return End();
         }

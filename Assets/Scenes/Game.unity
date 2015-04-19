@@ -3494,7 +3494,7 @@ MonoBehaviour:
     type: 3}
   PlayerChatFavSong: {fileID: 8300000, guid: 427199b1c0163d5448116a7d46c146c9, type: 3}
   PlayerChatFavSport: {fileID: 8300000, guid: f08764bc6cbd2df4499d3bf7668c6ee5, type: 3}
-  PlayerIntimidateRevealB: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
+  PlayerIntimidateRevealB: {fileID: 8300000, guid: 20942f515e390124cae376185354de2d,
     type: 3}
   PlayerIntimidateScratchCar: {fileID: 8300000, guid: a6c9bd39fe0d2424595a2c2b29083405,
     type: 3}
