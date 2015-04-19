@@ -14,23 +14,23 @@ public class MerkelDialogue : Dialogue
 
     protected override void StartNode()
     {
-        PlaySound( "TEST_SOUND" );
+        PlaySound("TEST_SOUND");
         Npc.Say(
             "Hi!",
             "I am ze Fräulein Merkel.",
-            "Welcome to ze Germany" );
+            "Welcome to ze Germany");
     }
 
     protected override IEnumerable<DialogueAction> CharismaOptions()
     {
         // Conditions go here
         // if( hasFlower )
-        yield return new DialogueAction( "Flower", Charisma_Flower );
+        yield return new DialogueAction("Flower", Charisma_Flower);
     }
 
     protected override IEnumerable<DialogueAction> IntimidationOptions()
     {
-        yield return new DialogueAction( "Punch", Intimidate_Punch );
+        yield return new DialogueAction("Punch", Intimidate_Punch);
     }
 
     protected override IEnumerable<DialogueAction> IntelligenceOptions()
@@ -45,61 +45,63 @@ public class MerkelDialogue : Dialogue
 
     public IEnumerator Charisma_Flower()
     {
-        PlaySound( "Merkel_Charisma_Flower_Player" );
+        PlaySound("Merkel_Charisma_Flower_Player");
         Player.Say(
             "Hello Frau Merkel!",
-            "I have bought you a flower. :D" );
+            "I have bought you a flower. :D");
 
         yield return WaitForInput();
 
-        PlaySound( "Merkel_Charisma_Flower_Merkel" );
+        PlaySound("Merkel_Charisma_Flower_Merkel");
         Npc.Say(
             "Dude wtf, I hate flowers!",
-            "Affinity -10" );
-        Npc.ModifyAffinity( -10.0f );
+            "Affinity -10");
+        Npc.ModifyAffinity(-10.0f);
 
 
         // Dialogue branching test
         yield return WaitForInput();
         ClearPlayerDialogue();
         bool test = true;
-        if( test )
+        if (test)
         {
-            ShowDialogueOption( "Test1", DialogBranchTest1 );
-            ShowDialogueOption( "Test2", DialogBranchTest2 );
+            ShowDialogueOption("Test1", DialogBranchTest1);
+            ShowDialogueOption("Test2", DialogBranchTest2);
         }
-        else
-            yield return End();
+
+        //Say some bad stuff
+        //modify affinity
+        yield return End();
     }
 
     public IEnumerator DialogBranchTest1()
     {
-        Player.Say( "Test1 Player" );
-        Npc.Say( "Test1 Npc" );
+        Player.Say("Test1 Player");
+        Npc.Say("Test1 Npc");
         yield return End();
     }
 
     public IEnumerator DialogBranchTest2()
     {
-        Player.Say( "Test2 Player" );
-        Npc.Say( "Test2 Npc" );
+        Player.Say("Test2 Player");
+        Npc.Say("Test2 Npc");
         yield return End();
     }
 
     public IEnumerator Intimidate_Punch()
     {
-        PlaySound( "Merkel_Intimidate_Punch_Player" );
+        PlaySound("Merkel_Intimidate_Punch_Player");
         Player.Say(
             "Hello Frau Merkel!",
-            "Joint my empire or I shall punch you the face!" );
+            "Joint my empire or I shall punch you the face!");
 
         yield return WaitForInput();
 
-        PlaySound( "Merkel_Intimidate_Punch_Merkel" );
+        PlaySound("Merkel_Intimidate_Punch_Merkel");
         Npc.Say(
             "omg pls no :(",
-            "Affinity +10" );
-        Npc.ModifyAffinity( +10.0f );
+            "Affinity +10");
+        Npc.ModifyAffinity(+10.0f);
 
         yield return End();
     }
