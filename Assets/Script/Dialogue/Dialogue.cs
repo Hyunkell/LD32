@@ -84,7 +84,8 @@ public abstract class Dialogue : MonoBehaviour
         }
         else
         {
-            GameObject.FindObjectOfType<SceneSelection>().ResetGame();
+            //GameObject.FindObjectOfType<SceneSelection>().ResetGame();
+            GameObject.FindObjectOfType<SceneSelection>().LoadGameOverPage();
         }
     }
 

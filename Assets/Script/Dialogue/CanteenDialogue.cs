@@ -24,9 +24,9 @@ public class CanteenDialogue : Dialogue
     public AudioClip NpcChatFavSong;
     public AudioClip NpcChatBeergarden;
     public AudioClip NpcChatLastWeekend;
-    public AudioClip NpcChatWarForDummies;
     public AudioClip NpcChatWhatsUp;
     public AudioClip NpcChatWeather;
+    public AudioClip NpcChatHowIsWork;
     #endregion
 
     #region Player Sound Files
@@ -338,7 +338,7 @@ public class CanteenDialogue : Dialogue
         Player.Say("How's your work doing?");
         yield return WaitForInput();
 
-        PlaySound(this.NpcChatWarForDummies);
+        PlaySound(this.NpcChatHowIsWork);
         Npc.Say("Not much, not much, I just saw my reflection in the kitchen sink, and I have to say, I ... am.... gorgeous. I spend hours at home to look as stunning as I do.");
         yield return End();
     }
