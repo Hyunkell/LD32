@@ -23,6 +23,8 @@ public class SceneSelection : MonoBehaviour {
 
     public void LoadCurrentScene()
     {
+        Audio.Stop();
+
         if (sceneIndex >= 0 && sceneIndex < scenes.Length)
         {
             LoadScene(scenes[sceneIndex]);
