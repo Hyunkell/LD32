@@ -12,13 +12,19 @@ public class MerkelDialogue : Dialogue
     protected override bool HasIntelligenceOptions { get { return false; } }
     protected override bool HasChatOptions { get { return false; } }
 
-    protected override void StartNode()
+    protected override void OnStart()
     {
         //PlaySound("TEST_SOUND");
         Npc.Say(
             "Hi!",
             "I am ze Fräulein Merkel.",
             "Welcome to ze Germany");
+    }
+
+    protected override IEnumerator OnSuccess()
+    {
+        Npc.Say( "TODO: OnSuccess()" );
+        yield return WaitForInput();
     }
 
     protected override IEnumerable<DialogueAction> CharismaOptions()

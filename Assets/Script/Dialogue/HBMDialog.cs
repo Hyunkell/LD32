@@ -82,11 +82,17 @@ public class HBMDialog : Dialogue
     protected override bool HasIntelligenceOptions { get { return true; } }
     protected override bool HasChatOptions { get { return this.HasHappend(HappeningKeys.Greeting); } }
 
-    protected override void StartNode()
+    protected override void OnStart()
     {
         PlaySound(this.NpcGreeting);
         Npc.Say(
             "How did you get here?");
+    }
+
+    protected override IEnumerator OnSuccess()
+    {
+        Npc.Say( "TODO: OnSuccess()" );
+        yield return WaitForInput();
     }
 
     #region Menu

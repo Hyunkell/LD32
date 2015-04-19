@@ -113,11 +113,17 @@ public class FathersOfficeDialog : Dialogue {
 	protected override bool HasIntelligenceOptions { get { return true; } }
 	protected override bool HasChatOptions { get { return this.HasHappend(HappeningKeys.Greeting); } }
 
-	protected override void StartNode()
+	protected override void OnStart()
 	{
 		PlaySound (this.NpcGreetingHaltNoEntry);
 		Npc.Say ("Halt! No entry past this point");
 	}
+
+    protected override IEnumerator OnSuccess()
+    {
+        Npc.Say( "TODO: OnSuccess()" );
+        yield return WaitForInput();
+    }
 
 	#region Menu
 	protected override IEnumerable<DialogueAction> CharismaOptions()

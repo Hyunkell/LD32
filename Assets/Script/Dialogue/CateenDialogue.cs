@@ -21,10 +21,16 @@ public class CateenDialouge : Dialogue
 
     protected override bool HasChatOptions { get { return true; } }
 
-    protected override void StartNode()
+    protected override void OnStart()
     {
         PlaySound(this.NpcGreeting);
         Npc.Say("Bretzel? Weiswurst? Sauerkraut?");
+    }
+
+    protected override IEnumerator OnSuccess()
+    {
+        Npc.Say( "TODO: OnSuccess()" );
+        yield return WaitForInput();
     }
 
     protected override System.Collections.Generic.IEnumerable<DialogueAction> CharismaOptions()

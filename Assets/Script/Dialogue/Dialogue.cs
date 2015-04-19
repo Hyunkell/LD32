@@ -14,7 +14,8 @@ public abstract class Dialogue : MonoBehaviour
     protected abstract bool HasIntelligenceOptions { get; }
     protected abstract bool HasChatOptions { get; }
 
-    protected abstract void StartNode();
+    protected abstract void OnStart();
+    protected abstract IEnumerator OnSuccess();
     protected abstract IEnumerable<DialogueAction> CharismaOptions();
     protected abstract IEnumerable<DialogueAction> IntimidationOptions();
     protected abstract IEnumerable<DialogueAction> IntelligenceOptions();
@@ -32,6 +33,7 @@ public abstract class Dialogue : MonoBehaviour
         // Check if we need to move to the next scene
         if( Npc.affinity >= 50.0f )
         {
+            yield return StartCoroutine( OnSuccess() );
             LoadNextScene();
         }
         else if( Npc.affinity <= -50.0f )
@@ -145,7 +147,7 @@ public abstract class Dialogue : MonoBehaviour
         //Player.speechBubble.gameObject.SetActive( true );
         Npc.speechBubble.gameObject.SetActive( true );
 
-        StartNode();
+        OnStart();
         ShowCategoryOptions().MoveNext();
     }
 
