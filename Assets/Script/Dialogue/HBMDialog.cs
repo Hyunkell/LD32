@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class HBMDialog : Dialogue
 {
@@ -30,6 +31,8 @@ public class HBMDialog : Dialogue
     public string NpcIntelligenceTaxSystem = string.Empty;
     public string NpcIntelligenceMilitary = string.Empty;
     public string NpcIntelligenceMilitarySmall = string.Empty;
+    public string NpcIntelligenceWomen = string.Empty;
+    public string NpcIntelligenceWorldLeader = string.Empty;
     #endregion
 
     #region Player Sound Files
@@ -55,12 +58,12 @@ public class HBMDialog : Dialogue
     public string PlayerIntelligenceTaxSystem = string.Empty;
     public string PlayerIntelligenceMilitary = string.Empty;
     public string PlayerIntelligenceMilitarySmall = string.Empty;
-    private string NpcIntelligenceWomen;
-    private string PlayerIntelligenceWomen;
-    private string PlayerIntelligenceWorldLeader;
-    private string NpcIntelligenceWorldLeader;
+    private string PlayerIntelligenceWomen = string.Empty;
+    private string PlayerIntelligenceWorldLeader = string.Empty;
+    private string[] PlayerIntimidateRevealBWrongNames = new string[5];
     #endregion
 
+    private string[] Names { get { return new string[] { "Bambi?", "Bärbel?", "Belzebub?", "Bernd?", "Brokkoli?" }; } }
 
     protected override bool HasCharismaOptions { get { return true; } }
     protected override bool HasIntimidationOptions { get { return true; } }
@@ -208,7 +211,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcIntelligenceWomen);
         Npc.Say("No thanks, I allready got the best girlfriend.");
         Npc.ModifyAffinity(-10f);
-        yield return End(); 
+        yield return End();
     }
     #endregion
 
@@ -240,18 +243,35 @@ public class HBMDialog : Dialogue
             Npc.ModifyAffinity(20f);
             yield return End();
         }
-        else
+        else if (!this.HasHappend(HappeningKeys.SaidWrongName))
         {
             PlaySound(this.NpcIntimidateBUnknown);
             Npc.Say("No, NO, that can't be true, how would you know");
+            yield return WaitForInput();
 
-            //TODO: Nameselection
-
+            this.ClearPlayerDialogue();
+            foreach (var name in this.Names)
+            {
+                ShowDialogueOption(name, IntimidateRevealWrongB, name);
+            }
+        }
+        else
+        {
             PlaySound(this.NpcIntimidateBWrong);
             Npc.Say("Mmmnnnyeaaaah... thats not it.");
             Npc.ModifyAffinity(-20f);
             yield return End();
         }
+    }
+
+    private IEnumerator IntimidateRevealWrongB(string name)
+    {
+        PlaySound(this.PlayerIntimidateRevealBWrongNames[Array.IndexOf(this.Names, name)]);
+        Player.Say(name);
+        Npc.Happens(HappeningKeys.SaidWrongName);
+        yield return WaitForInput();
+
+        //Go back to IntimidateRevealB
     }
 
     public IEnumerator IntimidateScratchCar()
