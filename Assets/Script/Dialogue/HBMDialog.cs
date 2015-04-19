@@ -61,9 +61,9 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerIntelligenceTaxSystem;
     public AudioClip PlayerIntelligenceMilitary;
     public AudioClip PlayerIntelligenceMilitarySmall;
-    private AudioClip PlayerIntelligenceWomen;
-    private AudioClip PlayerIntelligenceWorldLeader;
-    private AudioClip[] PlayerIntimidateRevealBWrongNames = new AudioClip[5];
+    public AudioClip PlayerIntelligenceWomen;
+    public AudioClip PlayerIntelligenceWorldLeader;
+    public AudioClip[] PlayerIntimidateRevealBWrongNames = new AudioClip[5];
 
 
     public AudioClip PlayerCharismaLoveYou;

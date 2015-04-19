@@ -3003,7 +3003,8 @@ MonoBehaviour:
   Npc: {fileID: 1135410819}
   NpcGreeting: {fileID: 8300000, guid: a7106e43d97cad7459201ed64d3f6a66, type: 3}
   NpcOk: {fileID: 8300000, guid: 4a6013e0eee6b8f4491b3ef11af822aa, type: 3}
-  NpcCharismaGreetingThanks: {fileID: 0}
+  NpcCharismaGreetingThanks: {fileID: 8300000, guid: 53f0b781853ef3041880b5ba9566bfb9,
+    type: 3}
   NpcCharismaWonder: {fileID: 8300000, guid: 8ad2844ca21f8ca4295554f1dd0a585f, type: 3}
   NpcCharismaMercedes: {fileID: 8300000, guid: 82bdad1a3f5d5d547857689a6a59497a, type: 3}
   NpcCharismaLoveYou: {fileID: 8300000, guid: 8fdcf1ae718239b4f92bc565888052f0, type: 3}
@@ -3011,12 +3012,13 @@ MonoBehaviour:
     type: 3}
   NpcChatWeatherMercedes: {fileID: 0}
   NpcChatMotionOfNoConfidence: {fileID: 0}
-  NpcChatWarForDummies: {fileID: 0}
-  NpcChatBeerGarden: {fileID: 0}
-  NpcChatMoney: {fileID: 0}
-  NpcChatOlympic: {fileID: 0}
-  NpcChatFather: {fileID: 0}
-  NpcIntimidateRevealB: {fileID: 8300000, guid: d39fe6cd36d1e554cb6c13ea999e9f88,
+  NpcChatWarForDummies: {fileID: 8300000, guid: 687984d3192b66444bc70a57e5061d6d,
+    type: 3}
+  NpcChatBeerGarden: {fileID: 8300000, guid: 97163f9bdd84fdf42b3e13bab6246c5f, type: 3}
+  NpcChatMoney: {fileID: 8300000, guid: 43dcdf5320ec7e0448bca02531def8be, type: 3}
+  NpcChatOlympic: {fileID: 8300000, guid: 19986a47e41557a4399b127f444b68e5, type: 3}
+  NpcChatFather: {fileID: 8300000, guid: b811e3b547d54cd40bb88fe450871d40, type: 3}
+  NpcIntimidateRevealB: {fileID: 8300000, guid: accd6d1efd04777479d920f05d7b88bc,
     type: 3}
   NpcIntimidateBUnknown: {fileID: 0}
   NpcIntimidateScratchCar: {fileID: 8300000, guid: f89a532086f37a847a226a2e2bda9afd,
@@ -3029,22 +3031,27 @@ MonoBehaviour:
   NpcIntelligenceGreetingHow: {fileID: 0}
   NpcIntelligenceTaxSystem: {fileID: 0}
   NpcIntelligenceMilitary: {fileID: 0}
-  NpcIntelligenceMilitarySmall: {fileID: 0}
-  NpcIntelligenceWomen: {fileID: 0}
-  NpcIntelligenceWorldLeader: {fileID: 0}
-  PlayerIntimidateGreeting: {fileID: 0}
+  NpcIntelligenceMilitarySmall: {fileID: 8300000, guid: 22ded8015f3efc149ab2d7c610e5cc86,
+    type: 3}
+  NpcIntelligenceWomen: {fileID: 8300000, guid: 3339726af77ac3146a8cd15cab7bf16f,
+    type: 3}
+  NpcIntelligenceWorldLeader: {fileID: 8300000, guid: c3e240db2183d4c47a6ac26867380a94,
+    type: 3}
+  PlayerIntimidateGreeting: {fileID: 8300000, guid: ae82262238bbc5d48b13507876472b6f,
+    type: 3}
   PlayerCharismaGreeting: {fileID: 8300000, guid: c5c44e9a5fb97da42861fbe95dc7f8ac,
     type: 3}
   PlayerCharismaWonder: {fileID: 8300000, guid: 8972c6ada4087cd4eb2e452dd5ad79ca,
     type: 3}
   PlayerCharismaMercedes: {fileID: 8300000, guid: 050335b74f71a044b86a3eaf66f1791d,
     type: 3}
-  PlayerChatWeather: {fileID: 0}
-  PlayerChatWhatsUp: {fileID: 0}
-  PlayerChatHowIsWork: {fileID: 0}
-  PlayerChatLastWeekend: {fileID: 0}
-  PlayerChatFavSong: {fileID: 0}
-  PlayerChatFavSport: {fileID: 0}
+  PlayerChatWeather: {fileID: 8300000, guid: 03c96ced41824db4fb25c04ebbe336ba, type: 3}
+  PlayerChatWhatsUp: {fileID: 8300000, guid: 042b6fe8d06481c4ea99e4eb3144a035, type: 3}
+  PlayerChatHowIsWork: {fileID: 8300000, guid: 6c9d03d8d57c5a54aa0930c8118dd49d, type: 3}
+  PlayerChatLastWeekend: {fileID: 8300000, guid: 6272fe5e63256964db02567ebad2de95,
+    type: 3}
+  PlayerChatFavSong: {fileID: 8300000, guid: 9d2791da6aee4564fae8d8b6215a3b8e, type: 3}
+  PlayerChatFavSport: {fileID: 8300000, guid: 8543b16662cf31346a735b6cf6ad6877, type: 3}
   PlayerIntimidateRevealB: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
     type: 3}
   PlayerIntimidateScratchCar: {fileID: 8300000, guid: a6c9bd39fe0d2424595a2c2b29083405,
@@ -3053,12 +3060,26 @@ MonoBehaviour:
     type: 3}
   PlayerIntimidateFeedDog: {fileID: 8300000, guid: 06e40cfd2e85c144d86be1b65462b09f,
     type: 3}
-  PlayerIntelligenceGreeting: {fileID: 0}
-  PlayerIntelligenceTaxSystem: {fileID: 0}
+  PlayerIntelligenceGreeting: {fileID: 8300000, guid: fc33d1eb11f0b5b408d5b274f0f1ddcc,
+    type: 3}
+  PlayerIntelligenceTaxSystem: {fileID: 8300000, guid: 1b3bf3b740e667b47aefa769e6377ed3,
+    type: 3}
   PlayerIntelligenceMilitary: {fileID: 8300000, guid: b34c1667ec721a64eafc649b1dbbd668,
     type: 3}
-  PlayerIntelligenceMilitarySmall: {fileID: 0}
-  PlayerCharismaLoveYou: {fileID: 0}
+  PlayerIntelligenceMilitarySmall: {fileID: 8300000, guid: d88693be50396044bb09a5f1458d0307,
+    type: 3}
+  PlayerIntelligenceWomen: {fileID: 8300000, guid: c4ea987bf44d6124bb7d4a67cdc8cca3,
+    type: 3}
+  PlayerIntelligenceWorldLeader: {fileID: 8300000, guid: f264ffc85efba1f47aad60a945f80409,
+    type: 3}
+  PlayerIntimidateRevealBWrongNames:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PlayerCharismaLoveYou: {fileID: 8300000, guid: 1563d49d772155a42970e8f7f6c644d0,
+    type: 3}
   PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
     type: 3}
   PlayerChatFather: {fileID: 0}
