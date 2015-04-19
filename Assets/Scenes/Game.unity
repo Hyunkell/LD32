@@ -2056,6 +2056,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+      propertyPath: m_Name
+      value: TitleScreen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
   m_IsPrefabParent: 0
