@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class SceneSelection : MonoBehaviour {
 
@@ -14,7 +15,13 @@ public class SceneSelection : MonoBehaviour {
         LoadCurrentScene();
 	}
 
-    private void LoadCurrentScene()
+    public void ResetGame()
+    {
+        Debug.LogWarning( "TODO: Define game over screen" );
+        Application.LoadLevel( Application.loadedLevel );
+    }
+
+    public void LoadCurrentScene()
     {
         if (sceneIndex >= 0 && sceneIndex < scenes.Length)
         {

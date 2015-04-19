@@ -48,8 +48,8 @@ public abstract class Dialogue : MonoBehaviour
                 ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, DisableIntimidateAbility );
             if( Player.hasIntelligenceAbility )
                 ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, DisableIntelligenceAblility );
-            if( Player.hasChatAbility )
-                ShowCategoryOption( Player.speechBubble._iconChatPrefab, DisableChatAbility );
+            //if( Player.hasChatAbility )
+            //    ShowCategoryOption( Player.speechBubble._iconChatPrefab, DisableChatAbility );
 
             // TODO: the player needs to know that he is loosing an ability
             // Just tint the buttons red for now
@@ -71,33 +71,53 @@ public abstract class Dialogue : MonoBehaviour
         Player.GetComponent<Movement>().enabled = true;
     }
 
+    void ReloadScene()
+    {
+        // Make sure the player still has abilities, otherwise it's game over
+        if( Player.hasCharismaAbility || Player.hasIntimidateAbility || Player.hasIntelligenceAbility )
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadCurrentScene();
+            DialogueAction.Reset();
+            Npc.Reset();
+            Npc.speechBubble.Clear();
+            Npc.speechBubble.Hide();
+            Player.speechBubble.Clear();
+            Player.speechBubble.Hide();
+            Player.GetComponent<Movement>().enabled = true;
+        }
+        else
+        {
+            GameObject.FindObjectOfType<SceneSelection>().ResetGame();
+        }
+    }
+
     private IEnumerator DisableCharmAbility()
     {
         Player.hasCharismaAbility = false;
-        LoadNextScene();
+        ReloadScene();
         yield break;
     }
 
     private IEnumerator DisableIntimidateAbility()
     {
         Player.hasIntimidateAbility = false;
-        LoadNextScene();
+        ReloadScene();
         yield break;
     }
 
     private IEnumerator DisableIntelligenceAblility()
     {
         Player.hasIntelligenceAbility = false;
-        LoadNextScene();
+        ReloadScene();
         yield break;
     }
 
-    private IEnumerator DisableChatAbility()
-    {
-        Player.hasChatAbility = false;
-        LoadNextScene();
-        yield break;
-    }
+//     private IEnumerator DisableChatAbility()
+//     {
+//         Player.hasChatAbility = false;
+//         LoadNextScene();
+//         yield break;
+//     }
 
     protected Coroutine WaitForInput()
     {

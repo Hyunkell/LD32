@@ -37,4 +37,10 @@ public class Actor : MonoBehaviour
     {
         this.happenings.Add(key);
     }
+
+    public void Reset()
+    {
+        happenings.Clear();
+        affinity = 0;
+    }
 }
