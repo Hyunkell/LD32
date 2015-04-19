@@ -1978,7 +1978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &766698286
 Transform:
   m_ObjectHideFlags: 0
@@ -3010,6 +3010,17 @@ Animator:
 Transform:
   m_PrefabParentObject: {fileID: 479588, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
   m_PrefabInternal: {fileID: 1135410816}
+--- !u!114 &1135410827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1135410818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045d989a9693d4505b08811c180a7fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1149850634
 GameObject:
   m_ObjectHideFlags: 0
