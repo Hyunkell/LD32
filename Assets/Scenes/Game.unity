@@ -442,12 +442,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 287545727}
   scenes:
-  - {fileID: 386013940}
-  - {fileID: 401983222}
-  - {fileID: 2115946743}
-  - {fileID: 403651246}
-  - {fileID: 1715500862}
-  - {fileID: 1663730977}
+  - {fileID: 803118151}
+  - {fileID: 923781124}
+  - {fileID: 16494066}
+  - {fileID: 547503871}
+  - {fileID: 1768324368}
+  - {fileID: 372209302}
   gameOverScene: {fileID: 706962466}
   scenesBeforeLeave: []
 --- !u!82 &131340432
@@ -1948,9 +1948,9 @@ MonoBehaviour:
   NpcChatFavSong: {fileID: 8300000, guid: 4575355246767cd4d81b0f1c341ebc07, type: 3}
   NpcChatBeergarden: {fileID: 8300000, guid: 4575355246767cd4d81b0f1c341ebc07, type: 3}
   NpcChatLastWeekend: {fileID: 8300000, guid: 658af0367dfc6604a80952d7bd1e8a08, type: 3}
-  NpcChatWarForDummies: {fileID: 0}
   NpcChatWhatsUp: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
-  NpcChatWeather: {fileID: 0}
+  NpcChatWeather: {fileID: 8300000, guid: 023e879e3cf254846b1242c6a63f076d, type: 3}
+  NpcChatHowIsWork: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
   PlayerGreetingSauerkraut: {fileID: 0}
   PlayerGreetingPretzel: {fileID: 0}
   "PlayerGreetingWei\xDFwurst": {fileID: 0}
@@ -3651,6 +3651,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ca3766b2ce458d4eb180cb55bc180bb, type: 3}
   - {fileID: 21300000, guid: a251f46f097aa2f4f8ab50dd5fe98a2e, type: 3}
   - {fileID: 21300000, guid: 50c192121b1760849a21839034d3412b, type: 3}
+  delaySeconds:
+  - 5
+  - 4
+  - 6
+  - 10
+  - 8
+  - 5
+  - 6
+  - 17
+  introSound: {fileID: 8300000, guid: 52ccc11f1fa6e1e42a4e286122dad3d3, type: 3}
   sceneLoader: {fileID: 131340425}
 --- !u!114 &1052347306
 MonoBehaviour:
