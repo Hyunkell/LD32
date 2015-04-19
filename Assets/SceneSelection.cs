@@ -6,7 +6,7 @@ public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
+    private string[] scenes = new string[] { "Intro", "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -47,13 +47,27 @@ public class SceneSelection : MonoBehaviour {
     private void LoadScene(string sceneName)
     {
         var scene = GameObject.Find(sceneName);
+
+		//Dirty but works
+		if (sceneName == "TheChefOffice") {
+			var animator = scene.GetComponentInChildren<Animator>();
+			animator.SetBool("standUp", true);
+			animator.Play("Sitting");
+		}
+
         this.gameObject.transform.position = new Vector3(scene.transform.position.x, scene.transform.position.y, this.gameObject.transform.position.z);
 		var spriteRenderers = scene.GetComponentsInChildren<SpriteRenderer> ();
 		foreach (var renderer in spriteRenderers) {
 			if(renderer.gameObject.name == "SpawnPoint"){
 				character.transform.position = renderer.gameObject.transform.position;
                 character.GetComponent<Movement>().enabled = true;
-                character.GetComponentInChildren<SpeechBubble>().Hide();
+                //character.GetComponentInChildren<SpeechBubble>().Hide();
+				var speechbubbles = scene.GetComponentsInChildren<SpeechBubble>();
+
+				foreach(var bubble in speechbubbles)
+				{
+					bubble.Hide();
+				}
 				return;
 			}
 		}

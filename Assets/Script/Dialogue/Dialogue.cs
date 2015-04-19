@@ -27,10 +27,7 @@ public abstract class Dialogue : MonoBehaviour
 
     IEnumerator WaitAndEnd()
     {
-        // TODO: Fix this clusterfuck
         yield return WaitForInput();
-        yield return WaitForInput();
-        //Npc.speechBubble.Clear();
 
         // Check if we need to move to the next scene
         if( Npc.affinity >= 50.0f )
@@ -124,10 +121,17 @@ public abstract class Dialogue : MonoBehaviour
         return StartCoroutine( WaitForInputEnumerator() );
     }
 
+    // Fix for WaitForInput() being able to trigger twice per frame
+    bool wasInputHandled = false;
+    void Update() { wasInputHandled = false; }
+
     IEnumerator WaitForInputEnumerator()
     {
-        while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
+        while( wasInputHandled || !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
+
+        // Fix for WaitForInput() being able to trigger twice per frame
+        wasInputHandled = true;
     }
 
     void OnMouseDown()
