@@ -49,4 +49,9 @@ public class SceneSelection : MonoBehaviour {
 			}
 		}
     }
+
+	public void QuitApp()
+	{
+		Application.Quit ();
+	}
 }
