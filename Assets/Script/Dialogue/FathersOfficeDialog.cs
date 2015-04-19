@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FathersOfficeDialog : Dialogue {
 
@@ -116,6 +118,28 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcGreetingHaltNoEntry);
 		Npc.Say ("Halt! No entry past this point");
 	}
+
+	#region Menu
+	protected override IEnumerable<DialogueAction> CharismaOptions()
+	{
+		yield return new DialogueAction ("Dummy", CharmeGreeting);
+	}
+	
+	protected override IEnumerable<DialogueAction> IntimidationOptions()
+	{
+		yield return new DialogueAction ("Dummy", CharmeGreeting);
+	}
+	
+	protected override IEnumerable<DialogueAction> IntelligenceOptions()
+	{
+		yield return new DialogueAction ("Dummy", CharmeGreeting);
+	}
+	
+	protected override IEnumerable<DialogueAction> ChatOptions()
+	{
+		yield return new DialogueAction ("Dummy", CharmeGreeting);
+	}
+	#endregion
 
 	#endregion
 
@@ -357,7 +381,7 @@ public class FathersOfficeDialog : Dialogue {
 
 	#region CharmeOptions
 
-	private IEnumerable CharmeGreeting()
+	private IEnumerator CharmeGreeting()
 	{
 		PlaySound (this.PlayerGreetingCompetent);
 		Player.Say ("That's why you're such a competent guard. Stopping all the people ...");

@@ -438,13 +438,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 287545727}
   scenes:
-  - {fileID: 386013940}
-  - {fileID: 401983222}
-  - {fileID: 2115946743}
-  - {fileID: 403651246}
-  - {fileID: 1715500862}
-  - {fileID: 1663730977}
-  gameOverScene: {fileID: 706962466}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameOverScene: {fileID: 0}
   scenesBeforeLeave: []
 --- !u!82 &131340432
 AudioSource:
@@ -1680,18 +1680,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300030, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &386013940 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 1093050732}
---- !u!1 &401983222 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 806821440}
---- !u!1 &403651246 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 134408739}
 --- !u!1001 &440558269
 Prefab:
   m_ObjectHideFlags: 0
@@ -3538,16 +3526,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ca3766b2ce458d4eb180cb55bc180bb, type: 3}
   - {fileID: 21300000, guid: a251f46f097aa2f4f8ab50dd5fe98a2e, type: 3}
   - {fileID: 21300000, guid: 50c192121b1760849a21839034d3412b, type: 3}
-  delaySeconds:
-  - 5
-  - 4
-  - 6
-  - 10
-  - 8
-  - 5
-  - 6
-  - 17
-  introSound: {fileID: 8300000, guid: 52ccc11f1fa6e1e42a4e286122dad3d3, type: 3}
+  delaySeconds: []
+  introSound: {fileID: 0}
   sceneLoader: {fileID: 131340425}
 --- !u!114 &1052347306
 MonoBehaviour:
@@ -3925,6 +3905,10 @@ MonoBehaviour:
     type: 3}
   PlayerCharismaMercedes: {fileID: 8300000, guid: 050335b74f71a044b86a3eaf66f1791d,
     type: 3}
+  PlayerCharismaLoveYou: {fileID: 8300000, guid: 1563d49d772155a42970e8f7f6c644d0,
+    type: 3}
+  PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
+    type: 3}
   PlayerChatWeather: {fileID: 8300000, guid: ad17a382d820473409e87c4da43a3d28, type: 3}
   PlayerChatWhatsUp: {fileID: 8300000, guid: b4ff222d8b55f904bb5fca444e06d1c7, type: 3}
   PlayerChatHowIsWork: {fileID: 8300000, guid: 1ee8cb81ef594fe44a0d591cdccb88bb, type: 3}
@@ -3932,6 +3916,7 @@ MonoBehaviour:
     type: 3}
   PlayerChatFavSong: {fileID: 8300000, guid: 427199b1c0163d5448116a7d46c146c9, type: 3}
   PlayerChatFavSport: {fileID: 8300000, guid: f08764bc6cbd2df4499d3bf7668c6ee5, type: 3}
+  PlayerChatFather: {fileID: 8300000, guid: 76dec721b2537ab489f217f00596038b, type: 3}
   PlayerIntimidateRevealB: {fileID: 8300000, guid: 20942f515e390124cae376185354de2d,
     type: 3}
   PlayerIntimidateScratchCar: {fileID: 8300000, guid: a6c9bd39fe0d2424595a2c2b29083405,
@@ -3954,11 +3939,6 @@ MonoBehaviour:
     type: 3}
   PlayerIntimidateRevealBWrongNames: {fileID: 8300000, guid: cc8db5bf910135a488d4713fa657f42f,
     type: 3}
-  PlayerCharismaLoveYou: {fileID: 8300000, guid: 1563d49d772155a42970e8f7f6c644d0,
-    type: 3}
-  PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
-    type: 3}
-  PlayerChatFather: {fileID: 8300000, guid: 76dec721b2537ab489f217f00596038b, type: 3}
 --- !u!1 &1135410821 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 153248, guid: a12ecfcecf134461a9b453e7114d56f8, type: 2}
@@ -5111,10 +5091,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: d9ae5631d2e20445d92a1c4a9771de35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1663730977 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 783523134}
 --- !u!1 &1671609682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5434,10 +5410,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704898595}
---- !u!1 &1715500862 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 743037436}
 --- !u!1 &1742796845
 GameObject:
   m_ObjectHideFlags: 0
@@ -6427,10 +6399,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22451726, guid: 372f8dcc06bc7a54aaa3763756f5dab6,
     type: 2}
   m_PrefabInternal: {fileID: 1008324656}
---- !u!1 &2115946743 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
-  m_PrefabInternal: {fileID: 685128321}
 --- !u!1 &2117960762
 GameObject:
   m_ObjectHideFlags: 0
