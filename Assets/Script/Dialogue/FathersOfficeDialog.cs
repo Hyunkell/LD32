@@ -122,7 +122,11 @@ public class FathersOfficeDialog : Dialogue {
 	#region Menu
 	protected override IEnumerable<DialogueAction> CharismaOptions()
 	{
-		yield return new DialogueAction ("Dummy", CharmeGreeting);
+		if (!this.HasHappend (HappeningKeys.Greeting)) {
+			yield return new DialogueAction ("You're so competent", CharmeGreeting);
+		} else {
+
+		}
 	}
 	
 	protected override IEnumerable<DialogueAction> IntimidationOptions()
@@ -392,6 +396,58 @@ public class FathersOfficeDialog : Dialogue {
 		Npc.Say ("*shy coughing*");
 
 		Npc.Happens (HappeningKeys.Greeting);
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmeBeard()
+	{
+		PlaySound (this.PlayerCharmeBeard);
+		Player.Say ("I really like your beard! You must have put a lot of effort into it!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeBestBeard);
+		Npc.Say ("Thank you! Last year, it won the \"best beard of the Oktoberfest\" award.");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmGun()
+	{
+		PlaySound (this.PlayerCharmeGun);
+		Player.Say ("I really like your gun! I bet you're a good shooter!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeSchuetzenkoenig);
+		Npc.Say ("Thanks, I've practiced a lot and was Schützenkönig of my home village 5 times in a row!");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmPretzel()
+	{
+		PlaySound (this.PlayerCharmePretzel);
+		Player.Say ("I brought a pretzel from Luxembourg. You want a bite?");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeBrezn);
+		Npc.Say ("How dare you mock the traditional Brezn-making with your dry lump of dough?");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmCap()
+	{
+		PlaySound (this.PlayerCharmeNiceCap);
+		Player.Say ("Hey, nice cap you've got there! And that fluffy cotton ball on top of it is really cute!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeGamsbart);
+		Npc.Say ("*gasp* That's traditional bavarian Trachtenhut with a Gamsbart, you lowly philistine!");
 
 		yield return End ();
 	}
