@@ -3110,6 +3110,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ca3766b2ce458d4eb180cb55bc180bb, type: 3}
   - {fileID: 21300000, guid: a251f46f097aa2f4f8ab50dd5fe98a2e, type: 3}
   - {fileID: 21300000, guid: 50c192121b1760849a21839034d3412b, type: 3}
+  delaySeconds:
+  - 5
+  - 4
+  - 6
+  - 10
+  - 8
+  - 5
+  - 6
+  - 17
+  introSound: {fileID: 8300000, guid: 52ccc11f1fa6e1e42a4e286122dad3d3, type: 3}
   sceneLoader: {fileID: 131340425}
 --- !u!114 &1052347306
 MonoBehaviour:
