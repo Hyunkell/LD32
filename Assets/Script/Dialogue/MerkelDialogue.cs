@@ -14,7 +14,7 @@ public class MerkelDialogue : Dialogue
 
     protected override void StartNode()
     {
-        PlaySound("TEST_SOUND");
+        //PlaySound("TEST_SOUND");
         Npc.Say(
             "Hi!",
             "I am ze Fräulein Merkel.",
@@ -43,16 +43,18 @@ public class MerkelDialogue : Dialogue
         return Enumerable.Empty<DialogueAction>();
     }
 
+    public AudioClip _audioMercedesMonolog;
+
     public IEnumerator Charisma_Flower()
     {
-        PlaySound("Merkel_Charisma_Flower_Player");
+        PlaySound( _audioMercedesMonolog );
         Player.Say(
             "Hello Frau Merkel!",
             "I have bought you a flower. :D");
 
         yield return WaitForInput();
 
-        PlaySound("Merkel_Charisma_Flower_Merkel");
+        //PlaySound("Merkel_Charisma_Flower_Merkel");
         Npc.Say(
             "Dude wtf, I hate flowers!",
             "Affinity -10");
@@ -90,14 +92,14 @@ public class MerkelDialogue : Dialogue
 
     public IEnumerator Intimidate_Punch()
     {
-        PlaySound("Merkel_Intimidate_Punch_Player");
+        //PlaySound("Merkel_Intimidate_Punch_Player");
         Player.Say(
             "Hello Frau Merkel!",
             "Joint my empire or I shall punch you the face!");
 
         yield return WaitForInput();
 
-        PlaySound("Merkel_Intimidate_Punch_Merkel");
+        //PlaySound("Merkel_Intimidate_Punch_Merkel");
         Npc.Say(
             "omg pls no :(",
             "Affinity +10");

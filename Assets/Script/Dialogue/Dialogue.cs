@@ -46,13 +46,15 @@ public abstract class Dialogue : MonoBehaviour
 
     protected Coroutine WaitForInput()
     {
-        return StartCoroutine( WaitForSpaceKey() );
+        return StartCoroutine( WaitForInputEnumerator() );
     }
 
-    IEnumerator WaitForSpaceKey()
+    IEnumerator WaitForInputEnumerator()
     {
         while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
+
+        Audio.Stop();
     }
 
     void OnMouseDown()
@@ -149,9 +151,9 @@ public abstract class Dialogue : MonoBehaviour
         yield break;
     }
 
-    protected void PlaySound( string fileName )
+    protected void PlaySound( AudioClip clip )
     {
-
+        Audio.Play( clip );
     }
 
     protected bool HasHappend( string key )
