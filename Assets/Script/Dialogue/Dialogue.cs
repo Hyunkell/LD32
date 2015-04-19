@@ -30,7 +30,7 @@ public abstract class Dialogue : MonoBehaviour
         // TODO: Fix this clusterfuck
         yield return WaitForInput();
         yield return WaitForInput();
-        Npc.speechBubble.Clear();
+        //Npc.speechBubble.Clear();
 
         // Check if we need to move to the next scene
         if( Npc.affinity >= 50.0f )
@@ -128,8 +128,6 @@ public abstract class Dialogue : MonoBehaviour
     {
         while( !( Input.GetKeyDown( KeyCode.Space ) || Input.GetMouseButtonDown( 0 ) ) )
             yield return null;
-
-        Audio.Stop();
     }
 
     void OnMouseDown()
