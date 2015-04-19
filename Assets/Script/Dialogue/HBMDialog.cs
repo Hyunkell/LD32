@@ -151,7 +151,7 @@ public class HBMDialog : Dialogue
     private IEnumerator IntelligenceGreeting()
     {
         PlaySound(this.PlayerIntelligenceGreeting);
-        Player.Say("I am quallified to help you.");
+        Player.Say("I am qualified to help you.");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceGreetingHow);
@@ -326,7 +326,7 @@ public class HBMDialog : Dialogue
     public IEnumerator CharismaGreeting()
     {
         PlaySound(this.PlayerCharismaGreeting);
-        Player.Say("I just wanted to thank you for doing an amazing job, ruling Germany.");
+        Player.Say("I wanted to thank you for doing such an amazing job, ruling Germany.");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaGreetingThanks);
@@ -363,7 +363,7 @@ public class HBMDialog : Dialogue
     public IEnumerator CharismaLoveYou()
     {
         PlaySound(this.PlayerCharismaLoveYou);
-        Player.Say("I am in love with you!");
+        Player.Say("You gimme the funk, brother! How about some hot man on man action? Mmmh, I would like that...");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaLoveYou);
