@@ -3900,7 +3900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Merkel
   speechBubble: {fileID: 1485351708}
-  affinity: -42.2000008
+  affinity: 0
   hasCharismaAbility: 1
   hasIntimidateAbility: 1
   hasIntelligenceAbility: 1
