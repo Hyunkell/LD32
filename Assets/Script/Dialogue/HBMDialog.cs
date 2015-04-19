@@ -44,6 +44,8 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerCharismaGreeting;
     public AudioClip PlayerCharismaWonder;
     public AudioClip PlayerCharismaMercedes;
+    public AudioClip PlayerCharismaLoveYou;
+    public AudioClip PlayerCharismaPanzerGeneral;
 
     public AudioClip PlayerChatWeather;
     public AudioClip PlayerChatWhatsUp;
@@ -51,6 +53,7 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerChatLastWeekend;
     public AudioClip PlayerChatFavSong;
     public AudioClip PlayerChatFavSport;
+    public AudioClip PlayerChatFather;
 
     public AudioClip PlayerIntimidateRevealB;
     public AudioClip PlayerIntimidateScratchCar;
@@ -66,9 +69,6 @@ public class HBMDialog : Dialogue
     public AudioClip PlayerIntimidateRevealBWrongNames;
 
 
-    public AudioClip PlayerCharismaLoveYou;
-    public AudioClip PlayerCharismaPanzerGeneral;
-    public AudioClip PlayerChatFather;
     #endregion
 
     private string[] mercedesMonolog = new string[] {
@@ -165,8 +165,8 @@ public class HBMDialog : Dialogue
         PlaySound(this.PlayerIntelligenceTaxSystem);
         Player.Say("Ok so you ever heard about the",
             "\"Dynamic Tax System\" we use in Luxembourgh?",
-            "We take from the poor and",
-            "give it to the rich, like you");
+            "We practically take from the poor and",
+            "give it to rich people like you");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceTaxSystem);
@@ -187,12 +187,13 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcIntelligenceMilitary);
         Npc.Say("Tactics are way to complicated,",
             "I thought war should be fun.",
-            "But there are so many tanks",
+            "But there are sooo many tanks",
             "that need attention.");
         yield return WaitForInput();
 
         PlaySound(this.PlayerIntelligenceMilitarySmall);
-        Player.Say("Luxembourg only has one tank!");
+        Player.Say("Brother, well I have a treat for you:",
+            "Luxembourg only has one single tank!");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceMilitarySmall);
@@ -205,9 +206,9 @@ public class HBMDialog : Dialogue
     private IEnumerator IntelligenceWorldLeader()
     {
         PlaySound(this.PlayerIntelligenceWorldLeader);
-        Player.Say("You could be the new",
+        Player.Say("How about: You could be the new",
             "world leader and order around",
-            "all the army.");
+            "every tank on this planet!");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceWorldLeader);
@@ -219,12 +220,13 @@ public class HBMDialog : Dialogue
     private IEnumerator IntelligenceWoman()
     {
         PlaySound(this.PlayerIntelligenceWomen);
-        Player.Say("Luxembourg has the most beautiful",
+        Player.Say("So, you look like a man who has great taste in women.",
+            "And Luxemburg has the most beautiful",
             "women in the world.");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceWomen);
-        Npc.Say("No thanks, I allready got the best girlfriend.");
+        Npc.Say("No thanks, I already got the best girlfriend.");
         Npc.ModifyAffinity(-10f);
         yield return End();
     }
@@ -246,7 +248,8 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateRevealB()
     {
         PlaySound(this.PlayerIntimidateRevealB);
-        Player.Say("I know what the \"B\" Stands for");
+        Player.Say("Hey brother! I know what the \"B\"",
+            "in your name stands for");
         yield return WaitForInput();
 
         if (this.Player.HasHappend(HappeningKeys.SecondName))
@@ -254,7 +257,7 @@ public class HBMDialog : Dialogue
             PlaySound(this.NpcIntimidateRevealB);
             Npc.Say(
                 "Oh, please don't tell anyone!",
-                " They will know that Im a Nazi");
+                "They will know about my heritage!");
             Npc.ModifyAffinity(20f);
             yield return End();
         }
@@ -265,7 +268,11 @@ public class HBMDialog : Dialogue
             yield return WaitForInput();
 
             PlaySound(this.PlayerIntimidateRevealBWrongNames);
-            Player.Say("blablabla");
+            Player.Say("I think it's Bambi!",
+                "Oh, no, no no: Bärbel!",
+                "It MUST be Beelzebub!",
+                "BERND! I'm sure, it's Bernd.",
+                "...or... Broccoli?");
             Npc.Happens(HappeningKeys.SaidWrongName);
             yield return WaitForInput();
 
@@ -281,7 +288,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.PlayerIntimidateScratchCar);
         Player.Say(
             "Shiny Mercedes you got out there, ",
-            "would be a shame if somehting were to happen");
+            "would be a shame if something were to happen to it...");
 
         yield return WaitForInput();
 
@@ -295,14 +302,15 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateHurtFather()
     {
         PlaySound(this.PlayerIntimidateHurtFather);
-        Player.Say("I will hurt your father ... bad!");
+        Player.Say("I will hurt your father ... bad!",
+            "Real bad! Mhhhh...");
 
         yield return WaitForInput();
 
         PlaySound(this.NpcIntimidateHurtFather);
         Npc.Say("You can't hurt him, ",
-            "he was Schützenmeister for five years in a row.",
-            "And I don't even like him anyway.");
+            "he was Schützenmeister five years in a row!",
+            "And I don't... even... like him.");
         Npc.ModifyAffinity(-10f);
 
         yield return End();
@@ -311,7 +319,7 @@ public class HBMDialog : Dialogue
     public IEnumerator IntimidateFeedDog()
     {
         PlaySound(this.PlayerIntimidateFeedDog);
-        Player.Say("I will give your dog treats till",
+        Player.Say("I will give your dog treats, until",
             "he is the fattest dog in the world!");
         yield return WaitForInput();
 
@@ -363,7 +371,9 @@ public class HBMDialog : Dialogue
     public IEnumerator CharismaLoveYou()
     {
         PlaySound(this.PlayerCharismaLoveYou);
-        Player.Say("You gimme the funk, brother! How about some hot man on man action? Mmmh, I would like that...");
+        Player.Say("You gimme the funk, brother!",
+            "How about some hot man on man action?",
+            "Mmmh, I would like that...");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaLoveYou);
@@ -426,9 +436,9 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatWarForDummies);
-        Npc.Say("I'm trying to Read \"War for Dummies\".",
-            "Those military stategies are realy complicated!" +
-            "Did you know that Germany has more than 1500 Tanks," +
+        Npc.Say("I'm trying to read \"War for Dummies\".",
+            "Those military stategies are really complicated!",
+            "Did you know that Germany has more than 1500 Tanks,",
             "and they all want to be commanded.");
 
         yield return End();
@@ -441,8 +451,8 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatBeerGarden);
-        Npc.Say("I've visited the beer garden" +
-            "with my girlfriend. We had Weiswurst and Sauerkraut.");
+        Npc.Say("I've visited the beer garden",
+            "with my girlfriend. We had Weißwurst and Sauerkraut.");
 
         yield return End();
     }
@@ -466,13 +476,13 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatOlympic);
-        Npc.Say("I don't like the Olympic Games," +
-            "they're so expensive." +
-            "I'm allready paying such a hugh amount" +
-            "of taxes and all is going to this useless sports!" +
-            "Did you know, that the more money you have," +
-            "the more money you have to give to the tax office," +
-            "even I, as president.");
+        Npc.Say("I don't like the Olympic Games,",
+            "they're so expensive.",
+            "I'm already paying such a huge amount",
+            "of taxes and all is going to these useless sports!",
+            "Did you know, that the more money you have,",
+            "the more you have to give to the tax office?",
+            "Even I, as president...");
 
         yield return End();
     }
@@ -484,10 +494,10 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatFather);
-        Npc.Say("Mwuhaha I made him my little bodyguard," +
-            "I never liked him, he was never there when" +
-            "I needed him, always at the Schützenverein." +
-            "Suddenly when I was voted Bundeskanzler," +
+        Npc.Say("Mwuhaha I made him my little bodyguard,",
+            "I never liked him, he was never there when",
+            "I needed him. Always at the Schützenverein!",
+            "Suddenly, when I was voted Bundeskanzler,",
             "he wanted to be there for me.");
         yield return End();
     }
