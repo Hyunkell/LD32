@@ -3047,7 +3047,7 @@ MonoBehaviour:
     type: 3}
   NpcIntelligenceTaxSystem: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
     type: 3}
-  NpcIntelligenceMilitary: {fileID: 8300000, guid: 156b77c36d8f2db40bc8791952036b7f,
+  NpcIntelligenceMilitary: {fileID: 8300000, guid: bbaccc6f1876fbe4ba996917cf436354,
     type: 3}
   NpcIntelligenceMilitarySmall: {fileID: 8300000, guid: 22ded8015f3efc149ab2d7c610e5cc86,
     type: 3}

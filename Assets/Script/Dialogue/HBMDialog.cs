@@ -265,7 +265,7 @@ public class HBMDialog : Dialogue
             yield return WaitForInput();
 
             PlaySound(this.PlayerIntimidateRevealBWrongNames);
-            Player.Say(name);
+            Player.Say("blablabla");
             Npc.Happens(HappeningKeys.SaidWrongName);
             yield return WaitForInput();
 
