@@ -371,7 +371,9 @@ public class HBMDialog : Dialogue
     public IEnumerator CharismaLoveYou()
     {
         PlaySound(this.PlayerCharismaLoveYou);
-        Player.Say("You gimme the funk, brother! How about some hot man on man action? Mmmh, I would like that...");
+        Player.Say("You gimme the funk, brother!",
+            "How about some hot man on man action?",
+            "Mmmh, I would like that...");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaLoveYou);
@@ -434,9 +436,9 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatWarForDummies);
-        Npc.Say("I'm trying to Read \"War for Dummies\".",
-            "Those military stategies are realy complicated!" +
-            "Did you know that Germany has more than 1500 Tanks," +
+        Npc.Say("I'm trying to read \"War for Dummies\".",
+            "Those military stategies are really complicated!",
+            "Did you know that Germany has more than 1500 Tanks,",
             "and they all want to be commanded.");
 
         yield return End();
@@ -449,8 +451,8 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatBeerGarden);
-        Npc.Say("I've visited the beer garden" +
-            "with my girlfriend. We had Weiswurst and Sauerkraut.");
+        Npc.Say("I've visited the beer garden",
+            "with my girlfriend. We had Weißwurst and Sauerkraut.");
 
         yield return End();
     }
@@ -474,13 +476,13 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatOlympic);
-        Npc.Say("I don't like the Olympic Games," +
-            "they're so expensive." +
-            "I'm allready paying such a hugh amount" +
-            "of taxes and all is going to this useless sports!" +
-            "Did you know, that the more money you have," +
-            "the more money you have to give to the tax office," +
-            "even I, as president.");
+        Npc.Say("I don't like the Olympic Games,",
+            "they're so expensive.",
+            "I'm already paying such a huge amount",
+            "of taxes and all is going to these useless sports!",
+            "Did you know, that the more money you have,",
+            "the more you have to give to the tax office?",
+            "Even I, as president...");
 
         yield return End();
     }
@@ -492,10 +494,10 @@ public class HBMDialog : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatFather);
-        Npc.Say("Mwuhaha I made him my little bodyguard," +
-            "I never liked him, he was never there when" +
-            "I needed him, always at the Schützenverein." +
-            "Suddenly when I was voted Bundeskanzler," +
+        Npc.Say("Mwuhaha I made him my little bodyguard,",
+            "I never liked him, he was never there when",
+            "I needed him. Always at the Schützenverein!",
+            "Suddenly, when I was voted Bundeskanzler,",
             "he wanted to be there for me.");
         yield return End();
     }
