@@ -108,10 +108,10 @@ public class FathersOfficeDialog : Dialogue {
 
 	#region Collections of dialog options
 
-	private IEnumerable<DialogueAction> _intelligenceOptions;
-	private IEnumerable<DialogueAction> _intimidateOptions;
-	private IEnumerable<DialogueAction> _charismaOptions;
-	private IEnumerable<DialogueAction> _chatOptions;
+	private IList<DialogueAction> _intelligenceOptions;
+	private IList<DialogueAction> _intimidateOptions;
+	private IList<DialogueAction> _charismaOptions;
+	private IList<DialogueAction> _chatOptions;
 
 	#endregion
 
@@ -485,6 +485,21 @@ public class FathersOfficeDialog : Dialogue {
 
 	#endregion
 
+	//TODO Put this in parent class or helper class and make this generic
+	public static IList<DialogueAction> ShuffleCollection(IList<DialogueAction> dialogueOptions)
+	{
+		IList<DialogueAction> shuffeledList = new List<DialogueAction> ();
+
+		while (dialogueOptions.Count > 0) 
+		{
+			var index = UnityEngine.Random.Range(0, dialogueOptions.Count-1);
+			shuffeledList.Add(dialogueOptions[index]);
+			dialogueOptions.RemoveAt(index);
+		}
+
+		return shuffeledList;
+	}
+
 	// Use this for initialization
 	void Start () {
 		_intelligenceOptions = new List<DialogueAction>(){
@@ -494,6 +509,8 @@ public class FathersOfficeDialog : Dialogue {
 			new DialogueAction("We have nice women", SmartWomen)
 		};
 
+		_intelligenceOptions = ShuffleCollection (_intelligenceOptions);
+
 		_intimidateOptions = new List<DialogueAction> (){
 			new DialogueAction("Gonna get to your house", IntimidateYourHouse),
 			new DialogueAction("Coffee on your uniform", IntimidateShinyUniform),
@@ -501,12 +518,16 @@ public class FathersOfficeDialog : Dialogue {
 			new DialogueAction("There a Wolpertinger", IntimidateWolpertinger)
 		};
 
+		_intimidateOptions = ShuffleCollection (_intimidateOptions);
+
 		_charismaOptions = new List<DialogueAction>(){
 			new DialogueAction("Nice beard", CharmeBeard),
 			new DialogueAction("Nice gun", CharmGun),
 			new DialogueAction("Have a pretzel", CharmPretzel),
 			new DialogueAction("Nice cap", CharmeCap)
 		};
+
+		_charismaOptions = ShuffleCollection (_charismaOptions);
 
 		_chatOptions = new List<DialogueAction> (){
 			new DialogueAction("How's the weather?", ChatHowsWeather),
@@ -516,6 +537,8 @@ public class FathersOfficeDialog : Dialogue {
 			new DialogueAction("Your favourite song?", ChatFavSong),
 			new DialogueAction("Your favourite sport?", ChatOlympic)
 		};
+
+		_chatOptions = ShuffleCollection (_chatOptions);
 	}
 	
 	// Update is called once per frame
