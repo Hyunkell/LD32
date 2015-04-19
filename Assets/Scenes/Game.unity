@@ -3007,7 +3007,8 @@ MonoBehaviour:
   NpcCharismaWonder: {fileID: 0}
   NpcCharismaMercedes: {fileID: 0}
   NpcCharismaLoveYou: {fileID: 0}
-  NpcCharismaPanzerGeneral: {fileID: 0}
+  NpcCharismaPanzerGeneral: {fileID: 8300000, guid: 5e3ca4396cd4536479751759458a11b0,
+    type: 3}
   NpcChatWeatherMercedes: {fileID: 0}
   NpcChatMotionOfNoConfidence: {fileID: 0}
   NpcChatWarForDummies: {fileID: 0}
@@ -3046,7 +3047,8 @@ MonoBehaviour:
   PlayerIntelligenceMilitary: {fileID: 0}
   PlayerIntelligenceMilitarySmall: {fileID: 0}
   PlayerCharismaLoveYou: {fileID: 0}
-  PlayerCharismaPanzerGeneral: {fileID: 0}
+  PlayerCharismaPanzerGeneral: {fileID: 8300000, guid: 9f9826f2b9b7ca44e862971603304bdd,
+    type: 3}
   PlayerChatFather: {fileID: 0}
 --- !u!1 &1135410821 stripped
 GameObject:
