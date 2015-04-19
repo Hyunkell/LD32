@@ -5,7 +5,7 @@ public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
+    private string[] scenes = new string[] { "TitleScreen","TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
     private int sceneIndex = 0;
 
 	// Use this for initialization
@@ -49,4 +49,9 @@ public class SceneSelection : MonoBehaviour {
 			}
 		}
     }
+
+	public void QuitApp()
+	{
+		Application.Quit ();
+	}
 }
