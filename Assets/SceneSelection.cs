@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class SceneSelection : MonoBehaviour {
 
 	public GameObject character;
 
-    private string[] scenes = new string[] { "Intro", "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
+    public List<GameObject> scenes;
+    //private string[] _scenes = new string[] { "Intro", "TitleScreen", "TheFathersOffice", "TheKitchen", "TheChefOffice", "EmptyTestScene" };
     public GameObject gameOverScene;
     private int sceneIndex = 0;
 
@@ -26,7 +28,7 @@ public class SceneSelection : MonoBehaviour {
     {
         Audio.Stop();
 
-        if (sceneIndex >= 0 && sceneIndex < scenes.Length)
+        if (sceneIndex >= 0 && sceneIndex < scenes.Count)
         {
             LoadScene(scenes[sceneIndex]);
         }

@@ -434,6 +434,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 287545727}
+  scenes:
+  - {fileID: 386013940}
+  - {fileID: 401983222}
+  - {fileID: 2115946743}
+  - {fileID: 403651246}
+  - {fileID: 1715500862}
+  - {fileID: 1663730977}
   gameOverScene: {fileID: 706962466}
 --- !u!82 &131340432
 AudioSource:
@@ -1418,6 +1425,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300030, guid: 60752eb4b49715b42a01c92e0564118b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &386013940 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 1093050732}
+--- !u!1 &401983222 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 806821440}
+--- !u!1 &403651246 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 134408739}
 --- !u!1001 &440558269
 Prefab:
   m_ObjectHideFlags: 0
@@ -4525,6 +4544,10 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300016, guid: d9ae5631d2e20445d92a1c4a9771de35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1663730977 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 783523134}
 --- !u!1 &1671609682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4844,6 +4867,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704898595}
+--- !u!1 &1715500862 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 743037436}
 --- !u!1 &1742796845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5832,6 +5859,10 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22451726, guid: 372f8dcc06bc7a54aaa3763756f5dab6,
     type: 2}
   m_PrefabInternal: {fileID: 1008324656}
+--- !u!1 &2115946743 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 129548, guid: 255c81d445b1f4a76b1a13a29aa3d5ab, type: 2}
+  m_PrefabInternal: {fileID: 685128321}
 --- !u!1 &2130702922
 GameObject:
   m_ObjectHideFlags: 0
