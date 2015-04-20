@@ -96,7 +96,7 @@ public class HBMDialog : Dialogue
         this.Npc.Say("Okay. You have convinced me. For the sake of our people — and especially me — "
             +"I will agree to join Germany and Luxembourg. Here are the auhorization codes for all "
             +"of our nuclear missile silos and the key to the country.");
-        yield break;
+        yield return WaitForInput();
         ShowSuccessOverlay();
         yield break;
         //yield return WaitForInput();
