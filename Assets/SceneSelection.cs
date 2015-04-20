@@ -27,7 +27,17 @@ public class SceneSelection : MonoBehaviour {
 
     public void LoadCurrentScene()
     {
-        Audio.Stop();
+        Audio.StopSound();
+
+        // Enable bgm if we aren't on the intro screen
+        if( sceneIndex > 0 )
+            Audio.EnableBGM();
+        else
+        {
+            // For the intro screen, play the intro clip instead
+            Audio.DisableBGM();
+            scenes[sceneIndex].GetComponentInChildren<Intro>().Play();
+        }
 
         if (sceneIndex >= 0 && sceneIndex < scenes.Count)
         {
@@ -46,6 +56,27 @@ public class SceneSelection : MonoBehaviour {
     {
         CheckForLeaveCondition();
         this.sceneIndex--;
+        LoadCurrentScene();
+    }
+
+    public int mainMenuIndex = 1;
+    public void LoadMainMenuScene()
+    {
+        this.sceneIndex = mainMenuIndex;
+        LoadCurrentScene();
+    }
+
+//     public int creditsIndex;
+//     public void LoadCredits()
+//     {
+//         this.sceneIndex = 1;
+//         LoadCurrentScene();
+//     }
+
+    public int introIndex = 0;
+    public void LoadIntro()
+    {
+        this.sceneIndex = introIndex;
         LoadCurrentScene();
     }
 

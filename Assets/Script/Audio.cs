@@ -3,7 +3,7 @@ using System.Collections;
 
 public static class Audio
 {
-    public static void Play( AudioClip clip )
+    public static void PlaySound( AudioClip clip )
     {
         if( clip != null )
         {
@@ -12,12 +12,22 @@ public static class Audio
             audio.PlayOneShot( clip );
         }
         else
-            Debug.LogWarning( "Audio.Play(null)" );
+            Debug.LogWarning( "Audio.PlaySound(null)" );
     }
 
-    public static void Stop()
+    public static void StopSound()
     {
         var audio = Camera.main.GetComponent<AudioSource>();
         audio.Stop();
+    }
+
+    public static void EnableBGM()
+    {
+        Camera.main.transform.FindChild( "BGM" ).gameObject.SetActive( true );
+    }
+
+    public static void DisableBGM()
+    {
+        Camera.main.transform.FindChild( "BGM" ).gameObject.SetActive( false );
     }
 }

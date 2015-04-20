@@ -233,7 +233,7 @@ public abstract class Dialogue : MonoBehaviour
 
     protected void PlaySound( AudioClip clip )
     {
-        Audio.Play( clip );
+        Audio.PlaySound( clip );
     }
 
     protected bool HasHappend( string key )

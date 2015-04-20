@@ -426,7 +426,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.32999992, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1560185973}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!114 &131340431
@@ -450,6 +451,8 @@ MonoBehaviour:
   - {fileID: 372209302}
   gameOverScene: {fileID: 706962466}
   scenesBeforeLeave: []
+  mainMenuIndex: 1
+  introIndex: 0
 --- !u!82 &131340432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -926,7 +929,7 @@ GameObject:
   - 114: {fileID: 264787703}
   - 114: {fileID: 264787702}
   m_Layer: 0
-  m_Name: CreditsButton 2
+  m_Name: PlayIntroButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -989,9 +992,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131340425}
-        m_MethodName: SendMessage
-        m_Mode: 5
+      - m_Target: {fileID: 131340431}
+        m_MethodName: LoadIntro
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -1303,7 +1306,7 @@ GameObject:
   - 114: {fileID: 323908581}
   - 114: {fileID: 323908584}
   m_Layer: 0
-  m_Name: Image
+  m_Name: SkipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,9 +1395,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131340425}
-        m_MethodName: SendMessage
-        m_Mode: 5
+      - m_Target: {fileID: 131340431}
+        m_MethodName: LoadMainMenuScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -3607,6 +3610,7 @@ GameObject:
   - 114: {fileID: 1052347307}
   - 114: {fileID: 1052347306}
   - 114: {fileID: 1052347305}
+  - 95: {fileID: 1052347309}
   m_Layer: 0
   m_Name: BackgroundImageIntro
   m_TagString: Untagged
@@ -3642,26 +3646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee1a1810745e4ac5a61f96af932bc94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images:
-  - {fileID: 21300000, guid: 62f1acc0ee0c9dd4f99e94d6d1139206, type: 3}
-  - {fileID: 21300000, guid: 3ebaa83327fff7b4595ee95c988385c3, type: 3}
-  - {fileID: 21300000, guid: 76b488b8ea2e72345b09f36e47c654c7, type: 3}
-  - {fileID: 21300000, guid: 1890480b5f3b73445b893d5595d3d686, type: 3}
-  - {fileID: 21300000, guid: 2bf558d6f24ac974abe67fa0671a3569, type: 3}
-  - {fileID: 21300000, guid: 9ca3766b2ce458d4eb180cb55bc180bb, type: 3}
-  - {fileID: 21300000, guid: a251f46f097aa2f4f8ab50dd5fe98a2e, type: 3}
-  - {fileID: 21300000, guid: 50c192121b1760849a21839034d3412b, type: 3}
-  delaySeconds:
-  - 5
-  - 4
-  - 6
-  - 10
-  - 8
-  - 5
-  - 6
-  - 17
   introSound: {fileID: 8300000, guid: 52ccc11f1fa6e1e42a4e286122dad3d3, type: 3}
-  sceneLoader: {fileID: 131340425}
+  sceneSelection: {fileID: 131340431}
 --- !u!114 &1052347306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3742,6 +3728,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052347303}
+--- !u!95 &1052347309
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052347303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 748475887e40e86409853c43da271c22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1093050732
 Prefab:
   m_ObjectHideFlags: 0
@@ -5167,6 +5170,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 870862827}
   m_RootOrder: 7
+--- !u!1 &1560185971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1560185973}
+  - 82: {fileID: 1560185972}
+  m_Layer: 0
+  m_Name: BGM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!82 &1560185972
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560185971}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ef6758d00be71d341948771f6c7d548f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .200000003
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!4 &1560185973
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1560185971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 131340430}
+  m_RootOrder: 0
 --- !u!1 &1605628095
 GameObject:
   m_ObjectHideFlags: 0
