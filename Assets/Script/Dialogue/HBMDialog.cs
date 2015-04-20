@@ -72,7 +72,7 @@ public class HBMDialog : Dialogue
     #endregion
 
     private string[] mercedesMonolog = new string[] {
-        "blabla"
+        "Well did you know that... *Boooring! Jeff decides to stop listening...*"
     };
 
     private string[] Names { get { return new string[] { "Bambi?", "Bärbel?", "Belzebub?", "Bernd?", "Brokkoli?" }; } }
