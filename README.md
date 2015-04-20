@@ -1,15 +1,9 @@
 # Fluffy Tigers - Ludum Dare 32
 
-[x] Christian H.
+Luxembourg wants it all, the whole world. 
+Problem: They don't have tanks, they don't have manpower, but they have YOU, Jeff Fligeren, their secret weapon. 
+Your first stop is Germany and you have to convince them to hand over their country with your charms, wits and intimidation techniques. 
 
-[X] Christian W.
+Funky Knight - an animated and fully voice acted adventure. 
 
-[x] Dominik F.
-
-[x] Dominik K.
-
-[X] Franziska 
-
-[X] Jeff
-
-[X] Marc
+Use WASD to walk around and use your mouse to choose dialog options.
