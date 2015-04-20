@@ -85,9 +85,9 @@ public class CanteenDialogue : Dialogue
         if (this.HasHappend(HappeningKeys.Greeting))
         {
             yield return new DialogueAction("You're handsome", CharismaHandsome);
-            yield return new DialogueAction("Fine partner", CharismaPartner);
-            yield return new DialogueAction("Funky Love", CharismaLove);
-            yield return new DialogueAction("Hairnet", CharismaHairnet);
+            yield return new DialogueAction("You've got a fine partner", CharismaPartner);
+            yield return new DialogueAction("Let's make love", CharismaLove);
+            yield return new DialogueAction("Nice hairnet", CharismaHairnet);
         }
     }
 
@@ -106,7 +106,7 @@ public class CanteenDialogue : Dialogue
     {
         if (this.HasHappend(HappeningKeys.Greeting))
         {
-            yield return new DialogueAction("Cheap beauty", IntelligenceBeauty);
+            yield return new DialogueAction("Cheap beauty products", IntelligenceBeauty);
             yield return new DialogueAction("Sauerkraut monopoly", IntelligenceSauerkraut);
             yield return new DialogueAction("Beautiful woman", IntelligenceWomen);
             yield return new DialogueAction("Rich man", IntelligenceMen);
