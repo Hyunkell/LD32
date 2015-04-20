@@ -19,4 +19,10 @@ public class Intro : MonoBehaviour
         // This resets the intro animation
         GetComponent<Animator>().Play( "PlayIntro", -1, 0.0f );
     }
+
+    void GoToMainMenu()
+    {
+        GameObject.FindObjectOfType<SceneSelection>().LoadMainMenuScene();
+        GetComponent<Animator>().StopPlayback();
+    }
 }
