@@ -1933,8 +1933,8 @@ MonoBehaviour:
   NpcCharismaHairnet: {fileID: 8300000, guid: 0517236557aeaf84fa5664547bae701b, type: 3}
   NpcCharismaLove: {fileID: 8300000, guid: a1f58e9c60e861647a17f356f8639a88, type: 3}
   NpcCharismaPartner: {fileID: 8300000, guid: b4fd5c8dfbc63d048808af4ab6875217, type: 3}
-  NpcCharismaHandsome: {fileID: 8300000, guid: 10f76f3fe9c7cdb46bbf8dcf0c186130, type: 3}
-  NpcIntelligenceSauerkraut: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6,
+  NpcCharismaHandsome: {fileID: 8300000, guid: 0f3b60ef660f7ef458e65432acca741a, type: 3}
+  NpcIntelligenceSauerkraut: {fileID: 8300000, guid: c2ebe42cf2cd8c64aab763a3abbbf1c3,
     type: 3}
   NpcIntelligencWomen: {fileID: 8300000, guid: ce5073d2876fd524680c7ac4fc327f49, type: 3}
   NpcIntelligenceBeauty: {fileID: 8300000, guid: ad839eeef702cf7499e2b87f26af9297,
@@ -1945,37 +1945,53 @@ MonoBehaviour:
   NpcIntimidateHair: {fileID: 8300000, guid: 0becfe71f766d7d44b87ac2a6f08d776, type: 3}
   NpcIntimidateRelationship: {fileID: 8300000, guid: 10f76f3fe9c7cdb46bbf8dcf0c186130,
     type: 3}
-  NpcIntimidateSauerkraut: {fileID: 8300000, guid: 1a71e639dd47011408ed929a37d1db69,
+  NpcIntimidateSauerkraut: {fileID: 8300000, guid: 6b55adc68ad392349876aff97b1fccfe,
     type: 3}
   NpcChatFavSport: {fileID: 8300000, guid: 7b566c06e91d0d2488fe5ec129bcc33e, type: 3}
   NpcChatFavSong: {fileID: 8300000, guid: 4575355246767cd4d81b0f1c341ebc07, type: 3}
-  NpcChatBeergarden: {fileID: 8300000, guid: 4575355246767cd4d81b0f1c341ebc07, type: 3}
+  NpcChatBeergarden: {fileID: 8300000, guid: 822006a5fda930d4f9567df43a868e85, type: 3}
   NpcChatLastWeekend: {fileID: 8300000, guid: 658af0367dfc6604a80952d7bd1e8a08, type: 3}
-  NpcChatWhatsUp: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
+  NpcChatWhatsUp: {fileID: 0}
   NpcChatWeather: {fileID: 8300000, guid: 023e879e3cf254846b1242c6a63f076d, type: 3}
   NpcChatHowIsWork: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
-  PlayerGreetingSauerkraut: {fileID: 0}
-  PlayerGreetingPretzel: {fileID: 0}
-  "PlayerGreetingWei\xDFwurst": {fileID: 0}
-  PlayerCharismaHairnet: {fileID: 0}
-  PlayerCharismaLove: {fileID: 0}
-  PlayerCharismaPartner: {fileID: 0}
-  PlayerCharismaHandsome: {fileID: 0}
-  PlayerIntelligenceSauerkraut: {fileID: 0}
-  PlayerIntelligenceWomen: {fileID: 0}
-  PlayerIntelligenceBeauty: {fileID: 0}
-  PlayerIntelligenceMen: {fileID: 0}
-  PlayerIntimidateBretzel: {fileID: 0}
-  PlayerIntimidateHair: {fileID: 0}
-  PlayerIntimidateRelationship: {fileID: 0}
-  PlayerIntimidateSauerkraut: {fileID: 0}
-  PlayerChatFavSport: {fileID: 0}
-  PlayerChatFavSong: {fileID: 0}
-  PlayerChatBeergarden: {fileID: 0}
-  PlayerChatLastWeekend: {fileID: 0}
-  PlayerChatHowIsWork: {fileID: 0}
-  PlayerChatWhatsUp: {fileID: 0}
-  PlayerChatWeather: {fileID: 0}
+  PlayerGreetingSauerkraut: {fileID: 8300000, guid: 9d9e7812123e81a4f8c6c873d6b7918a,
+    type: 3}
+  PlayerGreetingPretzel: {fileID: 8300000, guid: 36845f69d510e4a46a3d958695cee892,
+    type: 3}
+  "PlayerGreetingWei\xDFwurst": {fileID: 8300000, guid: faa86f178c0448346b238c0ae579c18e,
+    type: 3}
+  PlayerCharismaHairnet: {fileID: 8300000, guid: 41c5448307c0ce54c93ad049c6f4cabf,
+    type: 3}
+  PlayerCharismaLove: {fileID: 8300000, guid: 9e7cd71a75c895a4d8a2dcf9d9b3350b, type: 3}
+  PlayerCharismaPartner: {fileID: 8300000, guid: 58336816ff977ae4ea85d86364886640,
+    type: 3}
+  PlayerCharismaHandsome: {fileID: 8300000, guid: 3eec22c7870263c47b038c1f93038bc6,
+    type: 3}
+  PlayerIntelligenceSauerkraut: {fileID: 8300000, guid: bb5e84d5e56c77442b2937fcf57b0826,
+    type: 3}
+  PlayerIntelligenceWomen: {fileID: 8300000, guid: 7b45b533825463f4a8d4afec67455415,
+    type: 3}
+  PlayerIntelligenceBeauty: {fileID: 8300000, guid: 8f0255d869d8e8c49a8b170e49a34480,
+    type: 3}
+  PlayerIntelligenceMen: {fileID: 8300000, guid: 86ba2267c2b33ae48bb0916cd9a5a372,
+    type: 3}
+  PlayerIntimidateBretzel: {fileID: 8300000, guid: 1fcc0c6086d08ab49b994c64f578f806,
+    type: 3}
+  PlayerIntimidateHair: {fileID: 8300000, guid: 2ee27861d0856654793a2c9dac7e3a90,
+    type: 3}
+  PlayerIntimidateRelationship: {fileID: 8300000, guid: 8a25359f39a2aa846bfe5b588315699d,
+    type: 3}
+  PlayerIntimidateSauerkraut: {fileID: 8300000, guid: 00516fde6dd509a4db3bab0426c6c9ad,
+    type: 3}
+  PlayerChatFavSport: {fileID: 8300000, guid: b5a0f178fc5a04645a5487270f7b3f00, type: 3}
+  PlayerChatFavSong: {fileID: 8300000, guid: 80a5ab12b7ec6164aae3581f717fb700, type: 3}
+  PlayerChatBeergarden: {fileID: 8300000, guid: ebf75c0aec364434f9e70bc34f0aea54,
+    type: 3}
+  PlayerChatLastWeekend: {fileID: 8300000, guid: c2fd18b4ff6b0744bb5912f3f22f573d,
+    type: 3}
+  PlayerChatHowIsWork: {fileID: 8300000, guid: 328304c644bab094f904a0bf1b5818b1, type: 3}
+  PlayerChatWhatsUp: {fileID: 8300000, guid: 10104a073ff5af147a7b81b61a421793, type: 3}
+  PlayerChatWeather: {fileID: 8300000, guid: b120c439445647140b09a78b0f1909fb, type: 3}
 --- !u!114 &455556261
 MonoBehaviour:
   m_ObjectHideFlags: 0
