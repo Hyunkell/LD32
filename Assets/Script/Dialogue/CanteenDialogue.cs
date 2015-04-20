@@ -196,7 +196,7 @@ public class CanteenDialogue : Dialogue
     private IEnumerator CharismaPartner()
     {
         PlaySound(this.PlayerCharismaPartner);
-        Player.Say("You have chosen a fine young man for yourself");
+        Player.Say("You have chosen a fine young man for yourself.");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaPartner);
@@ -208,7 +208,7 @@ public class CanteenDialogue : Dialogue
     private IEnumerator CharismaHandsome()
     {
         PlaySound(this.PlayerCharismaHandsome);
-        Player.Say("You look very handsome.");
+        Player.Say("You look very handsome. Shiny hair, beautiful eyes, you're the whole package!");
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaHandsome);
@@ -222,11 +222,11 @@ public class CanteenDialogue : Dialogue
     private IEnumerator IntelligenceMen()
     {
         PlaySound(this.PlayerIntelligenceMen);
-        Player.Say("Luxembourg has the richest men.");
+        Player.Say("With your beauty and the money of the men in Luxembourg you will have everything.");
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceMen);
-        Npc.Say("My boyfriend is the Bundeskanzler...");
+        Npc.Say("But my boyfriend is the Bundeskanzler...");
         Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
@@ -262,7 +262,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcIntelligenceBeauty);
-        Npc.Say("You mean, I can be MORE beautiful?");
+        Npc.Say("You mean, I can be even MORE beautiful?");
         Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
@@ -276,7 +276,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcIntimidateSauerkraut);
-        Npc.Say("nonononononononono my beautiful, sour Sauerkraut");
+        Npc.Say("nonononononononono my beautiful, sour Sauerkraut.");
         Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
@@ -300,7 +300,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcIntimidateHair);
-        Npc.Say("You would help me with that today? The Sauerkraut makes my hair look shiny and gives them volume.");
+        Npc.Say("You would help me with that today? The Sauerkraut makes my hair look shiny and gives it the volume.");
         Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
@@ -360,15 +360,15 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatLastWeekend);
-        Npc.Say("I was in the Biergarten with Hans, It wasn't fun though, his mind is occupied with worries. He Isn't sure if he is a good president. A lot of people think, that he is to young. But during his puperty it was his love for Kuckuksuhren that started the Wirtschaftswunder");
+        Npc.Say("I was in the Biergarten with Hans, It wasn't fun though, his mind is occupied with worries. He Isn't sure if he is a good president. A lot of people think, that he is to young. But during his puperty it was his love for Kuckuksuhren that started the Wirtschaftswunder!");
         yield return WaitForInput();
 
         PlaySound(this.PlayerChatBeergarden);
-        Player.Say("What is it like, being the girlfriend of the Bundeskanzler");
+        Player.Say("What is it like, being the girlfriend of the Bundeskanzler?");
         yield return WaitForInput();
 
         PlaySound(this.NpcChatBeergarden);
-        Npc.Say("Please don't tell Franz Josef about the relationship, he wants his son to have a bavarian girlfriend.");
+        Npc.Say("Please don't tell Franz Josef about the relationship, he wants to have a BAVARIAN girlfriend for his son, but I am from Berlin.");
         yield return End();
     }
 
@@ -390,7 +390,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatFavSport);
-        Npc.Say("Wrestling! Sweaty Men fighting other sweaty man");
+        Npc.Say("Wrestling! Sweaty Men fighting other sweaty man.");
         yield return End();
     }
     #endregion
