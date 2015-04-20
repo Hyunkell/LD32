@@ -15,12 +15,12 @@ public class Movement : MonoBehaviour {
     }
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         var nInputHorizontal = Input.GetAxis("Horizontal");
         if (this._rigidBody.velocity.x <= this.maxSpeed)
         {
-            this._rigidBody.MovePosition(this._rigidBody.position + (new Vector2(nInputHorizontal * this.acceleration, 0) * Time.deltaTime));
+            this._rigidBody.MovePosition(this._rigidBody.position + (new Vector2(nInputHorizontal * this.acceleration, 0) * Time.fixedDeltaTime));
             //this.transform.Translate(new Vector3(Input.GetAxis("Horizontal") * this.acceleration, 0, 0) * Time.deltaTime, Space.World);
             
         }
