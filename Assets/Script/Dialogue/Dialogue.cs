@@ -168,11 +168,6 @@ public abstract class Dialogue : MonoBehaviour
         wasInputHandled = true;
     }
 
-    void OnMouseDown()
-    {
-        BeginDialogue();
-    }
-
     public void BeginDialogue()
     {
         //Player.speechBubble.gameObject.SetActive( true );

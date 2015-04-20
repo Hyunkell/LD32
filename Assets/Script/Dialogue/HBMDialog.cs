@@ -8,6 +8,7 @@ public class HBMDialog : Dialogue
     #region Npc Sound Files
     public AudioClip NpcGreeting;
     public AudioClip NpcOk;
+    public AudioClip NpcConversationEnd;
 
     public AudioClip NpcCharismaGreetingThanks;
     public AudioClip NpcCharismaWonder;
@@ -91,6 +92,11 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerator OnSuccess()
     {
+        PlaySound(this.NpcConversationEnd);
+        this.Npc.Say("Okay. You have convinced me. For the sake of our people — and especially me — "
+            +"I will agree to join Germany and Luxembourg. Here are the auhorization codes for all "
+            +"of our nuclear missile silos and the key to the country.");
+        yield break;
         ShowSuccessOverlay();
         yield break;
         //yield return WaitForInput();
