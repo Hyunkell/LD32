@@ -3,9 +3,10 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
-public class SceneSelection : MonoBehaviour {
+public class SceneSelection : MonoBehaviour
+{
 
-	public GameObject character;
+    public GameObject character;
 
     public List<GameObject> scenes;
     public GameObject gameOverScene;
@@ -13,11 +14,11 @@ public class SceneSelection : MonoBehaviour {
 
     private int sceneIndex = 0;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         LoadCurrentScene();
-	}
+    }
 
     public void ResetGame()
     {
@@ -39,9 +40,9 @@ public class SceneSelection : MonoBehaviour {
             scenes[sceneIndex].GetComponentInChildren<Intro>().Play();
         }
 
-        if (sceneIndex >= 0 && sceneIndex < scenes.Count)
+        if( sceneIndex >= 0 && sceneIndex < scenes.Count )
         {
-            LoadScene(scenes[sceneIndex]);
+            LoadScene( scenes[sceneIndex] );
         }
     }
 
@@ -87,57 +88,70 @@ public class SceneSelection : MonoBehaviour {
         LoadCurrentScene();
     }
 
+    public void LoadWinOverlay()
+    {
+        Audio.DisableBGM();
+        Camera.main.transform.FindChild( "WinOverlay" ).gameObject.SetActive( true );
+    }
+
+    public void LoadFailOverlay()
+    {
+
+    }
+
     private void CheckForLeaveCondition()
     {
         var currentScene = scenes[sceneIndex];
-        if (scenesBeforeLeave.Contains(currentScene))
+        if( scenesBeforeLeave.Contains( currentScene ) )
         {
-            
+
         }
     }
 
-    private void LoadScene(string sceneName)
+    private void LoadScene( string sceneName )
     {
-        var scene = GameObject.Find(sceneName);
+        var scene = GameObject.Find( sceneName );
 
         //Dirty but works
-        if (sceneName == "TheChefOffice")
+        if( sceneName == "TheChefOffice" )
         {
             var animator = scene.GetComponentInChildren<Animator>();
-            animator.SetBool("standUp", true);
-            animator.Play("Sitting");
+            animator.SetBool( "standUp", true );
+            animator.Play( "Sitting" );
         }
 
-        LoadScene(scene);
+        LoadScene( scene );
     }
 
-    private void LoadScene(GameObject scene)
+    private void LoadScene( GameObject scene )
     {
-        this.gameObject.transform.position = new Vector3(scene.transform.position.x, scene.transform.position.y, this.gameObject.transform.position.z);
-		var spriteRenderers = scene.GetComponentsInChildren<SpriteRenderer> ();
-		foreach (var renderer in spriteRenderers) {
-			if(renderer.gameObject.name == "SpawnPoint"){
-				character.transform.position = renderer.gameObject.transform.position;
+        this.gameObject.transform.position = new Vector3( scene.transform.position.x, scene.transform.position.y, this.gameObject.transform.position.z );
+        var spriteRenderers = scene.GetComponentsInChildren<SpriteRenderer>();
+        foreach( var renderer in spriteRenderers )
+        {
+            if( renderer.gameObject.name == "SpawnPoint" )
+            {
+                character.transform.position = renderer.gameObject.transform.position;
                 character.GetComponent<Movement>().enabled = true;
                 //character.GetComponentInChildren<SpeechBubble>().Hide();
-				var speechbubbles = scene.GetComponentsInChildren<SpeechBubble>();
+                var speechbubbles = scene.GetComponentsInChildren<SpeechBubble>();
 
-				foreach(var bubble in speechbubbles)
-				{
-					bubble.Hide();
-				}
-				return;
-			}
-		}
+                foreach( var bubble in speechbubbles )
+                {
+                    bubble.Hide();
+                }
+                return;
+            }
+        }
     }
 
-	public void QuitApp()
-	{
-		Application.Quit ();
-	}
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
 
     public void LoadGameOverPage()
     {
-        this.LoadScene(gameOverScene);
+        this.LoadScene( gameOverScene );
     }
 }
