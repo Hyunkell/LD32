@@ -54,6 +54,10 @@ public class CanteenDialogue : Dialogue
     public AudioClip PlayerChatWeather;
     #endregion
 
+    private float _negativeResponse = -4;
+
+    private float _positiveResponse = 5;
+
     protected override bool HasCharismaOptions { get { return this.HasHappend(HappeningKeys.Greeting); } }
 
     protected override bool HasIntimidationOptions { get { return this.HasHappend(HappeningKeys.Greeting); } }
@@ -173,7 +177,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcCharismaHairnet);
         Npc.Say("C'mon even I won't fall for that.");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
 
@@ -185,7 +189,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcCharismaLove);
         Npc.Say("Ewww I have a boyfriend and he is way hotter than you!");
-        Npc.ModifyAffinity(-20f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
 
@@ -197,7 +201,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcCharismaPartner);
         Npc.Say("He is the best! I like my men how I like my Sauerkraut. Simple, Unromantic and Unfunky.");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
 
@@ -209,7 +213,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcCharismaHandsome);
         Npc.Say("Yes, yes. But that's something I already know.");
-        Npc.ModifyAffinity(20f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
     #endregion
@@ -223,7 +227,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntelligenceMen);
         Npc.Say("My boyfriend is the Bundeskanzler...");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
 
@@ -235,7 +239,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntelligencWomen);
         Npc.Say("What? I AM the most beautiful woman in the world!");
-        Npc.ModifyAffinity(-20f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
 
@@ -247,7 +251,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntelligenceSauerkraut);
         Npc.Say("SAUERKRAUT FOR EVERYONE, I am going to make it... big.");
-        Npc.ModifyAffinity(20f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
 
@@ -259,7 +263,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntelligenceBeauty);
         Npc.Say("You mean, I can be MORE beautiful?");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
     #endregion
@@ -273,7 +277,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntimidateSauerkraut);
         Npc.Say("nonononononononono my beautiful, sour Sauerkraut");
-        Npc.ModifyAffinity(20f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
 
@@ -285,7 +289,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntimidateRelationship);
         Npc.Say("But, but it's not my fault that I am a Berliner.");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(_positiveResponse);
         yield return End();
     }
 
@@ -297,7 +301,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntimidateHair);
         Npc.Say("You would help me with that today? The Sauerkraut makes my hair look shiny and gives them volume.");
-        Npc.ModifyAffinity(-20f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
 
@@ -309,7 +313,7 @@ public class CanteenDialogue : Dialogue
 
         PlaySound(this.NpcIntimidateBretzel);
         Npc.Say("I like my Bretzels how I like my coffee. Black and salty.");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(_negativeResponse);
         yield return End();
     }
     #endregion
