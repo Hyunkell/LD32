@@ -70,7 +70,7 @@ public class CanteenDialogue : Dialogue
 
     protected override IEnumerator OnSuccess()
     {
-        Npc.Say( "TODO: OnSuccess()" );
+        Npc.Say("TODO: OnSuccess()");
         yield return WaitForInput();
     }
 
@@ -208,7 +208,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaHandsome);
-        Npc.Say("Yes, yes indeed. I really do look mighty fine.");
+        Npc.Say("Yes, yes. But that's something I allready know.");
         Npc.ModifyAffinity(20f);
         yield return End();
     }
