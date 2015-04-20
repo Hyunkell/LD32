@@ -16,5 +16,7 @@ public class Intro : MonoBehaviour
     public void Play()
     {
         Audio.PlaySound( introSound );
+        // This resets the intro animation
+        GetComponent<Animator>().Play( "PlayIntro", -1, 0.0f );
     }
 }
