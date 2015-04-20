@@ -91,8 +91,9 @@ public class HBMDialog : Dialogue
 
     protected override IEnumerator OnSuccess()
     {
-        Npc.Say( "TODO: OnSuccess()" );
-        yield return WaitForInput();
+        ShowSuccessOverlay();
+        yield break;
+        //yield return WaitForInput();
     }
 
     #region Menu
