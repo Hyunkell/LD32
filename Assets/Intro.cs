@@ -20,9 +20,9 @@ public class Intro : MonoBehaviour
         GetComponent<Animator>().Play( "PlayIntro", -1, 0.0f );
     }
 
-    void GoToMainMenu()
+    public void GoToMainMenu()
     {
         GameObject.FindObjectOfType<SceneSelection>().LoadMainMenuScene();
-        GetComponent<Animator>().StopPlayback();
+        GameObject.Destroy( gameObject );
     }
 }
