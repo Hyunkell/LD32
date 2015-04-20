@@ -7,12 +7,13 @@ public class FathersOfficeDialog : Dialogue {
 
 	#region Npc soundfiles
 
-	#region Greeting / Introduction
+	#region Greeting / Introduction / End
 
 	public AudioClip NpcGreetingHaltNoEntry;
 	public AudioClip NpcGreetingNotHappening;
 	public AudioClip NpcGreetingThatWouldBe;
 	public AudioClip NpcGreetingShyCoughing;
+    public AudioClip NpcConversationEnd;
 
 	#endregion
 
@@ -130,7 +131,8 @@ public class FathersOfficeDialog : Dialogue {
 
     protected override IEnumerator OnSuccess()
     {
-        Npc.Say( "TODO: OnSuccess()" );
+        this.PlaySound(this.NpcConversationEnd);
+        Npc.Say("Okay, I'll let you pass. Servus and have a nice day.");
         yield return WaitForInput();
     }
 

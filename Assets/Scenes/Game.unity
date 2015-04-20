@@ -5098,6 +5098,7 @@ MonoBehaviour:
     type: 3}
   NpcGreetingShyCoughing: {fileID: 8300000, guid: 802da361b4ddc17479f0cb47959f7d41,
     type: 3}
+  NpcConversationEnd: {fileID: 8300000, guid: bc4990d35e771df42b0ac9b6650cf6f6, type: 3}
   NpcChatWorriedWind: {fileID: 8300000, guid: a960d8d2ed65b894d929ebc6b1ee1077, type: 3}
   NpcChatSonPresident: {fileID: 8300000, guid: baa46dc8b7e4eff4bb9fa27f4d24d761, type: 3}
   NpcChatWorkingCloseToSon: {fileID: 8300000, guid: 5ab37143e63aacf4d97253a549eafdeb,
