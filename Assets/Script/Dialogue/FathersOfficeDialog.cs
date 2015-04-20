@@ -106,6 +106,15 @@ public class FathersOfficeDialog : Dialogue {
 
 	#endregion
 
+	#region Collections of dialog options
+
+	private IList<DialogueAction> _intelligenceOptions;
+	private IList<DialogueAction> _intimidateOptions;
+	private IList<DialogueAction> _charismaOptions;
+	private IList<DialogueAction> _chatOptions;
+
+	#endregion
+
 	#region Overrides
 
 	protected override bool HasCharismaOptions { get { return true; } }
@@ -122,22 +131,46 @@ public class FathersOfficeDialog : Dialogue {
 	#region Menu
 	protected override IEnumerable<DialogueAction> CharismaOptions()
 	{
-		yield return new DialogueAction ("Dummy", CharmeGreeting);
+		if (!this.HasHappend (HappeningKeys.Greeting)) {
+			yield return new DialogueAction ("You're so competent", CharmeGreeting);
+		} else {
+			foreach(var option in _charismaOptions)
+			{
+				yield return option;
+			}
+		}
 	}
 	
 	protected override IEnumerable<DialogueAction> IntimidationOptions()
 	{
-		yield return new DialogueAction ("Dummy", CharmeGreeting);
+		if (!this.HasHappend (HappeningKeys.Greeting)) {
+			yield return new DialogueAction("Out of my way!", IntimidateGreeting);
+		} else {
+			foreach(var option in _intimidateOptions)
+			{
+				yield return option;
+			}
+		}
 	}
 	
 	protected override IEnumerable<DialogueAction> IntelligenceOptions()
 	{
-		yield return new DialogueAction ("Dummy", CharmeGreeting);
+		if (!this.HasHappend (HappeningKeys.Greeting)) {
+			yield return new DialogueAction("I've got business", SmartGreeting);
+		} else {
+			foreach(var option in _intelligenceOptions)
+			{
+				yield return option;
+			}
+		}
 	}
 	
 	protected override IEnumerable<DialogueAction> ChatOptions()
 	{
-		yield return new DialogueAction ("Dummy", CharmeGreeting);
+		foreach (var option in _chatOptions) 
+		{
+			yield return option;
+		}
 	}
 	#endregion
 
@@ -396,13 +429,116 @@ public class FathersOfficeDialog : Dialogue {
 		yield return End ();
 	}
 
+	private IEnumerator CharmeBeard()
+	{
+		PlaySound (this.PlayerCharmeBeard);
+		Player.Say ("I really like your beard! You must have put a lot of effort into it!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeBestBeard);
+		Npc.Say ("Thank you! Last year, it won the \"best beard of the Oktoberfest\" award.");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmGun()
+	{
+		PlaySound (this.PlayerCharmeGun);
+		Player.Say ("I really like your gun! I bet you're a good shooter!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeSchuetzenkoenig);
+		Npc.Say ("Thanks, I've practiced a lot and was Schützenkönig of my home village 5 times in a row!");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmPretzel()
+	{
+		PlaySound (this.PlayerCharmePretzel);
+		Player.Say ("I brought a pretzel from Luxembourg. You want a bite?");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeBrezn);
+		Npc.Say ("How dare you mock the traditional Brezn-making with your dry lump of dough?");
+
+		yield return End ();
+	}
+
+	private IEnumerator CharmeCap()
+	{
+		PlaySound (this.PlayerCharmeNiceCap);
+		Player.Say ("Hey, nice cap you've got there! And that fluffy cotton ball on top of it is really cute!");
+
+		yield return WaitForInput ();
+
+		PlaySound (this.NpcCharmeGamsbart);
+		Npc.Say ("*gasp* That's traditional bavarian Trachtenhut with a Gamsbart, you lowly philistine!");
+
+		yield return End ();
+	}
+
 	#endregion
 
 	#endregion
+
+	//TODO Put this in parent class or helper class and make this generic
+	public static IList<DialogueAction> ShuffleCollection(IList<DialogueAction> dialogueOptions)
+	{
+		IList<DialogueAction> shuffeledList = new List<DialogueAction> ();
+
+		while (dialogueOptions.Count > 0) 
+		{
+			var index = UnityEngine.Random.Range(0, dialogueOptions.Count-1);
+			shuffeledList.Add(dialogueOptions[index]);
+			dialogueOptions.RemoveAt(index);
+		}
+
+		return shuffeledList;
+	}
 
 	// Use this for initialization
 	void Start () {
-	
+		_intelligenceOptions = new List<DialogueAction>(){
+			new DialogueAction("Germany will be Bavaria", SmartLuxRules),
+			new DialogueAction("Rule both countries", SmartRuleLAndG),
+			new DialogueAction("We have nice clothes", SmartTrachten),
+			new DialogueAction("We have nice women", SmartWomen)
+		};
+
+		_intelligenceOptions = ShuffleCollection (_intelligenceOptions);
+
+		_intimidateOptions = new List<DialogueAction> (){
+			new DialogueAction("Gonna get to your house", IntimidateYourHouse),
+			new DialogueAction("Coffee on your uniform", IntimidateShinyUniform),
+			new DialogueAction("Push and run", IntimidatePushAndRun),
+			new DialogueAction("There a Wolpertinger", IntimidateWolpertinger)
+		};
+
+		_intimidateOptions = ShuffleCollection (_intimidateOptions);
+
+		_charismaOptions = new List<DialogueAction>(){
+			new DialogueAction("Nice beard", CharmeBeard),
+			new DialogueAction("Nice gun", CharmGun),
+			new DialogueAction("Have a pretzel", CharmPretzel),
+			new DialogueAction("Nice cap", CharmeCap)
+		};
+
+		_charismaOptions = ShuffleCollection (_charismaOptions);
+
+		_chatOptions = new List<DialogueAction> (){
+			new DialogueAction("How's the weather?", ChatHowsWeather),
+			new DialogueAction("What's up?", ChatWhatsUp),
+			new DialogueAction("How's work?", ChatHowsWork),
+			new DialogueAction("How was the weekend?", ChatLastWeekend),
+			new DialogueAction("Your favourite song?", ChatFavSong),
+			new DialogueAction("Your favourite sport?", ChatOlympic)
+		};
+
+		_chatOptions = ShuffleCollection (_chatOptions);
 	}
 	
 	// Update is called once per frame
