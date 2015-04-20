@@ -141,8 +141,8 @@ public class FathersOfficeDialog : Dialogue {
 			yield return new DialogueAction ("You're so competent", CharmeGreeting);
 		} else {
 			yield return new DialogueAction("Nice beard", CharmeBeard);
-			yield return new DialogueAction("Nice gun", CharmGun);
 			yield return new DialogueAction("Have a pretzel", CharmPretzel);
+			yield return new DialogueAction("Nice gun", CharmGun);
 			yield return new DialogueAction("Nice cap", CharmeCap);
 		}
 	}
@@ -152,10 +152,10 @@ public class FathersOfficeDialog : Dialogue {
 		if (!this.HasHappend (HappeningKeys.Greeting)) {
 			yield return new DialogueAction("Out of my way!", IntimidateGreeting);
 		} else {
-			yield return new DialogueAction("Gonna get to your house", IntimidateYourHouse);
-			yield return new DialogueAction("Coffee on your uniform", IntimidateShinyUniform);
-			yield return new DialogueAction("Push and run", IntimidatePushAndRun);
 			yield return new DialogueAction("There a Wolpertinger", IntimidateWolpertinger);
+			yield return new DialogueAction("Coffee on your uniform", IntimidateShinyUniform);
+			yield return new DialogueAction("Gonna get to your house", IntimidateYourHouse);
+			yield return new DialogueAction("Push and run", IntimidatePushAndRun);
 		}
 	}
 	
@@ -165,20 +165,20 @@ public class FathersOfficeDialog : Dialogue {
 			yield return new DialogueAction("I've got business", SmartGreeting);
 		} else {
 			yield return new DialogueAction("Germany will be Bavaria", SmartLuxRules);
-			yield return new DialogueAction("Rule both countries", SmartRuleLAndG);
 			yield return new DialogueAction("We have nice clothes", SmartTrachten);
 			yield return new DialogueAction("We have nice women", SmartWomen);
+			yield return new DialogueAction("Rule both countries", SmartRuleLAndG);
 		}
 	}
 	
 	protected override IEnumerable<DialogueAction> ChatOptions()
 	{
-		yield return new DialogueAction ("How's the weather?", ChatHowsWeather);
+		yield return new DialogueAction ("Your favourite sport?", ChatOlympic);
 		yield return new DialogueAction ("What's up?", ChatWhatsUp);
+		yield return new DialogueAction ("How's the weather?", ChatHowsWeather);
+		yield return new DialogueAction ("Your favourite song?", ChatFavSong);
 		yield return new DialogueAction ("How's work?", ChatHowsWork);
 		yield return new DialogueAction ("How was the weekend?", ChatLastWeekend);
-		yield return new DialogueAction ("Your favourite song?", ChatFavSong);
-		yield return new DialogueAction ("Your favourite sport?", ChatOlympic);
 	}
 	#endregion
 
@@ -303,6 +303,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcIntimidateJessesMaria);
 		Npc.Say ("Jesses Maria! Everything but that!");
 
+		Npc.ModifyAffinity (5.0f);
+
 		yield return End ();
 	}
 
@@ -317,6 +319,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcIntimidateTraditionalUniform);
 		Npc.Say ("Oh no! My traditional Bavarian royal guard uniform! It's irreplaceable!");
 
+		Npc.ModifyAffinity (5.0f);
+
 		yield return End ();
 	}
 
@@ -330,6 +334,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcIntimidateKruschperl);
 		Npc.Say ("You little Krüschperl will not be able to pass me.");
 
+		Npc.ModifyAffinity (-4.0f);
+
 		yield return End ();
 	}
 
@@ -342,6 +348,8 @@ public class FathersOfficeDialog : Dialogue {
 
 		PlaySound (this.NpcIntimidateDontDrink);
 		Npc.Say ("I don't drink on duty. You won't fool me!");
+
+		Npc.ModifyAffinity (-4.0f);
 
 		yield return End ();
 	}
@@ -376,6 +384,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcSmartBavarianShit);
 		Npc.Say ("Dreamy Bavarian Shit!");
 
+		Npc.ModifyAffinity (5.0f);
+
 		yield return End ();
 	}
 
@@ -388,6 +398,8 @@ public class FathersOfficeDialog : Dialogue {
 
 		PlaySound (this.NpcSmartMorePower);
 		Npc.Say ("Ooooh the more power the better.");
+
+		Npc.ModifyAffinity (5.0f);
 
 		yield return End ();
 	}
@@ -402,6 +414,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcSmartTrachtenmaking);
 		Npc.Say ("Nothing can beat the traditional bavarian art of Trachtenmaking!");
 
+		Npc.ModifyAffinity (-4.0f);
+
 		yield return End ();
 	}
 
@@ -414,6 +428,8 @@ public class FathersOfficeDialog : Dialogue {
 
 		PlaySound (this.NpcSmartElfriede);
 		Npc.Say ("No, thanks. My beloved Elfriede is the only one for me!");
+
+		Npc.ModifyAffinity (-4.0f);
 
 		yield return End ();
 	}
@@ -447,6 +463,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcCharmeBestBeard);
 		Npc.Say ("Thank you! Last year, it won the \"best beard of the Oktoberfest\" award.");
 
+		Npc.ModifyAffinity (5.0f);
+
 		yield return End ();
 	}
 
@@ -459,6 +477,8 @@ public class FathersOfficeDialog : Dialogue {
 
 		PlaySound (this.NpcCharmeSchuetzenkoenig);
 		Npc.Say ("Thanks, I've practiced a lot and was Schützenkönig of my home village 5 times in a row!");
+
+		Npc.ModifyAffinity (5.0f);
 
 		yield return End ();
 	}
@@ -473,6 +493,8 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcCharmeBrezn);
 		Npc.Say ("How dare you mock the traditional Brezn-making with your dry lump of dough?");
 
+		Npc.ModifyAffinity (-4.0f);
+
 		yield return End ();
 	}
 
@@ -485,6 +507,8 @@ public class FathersOfficeDialog : Dialogue {
 
 		PlaySound (this.NpcCharmeGamsbart);
 		Npc.Say ("*gasp* That's traditional bavarian Trachtenhut with a Gamsbart, you lowly philistine!");
+
+		Npc.ModifyAffinity (-4.0f);
 
 		yield return End ();
 	}
