@@ -242,6 +242,7 @@ public class FathersOfficeDialog : Dialogue {
 		PlaySound (this.NpcChatNameday);
 		Npc.Say ("I have been celebrating the nameday of Hans' second name. \" Hans Blitzkrieg Müller, Buneskanzler " +
 			"of Germany\" has a nice ring to it, doesn't it?");
+        Player.Happens( HappeningKeys.SecondName );
 
 		yield return End ();
 	}

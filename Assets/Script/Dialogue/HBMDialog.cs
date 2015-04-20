@@ -365,6 +365,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcCharismaWonder);
         Npc.Say("You seem to be the only one who can remember that.");
+        Npc.ModifyAffinity( 5.0f );
 
         yield return End();
     }
@@ -377,6 +378,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcCharismaMercedes);
         Npc.Say(this.mercedesMonolog);
+        Npc.ModifyAffinity( 5.0f );
 
         yield return End();
     }
