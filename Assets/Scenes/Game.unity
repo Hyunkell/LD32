@@ -4697,6 +4697,7 @@ MonoBehaviour:
   Npc: {fileID: 1135410819}
   NpcGreeting: {fileID: 8300000, guid: a7106e43d97cad7459201ed64d3f6a66, type: 3}
   NpcOk: {fileID: 8300000, guid: 4a6013e0eee6b8f4491b3ef11af822aa, type: 3}
+  NpcConversationEnd: {fileID: 8300000, guid: 340531d84b8ae1547859035afbe54a38, type: 3}
   NpcCharismaGreetingThanks: {fileID: 8300000, guid: c47802890c8ded84a9a8659032cc9134,
     type: 3}
   NpcCharismaWonder: {fileID: 8300000, guid: 8ad2844ca21f8ca4295554f1dd0a585f, type: 3}
