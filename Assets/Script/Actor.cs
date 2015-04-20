@@ -25,17 +25,18 @@ public class Actor : MonoBehaviour
 
     public void ModifyAffinity( float val )
     {
+        Debug.Log( "Affinity: " + val.ToString() );
         affinity += val;
     }
 
-    internal bool HasHappend(string key)
+    internal bool HasHappend( string key )
     {
-        return this.happenings.Contains(key);
+        return this.happenings.Contains( key );
     }
 
-    public void Happens(string key)
+    public void Happens( string key )
     {
-        this.happenings.Add(key);
+        this.happenings.Add( key );
     }
 
     public void Reset()
