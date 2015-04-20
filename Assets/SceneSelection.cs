@@ -96,7 +96,8 @@ public class SceneSelection : MonoBehaviour
 
     public void LoadFailOverlay()
     {
-
+        Audio.DisableBGM();
+        Camera.main.transform.FindChild( "FailOverlay" ).gameObject.SetActive( true );
     }
 
     private void CheckForLeaveCondition()

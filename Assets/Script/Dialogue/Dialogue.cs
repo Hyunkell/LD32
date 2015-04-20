@@ -38,6 +38,12 @@ public abstract class Dialogue : MonoBehaviour
         }
         else if( Npc.affinity <= -50.0f )
         {
+            ShowFailOverlay();
+            LoadNextScene();
+
+
+            // Old loss of ability code
+            /*
             // The player will loose one of his abilities
             // Choose ability
             Player.speechBubble.Clear();
@@ -47,8 +53,6 @@ public abstract class Dialogue : MonoBehaviour
                 ShowCategoryOption( Player.speechBubble._iconIntimidatePrefab, DisableIntimidateAbility );
             if( Player.hasIntelligenceAbility )
                 ShowCategoryOption( Player.speechBubble._iconIntelligencePrefab, DisableIntelligenceAblility );
-            //if( Player.hasChatAbility )
-            //    ShowCategoryOption( Player.speechBubble._iconChatPrefab, DisableChatAbility );
 
             // TODO: the player needs to know that he is loosing an ability
             // Just tint the buttons red for now
@@ -57,6 +61,7 @@ public abstract class Dialogue : MonoBehaviour
                 var icon = child.GetComponent<UnityEngine.UI.Image>();
                 icon.color = Color.red;
             }
+            */
         }
         else
             ShowCategoryOptions().MoveNext();
