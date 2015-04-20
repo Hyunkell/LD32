@@ -2374,6 +2374,7 @@ MonoBehaviour:
   NpcChatWhatsUp: {fileID: 0}
   NpcChatWeather: {fileID: 8300000, guid: 023e879e3cf254846b1242c6a63f076d, type: 3}
   NpcChatHowIsWork: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
+  NpcConversationEnd: {fileID: 8300000, guid: 13aac784dc2b72d42bf5fff512b47a44, type: 3}
   PlayerGreetingSauerkraut: {fileID: 8300000, guid: 9d9e7812123e81a4f8c6c873d6b7918a,
     type: 3}
   PlayerGreetingPretzel: {fileID: 8300000, guid: 36845f69d510e4a46a3d958695cee892,
