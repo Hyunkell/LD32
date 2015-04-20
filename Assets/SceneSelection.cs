@@ -73,6 +73,13 @@ public class SceneSelection : MonoBehaviour {
         LoadCurrentScene();
     }
 
+    public int helpIndex = 6;
+    public void LoadHelp()
+    {
+        this.sceneIndex = helpIndex;
+        LoadCurrentScene();
+    }
+
     public int introIndex = 0;
     public void LoadIntro()
     {
