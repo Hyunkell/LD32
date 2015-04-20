@@ -66,12 +66,12 @@ public class SceneSelection : MonoBehaviour {
         LoadCurrentScene();
     }
 
-//     public int creditsIndex;
-//     public void LoadCredits()
-//     {
-//         this.sceneIndex = 1;
-//         LoadCurrentScene();
-//     }
+    public int creditsIndex = 5;
+    public void LoadCredits()
+    {
+        this.sceneIndex = creditsIndex;
+        LoadCurrentScene();
+    }
 
     public int introIndex = 0;
     public void LoadIntro()
