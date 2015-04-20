@@ -140,10 +140,10 @@ public class FathersOfficeDialog : Dialogue {
 		if (!this.HasHappend (HappeningKeys.Greeting)) {
 			yield return new DialogueAction ("You're so competent", CharmeGreeting);
 		} else {
-			foreach(var option in _charismaOptions)
-			{
-				yield return option;
-			}
+			yield return new DialogueAction("Nice beard", CharmeBeard);
+			yield return new DialogueAction("Nice gun", CharmGun);
+			yield return new DialogueAction("Have a pretzel", CharmPretzel);
+			yield return new DialogueAction("Nice cap", CharmeCap);
 		}
 	}
 	
@@ -152,10 +152,10 @@ public class FathersOfficeDialog : Dialogue {
 		if (!this.HasHappend (HappeningKeys.Greeting)) {
 			yield return new DialogueAction("Out of my way!", IntimidateGreeting);
 		} else {
-			foreach(var option in _intimidateOptions)
-			{
-				yield return option;
-			}
+			yield return new DialogueAction("Gonna get to your house", IntimidateYourHouse);
+			yield return new DialogueAction("Coffee on your uniform", IntimidateShinyUniform);
+			yield return new DialogueAction("Push and run", IntimidatePushAndRun);
+			yield return new DialogueAction("There a Wolpertinger", IntimidateWolpertinger);
 		}
 	}
 	
@@ -164,19 +164,21 @@ public class FathersOfficeDialog : Dialogue {
 		if (!this.HasHappend (HappeningKeys.Greeting)) {
 			yield return new DialogueAction("I've got business", SmartGreeting);
 		} else {
-			foreach(var option in _intelligenceOptions)
-			{
-				yield return option;
-			}
+			yield return new DialogueAction("Germany will be Bavaria", SmartLuxRules);
+			yield return new DialogueAction("Rule both countries", SmartRuleLAndG);
+			yield return new DialogueAction("We have nice clothes", SmartTrachten);
+			yield return new DialogueAction("We have nice women", SmartWomen);
 		}
 	}
 	
 	protected override IEnumerable<DialogueAction> ChatOptions()
 	{
-		foreach (var option in _chatOptions) 
-		{
-			yield return option;
-		}
+		yield return new DialogueAction ("How's the weather?", ChatHowsWeather);
+		yield return new DialogueAction ("What's up?", ChatWhatsUp);
+		yield return new DialogueAction ("How's work?", ChatHowsWork);
+		yield return new DialogueAction ("How was the weekend?", ChatLastWeekend);
+		yield return new DialogueAction ("Your favourite song?", ChatFavSong);
+		yield return new DialogueAction ("Your favourite sport?", ChatOlympic);
 	}
 	#endregion
 
@@ -508,43 +510,7 @@ public class FathersOfficeDialog : Dialogue {
 
 	// Use this for initialization
 	void Start () {
-		_intelligenceOptions = new List<DialogueAction>(){
-			new DialogueAction("Germany will be Bavaria", SmartLuxRules),
-			new DialogueAction("Rule both countries", SmartRuleLAndG),
-			new DialogueAction("We have nice clothes", SmartTrachten),
-			new DialogueAction("We have nice women", SmartWomen)
-		};
 
-		_intelligenceOptions = ShuffleCollection (_intelligenceOptions);
-
-		_intimidateOptions = new List<DialogueAction> (){
-			new DialogueAction("Gonna get to your house", IntimidateYourHouse),
-			new DialogueAction("Coffee on your uniform", IntimidateShinyUniform),
-			new DialogueAction("Push and run", IntimidatePushAndRun),
-			new DialogueAction("There a Wolpertinger", IntimidateWolpertinger)
-		};
-
-		_intimidateOptions = ShuffleCollection (_intimidateOptions);
-
-		_charismaOptions = new List<DialogueAction>(){
-			new DialogueAction("Nice beard", CharmeBeard),
-			new DialogueAction("Nice gun", CharmGun),
-			new DialogueAction("Have a pretzel", CharmPretzel),
-			new DialogueAction("Nice cap", CharmeCap)
-		};
-
-		_charismaOptions = ShuffleCollection (_charismaOptions);
-
-		_chatOptions = new List<DialogueAction> (){
-			new DialogueAction("How's the weather?", ChatHowsWeather),
-			new DialogueAction("What's up?", ChatWhatsUp),
-			new DialogueAction("How's work?", ChatHowsWork),
-			new DialogueAction("How was the weekend?", ChatLastWeekend),
-			new DialogueAction("Your favourite song?", ChatFavSong),
-			new DialogueAction("Your favourite sport?", ChatOlympic)
-		};
-
-		_chatOptions = ShuffleCollection (_chatOptions);
 	}
 	
 	// Update is called once per frame

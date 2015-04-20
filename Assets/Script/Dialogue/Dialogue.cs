@@ -62,12 +62,38 @@ public abstract class Dialogue : MonoBehaviour
             ShowCategoryOptions().MoveNext();
     }
 
+    bool isSuccess = false;
+    protected void ShowSuccessOverlay()
+    {
+        isSuccess = true;
+    }
+
+    bool isFail = false;
+    protected void ShowFailOverlay()
+    {
+        isFail = true;
+    }
+
     void LoadNextScene()
     {
-        GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
         Player.speechBubble.Clear();
         Player.speechBubble.Hide();
-        Player.GetComponent<Movement>().enabled = true;
+
+        if( isSuccess )
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadWinOverlay();
+            Npc.speechBubble.Hide();
+        }
+        else if( isFail )
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadFailOverlay();
+            Npc.speechBubble.Hide();
+        }
+        else
+        {
+            GameObject.FindObjectOfType<SceneSelection>().LoadNextScene();
+            Player.GetComponent<Movement>().enabled = true;
+        }
     }
 
     void ReloadScene()
@@ -112,12 +138,12 @@ public abstract class Dialogue : MonoBehaviour
         yield break;
     }
 
-//     private IEnumerator DisableChatAbility()
-//     {
-//         Player.hasChatAbility = false;
-//         LoadNextScene();
-//         yield break;
-//     }
+    //     private IEnumerator DisableChatAbility()
+    //     {
+    //         Player.hasChatAbility = false;
+    //         LoadNextScene();
+    //         yield break;
+    //     }
 
     protected Coroutine WaitForInput()
     {
