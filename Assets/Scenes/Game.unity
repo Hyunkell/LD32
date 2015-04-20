@@ -2237,7 +2237,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 5, y: -5}
-  m_SizeDelta: {x: 163.080002, y: 106.059998}
+  m_SizeDelta: {x: 214, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &451986374
 MonoBehaviour:
@@ -2374,6 +2374,7 @@ MonoBehaviour:
   NpcChatWhatsUp: {fileID: 0}
   NpcChatWeather: {fileID: 8300000, guid: 023e879e3cf254846b1242c6a63f076d, type: 3}
   NpcChatHowIsWork: {fileID: 8300000, guid: c4aa022f6e7492940b46c90d9003b2e6, type: 3}
+  NpcConversationEnd: {fileID: 8300000, guid: 13aac784dc2b72d42bf5fff512b47a44, type: 3}
   PlayerGreetingSauerkraut: {fileID: 8300000, guid: 9d9e7812123e81a4f8c6c873d6b7918a,
     type: 3}
   PlayerGreetingPretzel: {fileID: 8300000, guid: 36845f69d510e4a46a3d958695cee892,
@@ -5097,6 +5098,7 @@ MonoBehaviour:
     type: 3}
   NpcGreetingShyCoughing: {fileID: 8300000, guid: 802da361b4ddc17479f0cb47959f7d41,
     type: 3}
+  NpcConversationEnd: {fileID: 8300000, guid: bc4990d35e771df42b0ac9b6650cf6f6, type: 3}
   NpcChatWorriedWind: {fileID: 8300000, guid: a960d8d2ed65b894d929ebc6b1ee1077, type: 3}
   NpcChatSonPresident: {fileID: 8300000, guid: baa46dc8b7e4eff4bb9fa27f4d24d761, type: 3}
   NpcChatWorkingCloseToSon: {fileID: 8300000, guid: 5ab37143e63aacf4d97253a549eafdeb,
@@ -7718,7 +7720,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 4.13999987
+      value: 4.38000011
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.x
@@ -7726,7 +7728,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 160
+      value: 183.770004
       objectReference: {fileID: 0}
     - target: {fileID: 22476348, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchorMin.x
@@ -7758,11 +7760,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22485948, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 163.080002
+      value: 214
       objectReference: {fileID: 0}
     - target: {fileID: 22485948, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 106.059998
+      value: 173.770004
       objectReference: {fileID: 0}
     - target: {fileID: 22323480, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SortingOrder
@@ -7846,15 +7848,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22461906, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 5.65052032e-05
+      value: 5.48362732e-05
       objectReference: {fileID: 0}
     - target: {fileID: 22461906, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.y
-      value: -104.900002
+      value: -128.699997
       objectReference: {fileID: 0}
     - target: {fileID: 22461906, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -2.1499753
+      value: -2.15001726
       objectReference: {fileID: 0}
     - target: {fileID: 22461906, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
       propertyPath: m_SizeDelta.x
@@ -7864,6 +7866,18 @@ Prefab:
       propertyPath: iconMode
       value: 
       objectReference: {fileID: 1759176430}
+    - target: {fileID: 152458, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22480634, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 22480634, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 214
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cef758b06a9ba2643a422a372e7a42bb, type: 2}
   m_IsPrefabParent: 0

@@ -27,6 +27,7 @@ public class CanteenDialogue : Dialogue
     public AudioClip NpcChatWhatsUp;
     public AudioClip NpcChatWeather;
     public AudioClip NpcChatHowIsWork;
+    public AudioClip NpcConversationEnd;
     #endregion
 
     #region Player Sound Files
@@ -74,7 +75,8 @@ public class CanteenDialogue : Dialogue
 
     protected override IEnumerator OnSuccess()
     {
-        Npc.Say("TODO: OnSuccess()");
+        PlaySound(this.NpcConversationEnd);
+        Npc.Say("Your meal is ready, enjoy it.");
         yield return WaitForInput();
     }
 
