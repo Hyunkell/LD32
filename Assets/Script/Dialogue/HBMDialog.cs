@@ -179,7 +179,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcIntelligenceTaxSystem);
         Npc.Say("That sounds awesome, I tried",
             "to change the german tax system for years");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(5.0f);
 
         yield return End();
     }
@@ -206,7 +206,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcIntelligenceMilitarySmall);
         Npc.Say("That sounds like something even I",
             "can manage.");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(5.0f);
         yield return End();
     }
 
@@ -220,7 +220,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcIntelligenceWorldLeader);
         Npc.Say("More tanks? Nooooooooooo");
-        Npc.ModifyAffinity(-20f);
+        Npc.ModifyAffinity(-4.0f);
         yield return End();
     }
 
@@ -234,7 +234,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcIntelligenceWomen);
         Npc.Say("No thanks, I already got the best girlfriend.");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(-4.0f);
         yield return End();
     }
     #endregion
@@ -265,7 +265,7 @@ public class HBMDialog : Dialogue
             Npc.Say(
                 "Oh, please don't tell anyone!",
                 "They will know about my heritage!");
-            Npc.ModifyAffinity(20f);
+            Npc.ModifyAffinity(5.0f);
             yield return End();
         }
         else if (!this.HasHappend(HappeningKeys.SaidWrongName))
@@ -285,7 +285,7 @@ public class HBMDialog : Dialogue
 
             PlaySound(this.NpcIntimidateBWrong);
             Npc.Say("Mmmnnnyeaaaah... thats not it.");
-            Npc.ModifyAffinity(-20f);
+            Npc.ModifyAffinity(-4.0f);
             yield return End();
         }
     }
@@ -301,7 +301,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcIntimidateScratchCar);
         Npc.Say("Oh no! Please don't hurt it!");
-        Npc.ModifyAffinity(10f);
+        Npc.ModifyAffinity(5.0f);
 
         yield return End();
     }
@@ -318,7 +318,7 @@ public class HBMDialog : Dialogue
         Npc.Say("You can't hurt him, ",
             "he was Schützenmeister five years in a row!",
             "And I don't... even... like him.");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(-4.0f);
 
         yield return End();
     }
@@ -332,7 +332,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcIntimidateFeedDog);
         Npc.Say("Ahm... I... don't... have a dog.");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(-4.0f);
         yield return End();
     }
     #endregion
@@ -386,7 +386,7 @@ public class HBMDialog : Dialogue
         PlaySound(this.NpcCharismaLoveYou);
         Npc.Say("First of, you are way to funky,",
             "secondly I got a Girlfriend.");
-        Npc.ModifyAffinity(-20f);
+        Npc.ModifyAffinity(-4.0f);
         yield return End();
     }
 
@@ -398,7 +398,7 @@ public class HBMDialog : Dialogue
 
         PlaySound(this.NpcCharismaPanzerGeneral);
         Npc.Say("Straight up lie!");
-        Npc.ModifyAffinity(-10f);
+        Npc.ModifyAffinity(-4.0f);
         yield return End();
     }
     #endregion
