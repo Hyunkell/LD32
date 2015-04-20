@@ -80,9 +80,11 @@ public class SceneSelection : MonoBehaviour
         LoadCurrentScene();
     }
 
+    public int introIndex = 0;
     public void LoadIntro()
     {
-        ResetGame();
+        this.sceneIndex = introIndex;
+        LoadCurrentScene();
     }
 
     public void LoadWinOverlay()

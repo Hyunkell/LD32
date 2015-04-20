@@ -687,6 +687,7 @@ MonoBehaviour:
   mainMenuIndex: 1
   creditsIndex: 5
   helpIndex: 6
+  introIndex: 0
 --- !u!82 &131340432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1683,8 +1684,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1052347305}
-        m_MethodName: GoToMainMenu
+      - m_Target: {fileID: 131340431}
+        m_MethodName: LoadMainMenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
