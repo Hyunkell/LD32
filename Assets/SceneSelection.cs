@@ -22,7 +22,6 @@ public class SceneSelection : MonoBehaviour
 
     public void ResetGame()
     {
-        Debug.LogWarning( "TODO: Define game over screen" );
         Application.LoadLevel( Application.loadedLevel );
     }
 
