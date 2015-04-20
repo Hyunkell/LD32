@@ -16,6 +16,14 @@ public static class Prefab
             prefabs.Add( prefab.name, prefab );
         }
     }
+
+    public static GameObject CreateInstance( string prefabName, Vector3 position )
+    {
+        var instance = GameObject.Instantiate( prefabs[prefabName] );
+        instance.transform.position = position;
+        return instance;
+    }
+
     public static GameObject CreateInstance( string prefabName, GameObject parent )
     {
         return CreateInstance( prefabs[prefabName], parent );

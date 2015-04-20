@@ -10,6 +10,7 @@ public class Actor : MonoBehaviour
     public SpeechBubble speechBubble;
     [Range( -50, 50 )]
     public float affinity;
+    public GameObject thumbsSpawnLocation;
 
     private HashSet<string> happenings = new HashSet<string>();
 
@@ -27,6 +28,16 @@ public class Actor : MonoBehaviour
     {
         Debug.Log( "Affinity: " + val.ToString() );
         affinity += val;
+
+        if( affinity > 0.0f )
+        {
+            Prefab.CreateInstance( "ThumbsUp", thumbsSpawnLocation.transform.position );
+        }
+        else if( affinity < 0.0f )
+        {
+            Prefab.CreateInstance( "ThumbsDown", thumbsSpawnLocation.transform.position );
+            //instance.GetComponent<SpriteRenderer>().sprite = 
+        }
     }
 
     internal bool HasHappend( string key )

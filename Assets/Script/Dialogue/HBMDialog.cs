@@ -97,8 +97,8 @@ public class HBMDialog : Dialogue
             +"I will agree to join Germany and Luxembourg. Here are the auhorization codes for all "
             +"of our nuclear missile silos and the key to the country.");
         yield break;
-        ShowSuccessOverlay();
-        yield break;
+        //ShowSuccessOverlay();
+        //yield break;
         //yield return WaitForInput();
     }
 
