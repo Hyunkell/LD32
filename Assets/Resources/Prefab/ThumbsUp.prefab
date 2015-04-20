@@ -42,7 +42,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 15fb859facab3b540895adbe9d134504, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2578d2d862f39634ca435397c0e3da3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forcedSprite: {fileID: 0}
 --- !u!212 &21293218
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -744,7 +744,6 @@ MonoBehaviour:
   mainMenuIndex: 1
   creditsIndex: 5
   helpIndex: 6
-  introIndex: 0
 --- !u!82 &131340432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1742,8 +1741,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131340431}
-        m_MethodName: LoadMainMenuScene
+      - m_Target: {fileID: 1052347305}
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5034,7 +5033,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1192776941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.57999992, y: 2.13000011, z: 0}
+  m_LocalPosition: {x: 2.57999992, y: 2.13000011, z: -12.2200003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1135410817}

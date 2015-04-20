@@ -29,11 +29,11 @@ public class Actor : MonoBehaviour
         Debug.Log( "Affinity: " + val.ToString() );
         affinity += val;
 
-        if( affinity > 0.0f )
+        if( val > 0.0f )
         {
             Prefab.CreateInstance( "ThumbsUp", thumbsSpawnLocation.transform.position );
         }
-        else if( affinity < 0.0f )
+        else if( val < 0.0f )
         {
             Prefab.CreateInstance( "ThumbsDown", thumbsSpawnLocation.transform.position );
             //instance.GetComponent<SpriteRenderer>().sprite = 
