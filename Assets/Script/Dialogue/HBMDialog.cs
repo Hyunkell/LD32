@@ -111,7 +111,7 @@ public class HBMDialog : Dialogue
         }
         else
         {
-            yield return new DialogueAction("Like Mercedes?", CharismaMercedes);
+            yield return new DialogueAction("Nice mercedes", CharismaMercedes);
             yield return new DialogueAction("Good work", CharismaWonder);
             yield return new DialogueAction("I love you", CharismaLoveYou);
             yield return new DialogueAction("Panzer general", CharismaPanzerGeneral);
@@ -129,7 +129,7 @@ public class HBMDialog : Dialogue
             yield return new DialogueAction("Reveal the B", IntimidateRevealB);
             yield return new DialogueAction("Scratch car", IntimidateScratchCar);
             yield return new DialogueAction("Hurt father", IntimidateHurtFather);
-            yield return new DialogueAction("Feed dog", IntimidateFeedDog);
+            yield return new DialogueAction("Fatten your dog", IntimidateFeedDog);
         }
     }
 

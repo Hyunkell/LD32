@@ -156,7 +156,7 @@ public class FathersOfficeDialog : Dialogue {
 		} else {
 			yield return new DialogueAction("There a Wolpertinger", IntimidateWolpertinger);
 			yield return new DialogueAction("Coffee on your uniform", IntimidateShinyUniform);
-			yield return new DialogueAction("Gonna get to your house", IntimidateYourHouse);
+			yield return new DialogueAction("Mess around with your trash", IntimidateYourHouse);
 			yield return new DialogueAction("Push and run", IntimidatePushAndRun);
 		}
 	}
@@ -280,7 +280,7 @@ public class FathersOfficeDialog : Dialogue {
 	private IEnumerator IntimidateGreeting()
 	{
 		PlaySound (this.PlayerGreetingOutOfMyWay);
-		Player.Say ("Get out of my way, man!");
+		Player.Say ("Hey. Get out of my way, man!");
 
 		yield return WaitForInput ();
 
@@ -349,7 +349,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcIntimidateDontDrink);
-		Npc.Say ("I don't drink on duty. You won't fool me!");
+		Npc.Say ("You won't fool me! I don't drink on duty.");
 
 		Npc.ModifyAffinity (-4.0f);
 
@@ -378,8 +378,8 @@ public class FathersOfficeDialog : Dialogue {
 	private IEnumerator SmartLuxRules()
 	{
 		PlaySound (this.PlayerSmartLuxembourgRules);
-		Player.Say ("As soon as Luxembourg rules the world, all of Germany will be made Bavarian, that's the " +
-			"only thing the people know about Germany, anyway.");
+		Player.Say ("I promise you, as soon as Luxembourg rules the world, all of Germany will be made Bavarian, that's the " +
+			"only thing the people know about that country, anyway.");
 
 		yield return WaitForInput ();
 
@@ -424,7 +424,7 @@ public class FathersOfficeDialog : Dialogue {
 	private IEnumerator SmartWomen()
 	{
 		PlaySound (this.PlayerSmartWomen);
-		Player.Say("Luxembourg has some of the most beautiful women in the world.");
+		Player.Say("Luxembourg has some of the most beautiful and funky women in the world.");
 
 		yield return WaitForInput ();
 
@@ -443,7 +443,7 @@ public class FathersOfficeDialog : Dialogue {
 	private IEnumerator CharmeGreeting()
 	{
 		PlaySound (this.PlayerGreetingCompetent);
-		Player.Say ("That's why you're such a competent guard. Stopping all the people ...");
+		Player.Say ("Oh my, you're such a competent guard. Stopping all the people ...");
 
 		yield return WaitForInput ();
 
@@ -493,7 +493,7 @@ public class FathersOfficeDialog : Dialogue {
 		yield return WaitForInput ();
 
 		PlaySound (this.NpcCharmeBrezn);
-		Npc.Say ("How dare you mock the traditional Brezn-making with your dry lump of dough?");
+		Npc.Say ("How dare you mock the bavarian traditional Brezn-making with your dry lump of dough?");
 
 		Npc.ModifyAffinity (-4.0f);
 

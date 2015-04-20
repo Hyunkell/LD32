@@ -83,6 +83,7 @@ public abstract class Dialogue : MonoBehaviour
     {
         Player.speechBubble.Clear();
         Player.speechBubble.Hide();
+        DialogueAction.Reset();
 
         if( isSuccess )
         {
