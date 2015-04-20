@@ -31,12 +31,12 @@ public abstract class Dialogue : MonoBehaviour
         yield return WaitForInput();
 
         // Check if we need to move to the next scene
-        if( Npc.affinity >= 50.0f )
+        if( Npc.affinity >= 10.0f )
         {
             yield return StartCoroutine( OnSuccess() );
             LoadNextScene();
         }
-        else if( Npc.affinity <= -50.0f )
+        else if( Npc.affinity <= -10.0f )
         {
             ShowFailOverlay();
             LoadNextScene();
