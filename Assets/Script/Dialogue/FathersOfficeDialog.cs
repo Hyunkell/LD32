@@ -507,14 +507,5 @@ public class FathersOfficeDialog : Dialogue {
 
 		return shuffeledList;
 	}
-
-	// Use this for initialization
-	void Start () {
-
-	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
