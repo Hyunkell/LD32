@@ -65,7 +65,7 @@ public class CanteenDialogue : Dialogue
     protected override void OnStart()
     {
         PlaySound(this.NpcGreeting);
-        Npc.Say("Bretzel? Weiswurst? Sauerkraut?");
+        Npc.Say("Bretzel? Weisswurst? Sauerkraut?");
     }
 
     protected override IEnumerator OnSuccess()
@@ -154,7 +154,7 @@ public class CanteenDialogue : Dialogue
     private IEnumerator GreetingWeißwurst()
     {
         PlaySound(this.PlayerGreetingWeißwurst);
-        Player.Say("Weiswurst.");
+        Player.Say("Weisswurst.");
         yield return WaitForInput();
 
         PlaySound(this.NpcGreetingWeißwurst);
@@ -208,7 +208,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcCharismaHandsome);
-        Npc.Say("Yes, yes. But that's something I allready know.");
+        Npc.Say("Yes, yes. But that's something I already know.");
         Npc.ModifyAffinity(20f);
         yield return End();
     }
@@ -323,7 +323,7 @@ public class CanteenDialogue : Dialogue
         yield return WaitForInput();
 
         PlaySound(this.NpcChatWeather);
-        Npc.Say("Weiswurst weather!");
+        Npc.Say("Weisswurst weather!");
         yield return End();
     }
 
