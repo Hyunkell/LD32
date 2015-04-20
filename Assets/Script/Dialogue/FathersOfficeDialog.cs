@@ -156,7 +156,7 @@ public class FathersOfficeDialog : Dialogue {
 		} else {
 			yield return new DialogueAction("There a Wolpertinger", IntimidateWolpertinger);
 			yield return new DialogueAction("Coffee on your uniform", IntimidateShinyUniform);
-			yield return new DialogueAction("Gonna get to your house", IntimidateYourHouse);
+			yield return new DialogueAction("Mess around with your trash", IntimidateYourHouse);
 			yield return new DialogueAction("Push and run", IntimidatePushAndRun);
 		}
 	}
